@@ -1,36 +1,21 @@
 import React from 'react';
 
+import GithubIcon from '../../svg/github';
+import FacebookIcon from '../../svg/facebook';
+import LinkedInIcon from '../../svg/linkedin';
+import EmailIcon from '../../svg/email';
+import InstagramIcon from '../../svg/instagram';
+
 const Footer = () => (
-  <footer className="container mx-auto py-16 px-3 mt-48 mb-8 text-gray-800">
-    <div className="flex -mx-3">
-      <div className="flex-1 px-3">
-        <h2 className="text-lg font-semibold">About Us</h2>
-        <p className="mt-5">Ridiculus mus mauris vitae ultricies leo integer malesuada nunc.</p>
-      </div>
-      <div className="flex-1 px-3">
-        <h2 className="text-lg font-semibold">Important Links</h2>
-        <ul className="mt-4 leading-loose">
-          <li>
-            <a href="https://codebushi.com">Terms &amp; Conditions</a>
-          </li>
-          <li>
-            <a href="https://codebushi.com">Privacy Policy</a>
-          </li>
-        </ul>
-      </div>
-      <div className="flex-1 px-3">
-        <h2 className="text-lg font-semibold">Social Media</h2>
-        <ul className="mt-4 leading-loose">
-          <li>
-            <a href="https://dev.to/changoman">Dev.to</a>
-          </li>
-          <li>
-            <a href="https://twitter.com/HuntaroSan">Twitter</a>
-          </li>
-          <li>
-            <a href="https://github.com/codebushi/gatsby-starter-lander">GitHub</a>
-          </li>
-        </ul>
+  <footer id="contact" className="container mx-auto py-16 px-3 mb-8 text-gray-800">
+    <h2 className="text-3xl lg:text-5xl font-semibold text-center">Contact</h2>
+    <div className="flex justify-center pt-10 xl:pt-16">
+      <div className="socials flex justify-center w-9/12">
+        <LinkedInIcon classes="social-button w-10 mx-4 md:mx-6" />
+        <GithubIcon classes="social-button w-10 mx-4 md:mx-6" />
+        <FacebookIcon classes="social-button w-10 mx-4 md:mx-6" />
+        <InstagramIcon classes="social-button w-10 mx-4 md:mx-6" />
+        <EmailIcon classes="social-button w-10 mx-4 md:mx-6" />
       </div>
     </div>
   </footer>

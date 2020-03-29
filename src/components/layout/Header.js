@@ -1,34 +1,29 @@
 import React from 'react';
 import AnchorLink from 'react-anchor-link-smooth-scroll';
-import LogoIcon from '../../svg/LogoIcon';
-import Button from '../Button';
 
 const Header = () => (
   <header className="sticky top-0 bg-white shadow">
     <div className="container flex flex-col sm:flex-row justify-between items-center mx-auto py-4 px-8">
       <div className="flex items-center text-2xl">
-        <div className="w-12 mr-3">
-          <LogoIcon />
+        <div className="mr-3">
+          <p className="logo-sa">SLAVE_ATANASOV</p>
         </div>
-        Lander
       </div>
-      <div className="flex mt-4 sm:mt-0">
-        <AnchorLink className="px-4" href="#features">
-          Features
+      <div className="flex justify-between mt-4 sm:mt-0 nav-links">
+        <AnchorLink className="" href="#about">
+          About
         </AnchorLink>
-        <AnchorLink className="px-4" href="#services">
-          Services
+        <AnchorLink className="" href="#qualifications">
+          Qualifications
         </AnchorLink>
-        <AnchorLink className="px-4" href="#stats">
-          Stats
+        <AnchorLink className="" href="#projects">
+          Projects
         </AnchorLink>
-        <AnchorLink className="px-4" href="#testimonials">
-          Testimonials
+        <AnchorLink className="" href="#contact">
+          Contact
         </AnchorLink>
       </div>
-      <div className="hidden md:block">
-        <Button className="text-sm">Start Free Trial</Button>
-      </div>
+      <div className="hidden md:block" />
     </div>
   </header>
 );
