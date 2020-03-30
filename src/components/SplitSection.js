@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const SplitSection = ({ primarySlot, secondarySlot, reverseOrder }) => (
   <section className="py-10 xl:py-16">
@@ -12,5 +13,10 @@ const SplitSection = ({ primarySlot, secondarySlot, reverseOrder }) => (
     </div>
   </section>
 );
+
+SplitSection.propTypes = {
+  primarySlot: PropTypes.shape({}).isRequired,
+  secondarySlot: PropTypes.shape({}).isRequired
+};
 
 export default SplitSection;

@@ -6,26 +6,26 @@ import CleanCard from '../components/CleanCard';
 import SplitSection from '../components/SplitSection';
 
 import TechIcons from '../svg/_icons';
-import SvgCharts from '../svg/charts';
 import GithubIcon from '../svg/github';
 import FacebookIcon from '../svg/facebook';
 import LinkedInIcon from '../svg/linkedin';
 import InstagramIcon from '../svg/instagram';
 import EmailIcon from '../svg/email';
 import ImageSA from '../images/sa_img.jpg';
+import ImageProgrammer from '../svg/programmer';
 import ImageAcconote from '../images/acconote.png';
 import ImagePerssonified from '../images/perssonified_1.jpg';
 
 export default () => {
   return (
     <Layout>
-      <section id="about" className="pt-20">
+      <section id="about" className="pt-10 md:pt-20 bg-gradient">
         <div className="container mx-auto px-8 lg:flex">
           <div className="text-center lg:text-left lg:w-1/2 sm:mb-3">
             <h1 className="text-5xl lg:text-5xl xl:text-6xl font-bold leading-none robot-name">
               Slave Atanasov
             </h1>
-            <h1 className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-none">
+            <h1 className="text-3xl md:text-5xl xl:text-6xl font-bold leading-none">
               Frontend Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
@@ -33,8 +33,8 @@ export default () => {
               an endeavour of building a career in the web development industry.
             </p>
             <br />
-            <CleanCard className="">
-              <p className="font-semibold text-lg">Q&amp;A:</p>
+            <CleanCard className="q-a-card">
+              <h3 className="font-semibold text-lg">Q&amp;A:</h3>
               <p>
                 Employment status: <span className="text-green-500">Available for hire!</span>
               </p>
@@ -43,32 +43,72 @@ export default () => {
               </p>
               <p>
                 Eligible to work in the EU?{' '}
-                <span className="text-green-500">Yes, I&apos;m an EU Citizen</span>
+                <span className="text-green-500">Yes, I&apos;m an EU national</span>
               </p>
               <p>
                 Latest working experience?{' '}
-                <span className="text-green-500">Software engineer trainee at One Inside</span>
+                <span className="text-green-500">Software engineer trainee</span>
               </p>
               <p>
-                Goal: <span className="text-green-500">Junior frontend developer position.</span>
+                Goal: <span className="text-green-500">Junior frontend developer position</span>
               </p>
               <div className="socials flex justify-center lg:justify-start">
-                <LinkedInIcon classes="social-button w-6 mr-4" />
-                <GithubIcon classes="social-button w-6 mr-4" />
-                <FacebookIcon classes="social-button w-6 mr-4" />
-                <InstagramIcon classes="social-button w-6 mr-4" />
-                <EmailIcon classes="social-button w-6 mr-4" />
+                <a
+                  className="icon-anchor-link"
+                  href="https://www.linkedin.com/in/slaveatanasov"
+                  alt="LinkedIn"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <LinkedInIcon classes="social-button w-6 mr-4" />
+                </a>
+                <a
+                  className="icon-anchor-link"
+                  href="https://github.com/slaveatanasov"
+                  alt="GitHub"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <GithubIcon classes="social-button w-6 mr-4" />
+                </a>
+                <a
+                  className="icon-anchor-link"
+                  href="https://www.facebook.com/slaveatanasov"
+                  alt="Facebook"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FacebookIcon classes="social-button w-6 mr-4" />
+                </a>
+                <a
+                  className="icon-anchor-link"
+                  href="https://www.instagram.com/slaveatan"
+                  alt="Instagram"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <InstagramIcon classes="social-button w-6 mr-4" />
+                </a>
+                <a
+                  className="icon-anchor-link"
+                  href="mailto:slaveatanasovmusic@gmail.com"
+                  alt="Email"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <EmailIcon classes="social-button w-6 mr-4" />
+                </a>
               </div>
             </CleanCard>
           </div>
           <div className="lg:w-1/2">
             <div className="image-sa-wrapper">
-              <img src={ImageSA} alt="slave-atanasov" className="image-sa" />
+              <img src={ImageSA} alt="slave-atanasov" className="image-sa xl:ml-14" />
             </div>
           </div>
         </div>
       </section>
-      <section id="qualifications" className="pt-20 lg:pt-32">
+      <section id="qualifications" className="pt-20">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl lg:text-5xl font-semibold">Qualifications</h2>
           <div className="flex flex-col lg:flex-wrap lg:flex-row sm:-mx-3 mt-12">
@@ -188,7 +228,7 @@ export default () => {
                     </p>
                   </li>
                   <hr />
-                  <li className="">
+                  <li>
                     <p className="text-sm">2018 – 2010</p>
                     <h4>Student</h4>
                     <p className="institution">
@@ -200,7 +240,7 @@ export default () => {
                     </p>
                   </li>
                   <hr />
-                  <li className="">
+                  <li>
                     <p className="text-sm">2004 – 2008</p>
                     <h4>Diploma - Social Sciences and Humanities</h4>
                     <p className="institution">
@@ -253,14 +293,16 @@ export default () => {
         <SplitSection
           primarySlot={
             <div className="lg:pr-32 xl:pr-48">
-              <h3 className="text-3xl font-semibold leading-tight">peRSSonified</h3>
+              <h3 className="text-2xl font-semibold leading-tight">peRSSonified</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 <a href="https://github.com/slaveatanasov/perssonified">Check it out on GitHub</a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil animi vero soluta?
-                Aliquam quam temporibus laudantium fuga, quas voluptas deleniti quaerat officiis
-                exercitationem optio incidunt velit nobis cum libero ad?
+                Imagined as a personalized news aggregator allowing you to subscribe to news outlets
+                and topics that you want to read, this project implements authorization and
+                authentication, using tools such as Two Factor Authentication and JWT. The
+                technologies used in building it include Angular, Angular Material, TypeScript,
+                Node.js, MySQL, SCSS etc.
               </p>
             </div>
           }
@@ -270,14 +312,15 @@ export default () => {
           reverseOrder
           primarySlot={
             <div className="lg:pl-32 xl:pl-48">
-              <h3 className="text-3xl font-semibold leading-tight">Acconote</h3>
+              <h3 className="text-2xl font-semibold leading-tight">Acconote</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 <a href="https://github.com/slaveatanasov/acconote_app">Check it out on GitHub</a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil animi vero soluta?
-                Aliquam quam temporibus laudantium fuga, quas voluptas deleniti quaerat officiis
-                exercitationem optio incidunt velit nobis cum libero ad?
+                This basic note taking and to-do app is a quick way to showcase the latest React
+                possibilities. It implements TypeScript in React, as well as the newest React Hooks,
+                and it uses HTML5 drag and drop API for a better user experience. For the UI I used
+                tools such as Materialize and SCSS.
               </p>
             </div>
           }
@@ -286,22 +329,21 @@ export default () => {
         <SplitSection
           primarySlot={
             <div className="lg:pr-32 xl:pr-48">
-              <h3 className="text-3xl font-semibold leading-tight">Other projects</h3>
+              <h3 className="text-2xl font-semibold leading-tight">Other projects</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 <a href="https://github.com/slaveatanasov?tab=repositories">
-                  Check all projects on GitHub
+                  Explore all projects on GitHub
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil animi vero soluta?
-                Aliquam quam temporibus laudantium fuga, quas voluptas deleniti quaerat officiis
-                exercitationem optio incidunt velit nobis cum libero ad?
+                Check out my GitHub account for other small projects I&apos;ve built.
               </p>
             </div>
           }
-          secondarySlot={<SvgCharts />}
+          secondarySlot={<ImageProgrammer />}
         />
       </div>
+      <h2 className="text-3xl lg:text-4xl pt-16 font-semibold text-center">Contact</h2>
     </Layout>
   );
 };
