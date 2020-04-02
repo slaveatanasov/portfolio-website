@@ -108,10 +108,10 @@ export default () => {
           </div>
         </div>
       </section>
-      <section id="qualifications" className="pt-20">
+      <section id="qualifications" className="pt-12 md:pt-20">
         <div className="container mx-auto text-center">
           <h2 className="text-3xl lg:text-5xl font-semibold">Qualifications</h2>
-          <div className="flex flex-col lg:flex-wrap lg:flex-row sm:-mx-3 mt-12">
+          <div className="flex flex-col lg:flex-wrap lg:flex-row sm:-mx-3 mt-6 md:mt-12">
             <div className="lg:w-1/2 sm:w-auto px-3">
               <Card className="mb-8">
                 <p className="font-semibold text-xl">Technology</p>
@@ -220,7 +220,14 @@ export default () => {
                   <li>
                     <p className="text-sm">2018 – 2019</p>
                     <h4>Web Development - JavaScript Academy</h4>
-                    <a href="https://semosedu.com.mk">Semos Education - Skopje, North Macedonia</a>
+                    <a
+                      href="https://semosedu.com.mk"
+                      alt="Semos Edu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Semos Education - Skopje, North Macedonia
+                    </a>
                     <p className="mt-1">
                       Linux, Git, HTML 5, CSS 3, JavaScript, Node.js, MongoDB, React, Redux, HTTP,
                       REST. Subsequently, I added to my knowledge technologies such as Angular,
@@ -258,7 +265,14 @@ export default () => {
                   <li>
                     <p className="text-sm">06/2019 – 09/2019</p>
                     <h4>Software engineer trainee</h4>
-                    <a href="https://one-inside.com">One Inside - Skopje, North Macedonia</a>
+                    <a
+                      href="https://one-inside.com"
+                      alt="One Inside"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      One Inside - Skopje, North Macedonia
+                    </a>
                     <p className="mt-1">
                       One Inside is a Swiss company with subsidiaries in Germany and North
                       Macedonia. As a software engineer trainee at the Skopje office, I worked in a
@@ -272,14 +286,28 @@ export default () => {
                   <li className="">
                     <p className="text-sm">2013 – 2019</p>
                     <h4>Event organisation, music label and artist management</h4>
-                    <a href="https://patapata.eu">Pata Pata Recordings</a>
+                    <a
+                      href="https://patapata.eu"
+                      alt="Pata Pata Recordings"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Pata Pata Recordings
+                    </a>
                     <p className="mt-1">Event organisation, music label and artist management</p>
                   </li>
                   <hr />
                   <li className="">
                     <p className="text-sm">2008 – present</p>
                     <h4>Artist - electronic music producer</h4>
-                    <a href="https://patapata.eu">Sal Sonder – Pata Pata Recordings</a>
+                    <a
+                      href="https://patapata.eu"
+                      alt="Pata Pata Recordings"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Sal Sonder – Pata Pata Recordings
+                    </a>
                     <p className="mt-1">Freelance producer, mix and mastering engineer</p>
                   </li>
                 </ul>
@@ -288,14 +316,31 @@ export default () => {
           </div>
         </div>
       </section>
-      <div id="projects" className="pt-20">
+      <div id="projects" className="pt-12 md:pt-20">
         <h2 className="text-3xl lg:text-5xl font-semibold text-center">Portfolio projects</h2>
         <SplitSection
           primarySlot={
             <div className="lg:pr-32 xl:pr-48">
               <h3 className="text-2xl font-semibold leading-tight">peRSSonified</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                <a href="https://github.com/slaveatanasov/perssonified">Check it out on GitHub</a>
+                Check it out on{' '}
+                <a
+                  href="https://github.com/slaveatanasov/perssonified"
+                  alt="GitHub peRSSonified"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                {' and '}
+                <a
+                  href="https://perssonified.herokuapp.com/"
+                  alt="Heroku peRSSonified"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Heroku
+                </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 Imagined as a personalized news aggregator allowing you to subscribe to news outlets
@@ -314,7 +359,24 @@ export default () => {
             <div className="lg:pl-32 xl:pl-48">
               <h3 className="text-2xl font-semibold leading-tight">Acconote</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                <a href="https://github.com/slaveatanasov/acconote_app">Check it out on GitHub</a>
+                Check it out on{' '}
+                <a
+                  href="https://github.com/slaveatanasov/acconote_app"
+                  alt="GitHub Acconote"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                {' and '}
+                <a
+                  href="https://acconote.herokuapp.com/"
+                  alt="Heroku Acconote"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Heroku
+                </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 This basic note taking and to-do app is a quick way to showcase the latest React
@@ -331,7 +393,12 @@ export default () => {
             <div className="lg:pr-32 xl:pr-48">
               <h3 className="text-2xl font-semibold leading-tight">Other projects</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                <a href="https://github.com/slaveatanasov?tab=repositories">
+                <a
+                  href="https://github.com/slaveatanasov?tab=repositories"
+                  alt="GitHub Projects"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   Explore all projects on GitHub
                 </a>
               </p>
@@ -343,7 +410,7 @@ export default () => {
           secondarySlot={<ImageProgrammer />}
         />
       </div>
-      <h2 className="text-3xl lg:text-4xl pt-16 font-semibold text-center">Contact</h2>
+      <h2 className="text-2xl lg:text-4xl pt-16 font-semibold text-center">Contact</h2>
     </Layout>
   );
 };

@@ -1,7 +1,6 @@
 {
   "name": "slaveatanasov",
   "author": "Slave Atanasov",
-  "repository": "https://github.com/codebushi/gatsby-starter-lander",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
@@ -10,10 +9,13 @@
   },
   "dependencies": {
     "gatsby": "^2.18.18",
+    "gatsby-plugin-manifest": "^2.3.3",
+    "gatsby-plugin-react-helmet": "^3.2.1",
     "gatsby-theme-codebushi": "1.0.0",
     "react": "^16.12.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^16.12.0"
+    "react-dom": "^16.12.0",
+    "react-helmet": "^5.2.1"
   },
   "devDependencies": {
     "eslint": "^6.8.0",
