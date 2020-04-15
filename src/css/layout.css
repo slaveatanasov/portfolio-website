@@ -20,6 +20,7 @@
 
 .q-a-card p, .q-a-card h3 {
   padding: 0.2rem;
+  cursor: default;
 }
 
 .q-a-card p:hover {
@@ -61,8 +62,6 @@ a:hover {
   width: 40vw;
   min-width: 250px;
   max-width: 380px;
-  /* width: 50vw;
-  max-width: 60%; */
   border-radius: 50%;
   transform: scale(0.9);
   box-shadow: rgba(73, 73, 73, 0) 0px 0px 28px;
@@ -74,8 +73,13 @@ a:hover {
   transform: scale(1);
 }
 
-.socials {
+.socials ul {
   padding: 1rem 0;
+  list-style-type: none;
+}
+
+.q-a-card ul {
+  width: 180px;
 }
 
 .social-button {
@@ -83,9 +87,12 @@ a:hover {
   transition: 0.2s ease-in-out;
 }
 
+.social-button a {
+  cursor: pointer;
+}
+
 .social-button:hover {
   fill: rgb(131, 131, 131);
-  cursor: pointer;
 }
 
 .robot-name {
@@ -127,6 +134,7 @@ a:hover {
   display: block;
   padding: 0.2rem;
   transition: 0.1s ease-out;
+  cursor: default;
 }
 
 .list-skills li:hover {

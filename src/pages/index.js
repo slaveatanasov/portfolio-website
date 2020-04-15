@@ -34,7 +34,7 @@ export default () => {
             </p>
             <br />
             <CleanCard className="q-a-card">
-              <h3 className="font-semibold text-lg">Q&amp;A:</h3>
+              <h3 className="font-semibold text-lg">Q&amp;A</h3>
               <p>
                 Employment status: <span className="text-green-500">Available for hire!</span>
               </p>
@@ -43,61 +43,73 @@ export default () => {
               </p>
               <p>
                 Eligible to work in the EU?{' '}
-                <span className="text-green-500">Yes, I&apos;m an EU national</span>
+                <span className="text-green-500">Yes, I&apos;m an EU citizen</span>
               </p>
               <p>
                 Latest working experience?{' '}
                 <span className="text-green-500">Software engineer trainee</span>
               </p>
               <p>
-                Goal: <span className="text-green-500">Junior frontend developer position</span>
+                Goal: <span className="text-green-500">Frontend developer position</span>
               </p>
               <div className="socials flex justify-center lg:justify-start">
-                <a
-                  className="icon-anchor-link"
-                  href="https://www.linkedin.com/in/slaveatanasov"
-                  alt="LinkedIn"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <LinkedInIcon classes="social-button w-6 mr-4" />
-                </a>
-                <a
-                  className="icon-anchor-link"
-                  href="https://github.com/slaveatanasov"
-                  alt="GitHub"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <GithubIcon classes="social-button w-6 mr-4" />
-                </a>
-                <a
-                  className="icon-anchor-link"
-                  href="https://www.facebook.com/slaveatanasov"
-                  alt="Facebook"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <FacebookIcon classes="social-button w-6 mr-4" />
-                </a>
-                <a
-                  className="icon-anchor-link"
-                  href="https://www.instagram.com/slaveatan"
-                  alt="Instagram"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <InstagramIcon classes="social-button w-6 mr-4" />
-                </a>
-                <a
-                  className="icon-anchor-link"
-                  href="mailto:slaveatanasovmusic@gmail.com"
-                  alt="Email"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <EmailIcon classes="social-button w-6 mr-4" />
-                </a>
+                <ul className="flex justify-between w:180px">
+                  <li>
+                    <a
+                      className="icon-anchor-link"
+                      href="https://www.linkedin.com/in/slaveatanasov"
+                      alt="LinkedIn"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <LinkedInIcon classes="social-button w-6" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="icon-anchor-link"
+                      href="https://github.com/slaveatanasov"
+                      alt="GitHub"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <GithubIcon classes="social-button w-6" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="icon-anchor-link"
+                      href="https://www.facebook.com/slaveatanasov"
+                      alt="Facebook"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <FacebookIcon classes="social-button w-6" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="icon-anchor-link"
+                      href="https://www.instagram.com/slaveatan"
+                      alt="Instagram"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <InstagramIcon classes="social-button w-6" />
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      className="icon-anchor-link"
+                      href="mailto:slaveatanasovmusic@gmail.com"
+                      alt="Email"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <EmailIcon classes="social-button w-6" />
+                    </a>
+                  </li>
+                </ul>
               </div>
             </CleanCard>
           </div>
@@ -236,7 +248,7 @@ export default () => {
                   </li>
                   <hr />
                   <li>
-                    <p className="text-sm">2018 – 2010</p>
+                    <p className="text-sm">2008 – 2010</p>
                     <h4>Student</h4>
                     <p className="institution">
                       Faculty of Applied Foreign Languages - business department, FON University,
