@@ -1,8 +1,8 @@
 import React from 'react';
 
-const ReduxIcon = () => (
+const ReduxIcon = ({classes}) => (
   <svg
-    className="tech-icon w-6 md:w-8 m-2"
+  className={classes}
     role="img"
     viewBox="0 0 24 24"
     xmlns="http://www.w3.org/2000/svg"

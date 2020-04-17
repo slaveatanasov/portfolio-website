@@ -1,8 +1,8 @@
 import React from 'react';
 
-const GatsbyIcon = () => (
+const GatsbyIcon = ({classes}) => (
   <svg
-    className="tech-icon w-6 md:w-8 m-2"
+  className={classes}
     role="img"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"

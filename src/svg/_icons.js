@@ -13,20 +13,48 @@ import NodeJSIcon from './nodejs';
 import ReactIcon from './react';
 import ReduxIcon from './redux';
 import TSIcon from './typescript';
+import AdobeIllustratorIcon from './adobe-illustrator';
+import AdobePhotoshopIcon from './adobe-photoshop';
+import AdobeXdIcon from './adobe-xd';
+import BootstrapIcon from './bootstrap';
+import DockerIcon from './docker';
+import FigmaIcon from './figma';
+import JestIcon from './jest';
+import MaterialUiIcon from './material-ui';
+import RxjsIcon from './rxjs';
+import SassIcon from './sass';
+import VSCodeIcon from './vscode';
+import WebpackIcon from './webpack';
+import WordpressIcon from './wordpress';
+
+const classes = 'tech-icon w-6 m-2';
 
 export default {
-  angular: <AngularIcon />,
-  css: <CSSIcon />,
-  gatsby: <GatsbyIcon />,
-  git: <GitIcon />,
-  graphql: <GraphQLIcon />,
-  html: <HTMLIcon />,
-  js: <JSIcon />,
-  linux: <LinuxIcon />,
-  mongodb: <MongoDBIcon />,
-  mysql: <MySQLIcon />,
-  nodejs: <NodeJSIcon />,
-  react: <ReactIcon />,
-  redux: <ReduxIcon />,
-  ts: <TSIcon />
+  angular: <AngularIcon classes={classes} />,
+  css: <CSSIcon classes={classes} />,
+  gatsby: <GatsbyIcon classes={classes} />,
+  git: <GitIcon classes={classes} />,
+  graphql: <GraphQLIcon classes={classes} />,
+  html: <HTMLIcon classes={classes} />,
+  js: <JSIcon classes={classes} />,
+  linux: <LinuxIcon classes={classes} />,
+  mongodb: <MongoDBIcon classes={classes} />,
+  mysql: <MySQLIcon classes={classes} />,
+  nodejs: <NodeJSIcon classes={classes} />,
+  react: <ReactIcon classes={classes} />,
+  redux: <ReduxIcon classes={classes} />,
+  ts: <TSIcon classes={classes} />,
+  adobeillustrator: <AdobeIllustratorIcon classes={classes} />,
+  adobephotoshop: <AdobePhotoshopIcon classes={classes} />,
+  adobexd: <AdobeXdIcon classes={classes} />,
+  bootstrap: <BootstrapIcon classes={classes} />,
+  docker: <DockerIcon classes={classes} />,
+  figma: <FigmaIcon classes={classes} />,
+  jest: <JestIcon classes={classes} />,
+  materialui: <MaterialUiIcon classes={classes} />,
+  rxjs: <RxjsIcon classes={classes} />,
+  sass: <SassIcon classes={classes} />,
+  vscode: <VSCodeIcon classes={classes} />,
+  webpack: <WebpackIcon classes={classes} />,
+  wordpress: <WordpressIcon classes={classes} />
 };

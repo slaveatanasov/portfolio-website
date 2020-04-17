@@ -15,6 +15,8 @@ import ImageSA from '../images/sa_img.jpg';
 import ImageProgrammer from '../svg/programmer';
 import ImageAcconote from '../images/acconote.png';
 import ImagePerssonified from '../images/perssonified_1.jpg';
+import ImageLandingPage from '../images/landing-page-project.png';
+import ImageSACOM from '../images/slaveatanasovcom.png';
 
 export default () => {
   return (
@@ -29,12 +31,12 @@ export default () => {
               Frontend Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hi! My lifelong interest of modern technologies and creative environments has become
+              Hi! My lifelong interest in modern technologies and creative environments has become
               an endeavour of building a career in the web development industry.
             </p>
             <br />
             <CleanCard className="q-a-card">
-              <h3 className="font-semibold text-lg">Q&amp;A</h3>
+              <h3 className="font-semibold text-lg">FAQ</h3>
               <p>
                 Employment status: <span className="text-green-500">Available for hire!</span>
               </p>
@@ -132,139 +134,111 @@ export default () => {
                 <ul className="list-tech flex flex-row flex-wrap justify-center">
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.html}</span>
-                    <span className="md:text-lg">HTML 5</span>
+                    <span>HTML 5</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.css}</span>
-                    <span className="md:text-lg">CSS 3</span>
+                    <span>CSS 3</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.js}</span>
-                    <span className="md:text-lg">JavaScript</span>
+                    <span>JavaScript</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.ts}</span>
-                    <span className="md:text-lg">TypeScript</span>
+                    <span>TypeScript</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.nodejs}</span>
-                    <span className="md:text-lg">Node.js</span>
+                    <span>Node.js</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.angular}</span>
-                    <span className="md:text-lg">Angular</span>
+                    <span>Angular</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.react}</span>
-                    <span className="md:text-lg">React</span>
+                    <span>React</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.redux}</span>
-                    <span className="md:text-lg">Redux</span>
+                    <span>Redux</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.gatsby}</span>
+                    <span>Gatsby</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.mongodb}</span>
-                    <span className="md:text-lg">MongoDB</span>
+                    <span>MongoDB</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.mysql}</span>
-                    <span className="md:text-lg">MySQL</span>
+                    <span>MySQL</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.git}</span>
-                    <span className="md:text-lg">Git</span>
+                    <span>Git</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.linux}</span>
-                    <span className="md:text-lg">Linux</span>
+                    <span>Linux</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.vscode}</span>
+                    <span>VSCode</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.bootstrap}</span>
+                    <span>Bootstrap</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.materialui}</span>
+                    <span>Material UI</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.sass}</span>
+                    <span>Sass</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.adobephotoshop}</span>
+                    <span>Adobe Photoshop</span>
                   </li>
                 </ul>
                 <hr />
                 <p className="text-md">I&apos;m currently exploring</p>
                 <ul className="list-tech flex flex-row flex-wrap justify-center">
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.gatsby}</span>
-                    <span>Gatsby</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
                     <span>{TechIcons.graphql}</span>
                     <span>GraphQL</span>
                   </li>
-                </ul>
-              </Card>
-            </div>
-            <div className="lg:w-1/2 sm:w-auto px-3">
-              <Card className="mb-8">
-                <p className="font-semibold text-xl">Personal skills</p>
-                <hr />
-                <ul className="list-skills mt-4 text-left">
-                  <li>
-                    <span>
-                      Friendly and communicative person, with a positive outlook on things
-                    </span>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.docker}</span>
+                    <span>Docker</span>
                   </li>
-                  <li>
-                    <span>Task-oriented and deadline-focused</span>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.webpack}</span>
+                    <span>Webpack</span>
                   </li>
-                  <li>
-                    <span>Team player</span>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.jest}</span>
+                    <span>Jest</span>
                   </li>
-                  <li>
-                    <span>Responsible</span>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.adobeillustrator}</span>
+                    <span>Adobe Illustrator</span>
                   </li>
-                  <li>
-                    <span>Adaptive</span>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.adobexd}</span>
+                    <span>Adobe Xd</span>
                   </li>
-                  <li>
-                    <span>Resourceful</span>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.figma}</span>
+                    <span>Figma</span>
                   </li>
-                  <li>
-                    <span>Greatly interested in developing new skills</span>
-                  </li>
-                </ul>
-              </Card>
-            </div>
-            <div className="lg:w-1/2 sm:w-auto px-3">
-              <Card className="mb-8">
-                <p className="font-semibold text-xl">Education and training</p>
-                <hr />
-                <ul className="list-edu mt-4 text-left">
-                  <li>
-                    <p className="text-sm">2018 – 2019</p>
-                    <h4>Web Development - JavaScript Academy</h4>
-                    <a
-                      href="https://semosedu.com.mk"
-                      alt="Semos Edu"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Semos Education - Skopje, North Macedonia
-                    </a>
-                    <p className="mt-1">
-                      Linux, Git, HTML 5, CSS 3, JavaScript, Node.js, MongoDB, React, Redux, HTTP,
-                      REST. Subsequently, I added to my knowledge technologies such as Angular,
-                      TypeScript, MySQL etc.
-                    </p>
-                  </li>
-                  <hr />
-                  <li>
-                    <p className="text-sm">2008 – 2010</p>
-                    <h4>Student</h4>
-                    <p className="institution">
-                      Faculty of Applied Foreign Languages - business department, FON University,
-                      Skopje (North Macedonia)
-                    </p>
-                    <p className="mt-1">
-                      Education put on hold in the 2nd of total 4 academic years
-                    </p>
-                  </li>
-                  <hr />
-                  <li>
-                    <p className="text-sm">2004 – 2008</p>
-                    <h4>Diploma - Social Sciences and Humanities</h4>
-                    <p className="institution">
-                      Public High School &ldquo;Jane Sandanski&ldquo; (North Macedonia)
-                    </p>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.wordpress}</span>
+                    <span>Wordpress</span>
                   </li>
                 </ul>
               </Card>
@@ -325,6 +299,82 @@ export default () => {
                 </ul>
               </Card>
             </div>
+            <div className="lg:w-1/2 sm:w-auto px-3">
+              <Card className="mb-8">
+                <p className="font-semibold text-xl">Education and training</p>
+                <hr />
+                <ul className="list-edu mt-4 text-left">
+                  <li>
+                    <p className="text-sm">2018 – 2019</p>
+                    <h4>Web Development - JavaScript Academy</h4>
+                    <a
+                      href="https://semosedu.com.mk"
+                      alt="Semos Edu"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Semos Education - Skopje, North Macedonia
+                    </a>
+                    <p className="mt-1">
+                      Linux, Git, HTML 5, CSS 3, JavaScript, Node.js, MongoDB, React, Redux, HTTP,
+                      REST. Subsequently, I added to my knowledge technologies such as Angular,
+                      TypeScript, MySQL etc.
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">2008 – 2010</p>
+                    <h4>Student</h4>
+                    <p className="institution">
+                      Faculty of Applied Foreign Languages - business department, FON University,
+                      Skopje (North Macedonia)
+                    </p>
+                    <p className="mt-1">
+                      Education put on hold in the 2nd of total 4 academic years
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">2004 – 2008</p>
+                    <h4>Diploma - Social Sciences and Humanities</h4>
+                    <p className="institution">
+                      Public High School &ldquo;Jane Sandanski&ldquo; (North Macedonia)
+                    </p>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+            <div className="lg:w-1/2 sm:w-auto px-3">
+              <Card className="mb-8">
+                <p className="font-semibold text-xl">Personal skills</p>
+                <hr />
+                <ul className="list-skills mt-4 text-left">
+                  <li>
+                    <span>
+                      Friendly and communicative person, with a positive outlook on things
+                    </span>
+                  </li>
+                  <li>
+                    <span>Task-oriented and deadline-focused</span>
+                  </li>
+                  <li>
+                    <span>Team player</span>
+                  </li>
+                  <li>
+                    <span>Responsible</span>
+                  </li>
+                  <li>
+                    <span>Adaptive</span>
+                  </li>
+                  <li>
+                    <span>Resourceful</span>
+                  </li>
+                  <li>
+                    <span>Greatly interested in developing new skills</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
           </div>
         </div>
       </section>
@@ -364,6 +414,65 @@ export default () => {
             </div>
           }
           secondarySlot={<img src={ImagePerssonified} alt="perssonified" className="project-img" />}
+        />
+        <SplitSection
+          reverseOrder
+          primarySlot={
+            <div className="lg:pl-32 xl:pl-48">
+              <h3 className="text-2xl font-semibold leading-tight">
+                From prototype in Photoshop to a complete website
+              </h3>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                Check it out on{' '}
+                <a
+                  href="https://github.com/slaveatanasov/landing-page-example"
+                  alt="GitHub Landing Page Project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                {' and '}
+                <a
+                  href="https://playground-by-slave-atanasov.herokuapp.com/"
+                  alt="Heroku Landing Page Project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Heroku
+                </a>
+              </p>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                This slick landing page website was built in Angular from scratch following the
+                design provided in a Photoshop file. It is fully responsive with features such as
+                automatic slideshow, AJAX tabs section, modern cards and banners section, as well as
+                contact form and cookie policy components.
+              </p>
+            </div>
+          }
+          secondarySlot={<img src={ImageLandingPage} alt="landing page" className="project-img" />}
+        />
+        <SplitSection
+          primarySlot={
+            <div className="lg:pr-32 xl:pr-48">
+              <h3 className="text-2xl font-semibold leading-tight">SlaveAtanasov.com</h3>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                <a
+                  href="https://github.com/slaveatanasov/portfolio-website"
+                  alt="slaveatanasov.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Check out the source code on GitHub
+                </a>
+              </p>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                I built the website you&apos;re currently browsing in Gatsby. It&apos;s one of the
+                fastest static website frameworks.
+              </p>
+            </div>
+          }
+          secondarySlot={<img src={ImageSACOM} alt="slaveatanasov.com" className="project-img" />}
         />
         <SplitSection
           reverseOrder
@@ -422,7 +531,7 @@ export default () => {
           secondarySlot={<ImageProgrammer />}
         />
       </div>
-      <h2 className="text-2xl lg:text-4xl pt-16 font-semibold text-center">Contact</h2>
+      <h2 className="text-2xl lg:text-3xl pt-16 font-semibold text-center">Contact</h2>
     </Layout>
   );
 };
