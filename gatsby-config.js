@@ -1,6 +1,13 @@
 module.exports = {
   plugins: [
     {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images/`
+      }
+    },
+    {
       resolve: `gatsby-theme-codebushi`,
       options: {
         tailwindConfig: `tailwind.config.js`
@@ -12,6 +19,8 @@ module.exports = {
       options: {
         icon: `src/images/sa-favicon.png`
       }
-    }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`
   ]
 };

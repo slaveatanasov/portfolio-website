@@ -1,4 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
+import { graphql } from 'gatsby';
+import Img from 'gatsby-image';
 
 import Layout from '../components/layout/Layout';
 import Card from '../components/Card';
@@ -11,14 +14,14 @@ import FacebookIcon from '../svg/facebook';
 import LinkedInIcon from '../svg/linkedin';
 import InstagramIcon from '../svg/instagram';
 import EmailIcon from '../svg/email';
-import ImageSA from '../images/sa_img.jpg';
 import ImageProgrammer from '../svg/programmer';
-import ImageAcconote from '../images/acconote.png';
-import ImagePerssonified from '../images/perssonified_1.jpg';
-import ImageLandingPage from '../images/landing-page-project.png';
-import ImageSACOM from '../images/slaveatanasovcom.png';
+// import ImageSA from '../images/sa_img.jpg';
+// import ImageAcconote from '../images/acconote.png';
+// import ImagePerssonified from '../images/perssonified_1.jpg';
+// import ImageLandingPage from '../images/landing-page-project.png';
+// import ImageSACOM from '../images/slaveatanasovcom.png';
 
-export default () => {
+export default ({ data }) => {
   return (
     <Layout>
       <section id="about" className="pt-10 md:pt-20 bg-gradient">
@@ -117,7 +120,12 @@ export default () => {
           </div>
           <div className="lg:w-1/2">
             <div className="image-sa-wrapper">
-              <img src={ImageSA} alt="slave-atanasov" className="image-sa xl:ml-14" />
+              {/* <img src={ImageSA} alt="slave-atanasov" className="image-sa xl:ml-14" /> */}
+              <Img
+                fluid={data.goodLookingDude.childImageSharp.fluid}
+                alt="Good Looking Dude"
+                className="image-sa xl:ml-14"
+              />
             </div>
           </div>
         </div>
@@ -413,7 +421,13 @@ export default () => {
               </p>
             </div>
           }
-          secondarySlot={<img src={ImagePerssonified} alt="perssonified" className="project-img" />}
+          secondarySlot={
+            <Img
+              fluid={data.perssonified.childImageSharp.fluid}
+              alt="perssonified"
+              className="project-img"
+            />
+          }
         />
         <SplitSection
           reverseOrder
@@ -450,7 +464,13 @@ export default () => {
               </p>
             </div>
           }
-          secondarySlot={<img src={ImageLandingPage} alt="landing page" className="project-img" />}
+          secondarySlot={
+            <Img
+              fluid={data.landingPageProject.childImageSharp.fluid}
+              alt="Landing page project"
+              className="project-img"
+            />
+          }
         />
         <SplitSection
           primarySlot={
@@ -472,7 +492,13 @@ export default () => {
               </p>
             </div>
           }
-          secondarySlot={<img src={ImageSACOM} alt="slaveatanasov.com" className="project-img" />}
+          secondarySlot={
+            <Img
+              fluid={data.sacom.childImageSharp.fluid}
+              alt="slaveatanasov.com"
+              className="project-img"
+            />
+          }
         />
         <SplitSection
           reverseOrder
@@ -507,7 +533,13 @@ export default () => {
               </p>
             </div>
           }
-          secondarySlot={<img src={ImageAcconote} alt="acconote" className="project-img" />}
+          secondarySlot={
+            <Img
+              fluid={data.acconote.childImageSharp.fluid}
+              alt="Acconote"
+              className="project-img"
+            />
+          }
         />
         <SplitSection
           primarySlot={
@@ -535,3 +567,43 @@ export default () => {
     </Layout>
   );
 };
+
+export const query = graphql`
+  query Images {
+    acconote: file(relativePath: { eq: "acconote.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    perssonified: file(relativePath: { eq: "perssonified_1.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    landingPageProject: file(relativePath: { eq: "landing-page-project.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    sacom: file(relativePath: { eq: "slaveatanasovcom.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    goodLookingDude: file(relativePath: { eq: "sa_img.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;
