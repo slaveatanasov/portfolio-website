@@ -15,11 +15,6 @@ import LinkedInIcon from '../svg/linkedin';
 import InstagramIcon from '../svg/instagram';
 import EmailIcon from '../svg/email';
 import ImageProgrammer from '../svg/programmer';
-// import ImageSA from '../images/sa_img.jpg';
-// import ImageAcconote from '../images/acconote.png';
-// import ImagePerssonified from '../images/perssonified_1.jpg';
-// import ImageLandingPage from '../images/landing-page-project.png';
-// import ImageSACOM from '../images/slaveatanasovcom.png';
 
 export default ({ data }) => {
   return (
@@ -120,7 +115,6 @@ export default ({ data }) => {
           </div>
           <div className="lg:w-1/2">
             <div className="image-sa-wrapper">
-              {/* <img src={ImageSA} alt="slave-atanasov" className="image-sa xl:ml-14" /> */}
               <Img
                 fluid={data.goodLookingDude.childImageSharp.fluid}
                 alt="Good Looking Dude"
@@ -196,14 +190,14 @@ export default ({ data }) => {
                     <span>{TechIcons.vscode}</span>
                     <span>VSCode</span>
                   </li>
-                  <li className="xl:p-1 m-2">
+                  {/* <li className="xl:p-1 m-2">
                     <span>{TechIcons.bootstrap}</span>
                     <span>Bootstrap</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.materialui}</span>
                     <span>Material UI</span>
-                  </li>
+                  </li> */}
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.sass}</span>
                     <span>Sass</span>
@@ -256,6 +250,11 @@ export default ({ data }) => {
                 <p className="font-semibold text-xl">Work experience</p>
                 <hr />
                 <ul className="list-workexp mt-4 text-left">
+                  <li>
+                    <p className="text-sm">01/2020 – Present</p>
+                    <h4>Freelance web developer</h4>
+                    <p className="mt-1">Working on frontend web development projects</p>
+                  </li>
                   <li>
                     <p className="text-sm">06/2019 – 09/2019</p>
                     <h4>Software engineer trainee</h4>
@@ -504,6 +503,44 @@ export default ({ data }) => {
           reverseOrder
           primarySlot={
             <div className="lg:pl-32 xl:pl-48">
+              <h3 className="text-2xl font-semibold leading-tight">Project 5mins</h3>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                Check it out on{' '}
+                <a
+                  href="https://github.com/slaveatanasov/darryl-dexter"
+                  alt="GitHub Project5mins"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  GitHub
+                </a>
+                {' and '}
+                <a
+                  href="https://darryldexter.netlify.app/"
+                  alt="Netlify Project5mins"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Netlify
+                </a>
+              </p>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                I was commisioned to develop this website for a client&apos;s new app. I build it in
+                Gatsby, with the content being sourced from Contentful via a GraphQL API.
+              </p>
+            </div>
+          }
+          secondarySlot={
+            <Img
+              fluid={data.project5mins.childImageSharp.fluid}
+              alt="project-5mins"
+              className="project-img"
+            />
+          }
+        />
+        <SplitSection
+          primarySlot={
+            <div className="lg:pr-32 xl:pr-48">
               <h3 className="text-2xl font-semibold leading-tight">Acconote</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 Check it out on{' '}
@@ -542,8 +579,9 @@ export default ({ data }) => {
           }
         />
         <SplitSection
+          reverseOrder
           primarySlot={
-            <div className="lg:pr-32 xl:pr-48">
+            <div className="lg:pl-32 xl:pl-48">
               <h3 className="text-2xl font-semibold leading-tight">Other projects</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 <a
@@ -592,6 +630,13 @@ export const query = graphql`
       }
     }
     sacom: file(relativePath: { eq: "slaveatanasovcom.png" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    project5mins: file(relativePath: { eq: "project-5mins.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
