@@ -29,17 +29,17 @@ export default ({ data }) => {
               Frontend Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hi! My lifelong interest in modern technologies and creative environments has become
-              an endeavour of building a career in the web development industry.
+              Hello! My lifelong interest in modern technologies and creative environments has
+              become an endeavour of building a career in web development.
             </p>
             <br />
             <CleanCard className="q-a-card">
               <h3 className="font-semibold text-lg">FAQ</h3>
               <p>
-                Employment status: <span className="text-green-500">Available for hire!</span>
+                Employment status: <span className="text-green-500">Employed</span>
               </p>
               <p>
-                Current location: <span className="text-green-500">Milan, Italy</span>
+                Location: <span className="text-green-500">Milan, Italy</span>
               </p>
               <p>
                 Eligible to work in the EU?{' '}
@@ -47,11 +47,11 @@ export default ({ data }) => {
               </p>
               <p>
                 Latest working experience?{' '}
-                <span className="text-green-500">Software engineer trainee</span>
+                <span className="text-green-500">Junior frontend developer</span>
               </p>
-              <p>
+              {/* <p>
                 Goal: <span className="text-green-500">Frontend developer position</span>
-              </p>
+              </p> */}
               <div className="socials flex justify-center lg:justify-start">
                 <ul className="flex justify-between w:180px">
                   <li>
@@ -170,14 +170,14 @@ export default ({ data }) => {
                     <span>{TechIcons.gatsby}</span>
                     <span>Gatsby</span>
                   </li>
-                  <li className="xl:p-1 m-2">
+                  {/* <li className="xl:p-1 m-2">
                     <span>{TechIcons.mongodb}</span>
                     <span>MongoDB</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.mysql}</span>
                     <span>MySQL</span>
-                  </li>
+                  </li> */}
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.git}</span>
                     <span>Git</span>
@@ -250,6 +250,23 @@ export default ({ data }) => {
                 <p className="font-semibold text-xl">Work experience</p>
                 <hr />
                 <ul className="list-workexp mt-4 text-left">
+                  <li>
+                    <p className="text-sm">05/2020 – Present</p>
+                    <h4>Junior frontend developer consultant</h4>
+                    <a
+                      href="https://it.nttdata.com"
+                      alt="NTTData"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      NTTData / Ipse Docet - Milan, Italy
+                    </a>
+                    <p className="mt-1">
+                      Working in the frontend web development division of international company
+                      NTTData as a consultant developer via Milan based company Ipse Docet.
+                      We&apos;re currently developing projects for Vodafone.
+                    </p>
+                  </li>
                   <li>
                     <p className="text-sm">01/2020 – Present</p>
                     <h4>Freelance web developer</h4>
