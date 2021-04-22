@@ -29,8 +29,8 @@ export default ({ data }) => {
               Frontend Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hello! My lifelong interest in modern technologies and creative environments has
-              become an endeavour of building a career in web development.
+              Hey! My lifelong interest in modern technologies and creative environments has become
+              an endeavor of building a career in web development.
             </p>
             <br />
             <CleanCard className="q-a-card">
@@ -39,15 +39,26 @@ export default ({ data }) => {
                 Employment status: <span className="text-green-500">Employed</span>
               </p>
               <p>
-                Location: <span className="text-green-500">Milan, Italy</span>
+                Location: <span className="text-green-500">World</span>
               </p>
               <p>
                 Eligible to work in the EU?{' '}
                 <span className="text-green-500">Yes, I&apos;m an EU citizen</span>
               </p>
               <p>
-                Latest working experience?{' '}
-                <span className="text-green-500">Junior frontend developer</span>
+                Latest position?{' '}
+                <span className="text-green-500">
+                  Frontend web developer at{' '}
+                  <a
+                    href="https://it.nttdata.com/"
+                    alt="NTT Data Italia"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-500"
+                  >
+                    NTT Data Italia
+                  </a>
+                </span>
               </p>
               {/* <p>
                 Goal: <span className="text-green-500">Frontend developer position</span>
@@ -203,8 +214,16 @@ export default ({ data }) => {
                     <span>Sass</span>
                   </li>
                   <li className="xl:p-1 m-2">
+                    <span>{TechIcons.jest}</span>
+                    <span>Jest</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
                     <span>{TechIcons.adobephotoshop}</span>
                     <span>Adobe Photoshop</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.figma}</span>
+                    <span>Figma</span>
                   </li>
                 </ul>
                 <hr />
@@ -223,20 +242,12 @@ export default ({ data }) => {
                     <span>Webpack</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.jest}</span>
-                    <span>Jest</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
                     <span>{TechIcons.adobeillustrator}</span>
                     <span>Adobe Illustrator</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.adobexd}</span>
                     <span>Adobe Xd</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.figma}</span>
-                    <span>Figma</span>
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.wordpress}</span>
@@ -252,25 +263,30 @@ export default ({ data }) => {
                 <ul className="list-workexp mt-4 text-left">
                   <li>
                     <p className="text-sm">05/2020 – Present</p>
-                    <h4>Junior frontend developer consultant</h4>
+                    <h4>Frontend web developer</h4>
                     <a
                       href="https://it.nttdata.com"
                       alt="NTTData"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      NTTData / Ipse Docet - Milan, Italy
+                      NTT Data Italia / Ipse Docet - Milan, Italy
                     </a>
                     <p className="mt-1">
-                      Working in the frontend web development division of international company
-                      NTTData as a consultant developer via Milan based company Ipse Docet.
-                      We&apos;re currently developing projects for Vodafone.
+                      Working in the frontend web development division of international company NTT
+                      Data. Have been part of diverse teams working on solutions for clients such as
+                      Vodafone, TIM, Enel, Lepida, Sogei, Sky UK using the latest of techologies and
+                      development principles.
                     </p>
                   </li>
                   <li>
-                    <p className="text-sm">01/2020 – Present</p>
+                    <p className="text-sm">01/2020 – 05/2020</p>
                     <h4>Freelance web developer</h4>
-                    <p className="mt-1">Working on frontend web development projects</p>
+                    <p className="mt-1">
+                      Working on projects for diverse clients, building components for web
+                      applications and doing projects such as static web sites, PSD to
+                      HTML/CSS/JavaScript, and more.
+                    </p>
                   </li>
                   <li>
                     <p className="text-sm">06/2019 – 09/2019</p>
@@ -286,16 +302,17 @@ export default ({ data }) => {
                     <p className="mt-1">
                       One Inside is a Swiss company with subsidiaries in Germany and North
                       Macedonia. As a software engineer trainee at the Skopje office, I worked in a
-                      collaborative, agile development team both on frontend and backend tasks on
-                      multiple applications. I became knowledgeable in and used technologies such as
-                      Angular, Node.js, JavaScript, TypeScript, MySQL, SCSS, Git, Docker, Jira as
-                      well as UI/UX implementations
+                      collaborative, agile development team and on multiple applications. I became
+                      knowledgeable in and used technologies such as Angular, Node.js, JavaScript,
+                      TypeScript, SCSS, Git. I also dabbled in MySQL, Docker, Jira as well as UI/UX
+                      work to better understand the general aspect of a project as a frontend web
+                      developer.
                     </p>
                   </li>
                   <hr />
                   <li className="">
                     <p className="text-sm">2013 – 2019</p>
-                    <h4>Event organisation, music label and artist management</h4>
+                    <h4>Event organisation, music label, and artist management</h4>
                     <a
                       href="https://patapata.eu"
                       alt="Pata Pata Recordings"
@@ -304,7 +321,7 @@ export default ({ data }) => {
                     >
                       Pata Pata Recordings
                     </a>
-                    <p className="mt-1">Event organisation, music label and artist management</p>
+                    <p className="mt-1">Event organisation, music label, and artist management</p>
                   </li>
                   <hr />
                   <li className="">
@@ -342,7 +359,7 @@ export default ({ data }) => {
                     <p className="mt-1">
                       Linux, Git, HTML 5, CSS 3, JavaScript, Node.js, MongoDB, React, Redux, HTTP,
                       REST. Subsequently, I added to my knowledge technologies such as Angular,
-                      TypeScript, MySQL etc.
+                      TypeScript, etc.
                     </p>
                   </li>
                   <hr />
