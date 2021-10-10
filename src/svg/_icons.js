@@ -26,6 +26,7 @@ import SassIcon from './sass';
 import VSCodeIcon from './vscode';
 import WebpackIcon from './webpack';
 import WordpressIcon from './wordpress';
+import NextJsIcon from './nextjs';
 
 const classes = 'tech-icon w-6 m-2';
 
@@ -56,5 +57,6 @@ export default {
   sass: <SassIcon classes={classes} />,
   vscode: <VSCodeIcon classes={classes} />,
   webpack: <WebpackIcon classes={classes} />,
-  wordpress: <WordpressIcon classes={classes} />
+  wordpress: <WordpressIcon classes={classes} />,
+  nextjs: <NextJsIcon classes={classes} />
 };

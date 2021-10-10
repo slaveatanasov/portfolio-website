@@ -10,9 +10,7 @@ import SplitSection from '../components/SplitSection';
 
 import TechIcons from '../svg/_icons';
 import GithubIcon from '../svg/github';
-import FacebookIcon from '../svg/facebook';
 import LinkedInIcon from '../svg/linkedin';
-import InstagramIcon from '../svg/instagram';
 import EmailIcon from '../svg/email';
 import ImageProgrammer from '../svg/programmer';
 
@@ -29,40 +27,38 @@ export default ({ data }) => {
               Frontend Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hey! My lifelong interest in modern technologies and creative environments has become
-              an endeavor of building a career in web development.
+              Hey! I&apos;m Slave, and my lifelong interest in digital technologies and creative
+              environments has become a pursuit of a career in web development.
             </p>
             <br />
             <CleanCard className="q-a-card">
-              <h3 className="font-semibold text-lg">FAQ</h3>
+              <h3 className="font-semibold text-lg">Quick info</h3>
+              <hr />
               <p>
-                Employment status: <span className="text-green-500">Employed</span>
+                Current employment status: <span className="text-green-500">Employed</span>
               </p>
               <p>
-                Location: <span className="text-green-500">World</span>
+                Location: <span className="text-green-500">WFH / remote</span>
               </p>
               <p>
                 Eligible to work in the EU?{' '}
-                <span className="text-green-500">Yes, I&apos;m an EU citizen</span>
+                <span className="text-green-500">Yes, I&apos;m an European Union citizen</span>
               </p>
               <p>
-                Latest position?{' '}
+                Most recent job position?{' '}
                 <span className="text-green-500">
                   Frontend web developer at{' '}
                   <a
-                    href="https://it.nttdata.com/"
-                    alt="NTT Data Italia"
+                    href="https://www.be-tse.it/"
+                    alt="BE Group Italy"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-500"
                   >
-                    NTT Data Italia
+                    BE Group Italy
                   </a>
                 </span>
               </p>
-              {/* <p>
-                Goal: <span className="text-green-500">Frontend developer position</span>
-              </p> */}
               <div className="socials flex justify-center lg:justify-start">
                 <ul className="flex justify-between w:180px">
                   <li>
@@ -85,28 +81,6 @@ export default ({ data }) => {
                       rel="noopener noreferrer"
                     >
                       <GithubIcon classes="social-button w-6" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="icon-anchor-link"
-                      href="https://www.facebook.com/slaveatanasov"
-                      alt="Facebook"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <FacebookIcon classes="social-button w-6" />
-                    </a>
-                  </li>
-                  <li>
-                    <a
-                      className="icon-anchor-link"
-                      href="https://www.instagram.com/slaveatan"
-                      alt="Instagram"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <InstagramIcon classes="social-button w-6" />
                     </a>
                   </li>
                   <li>
@@ -162,6 +136,22 @@ export default ({ data }) => {
                     <span>TypeScript</span>
                   </li>
                   <li className="xl:p-1 m-2">
+                    <span>{TechIcons.react}</span>
+                    <span>React</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.redux}</span>
+                    <span>Redux / Redux Toolkit</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.nextjs}</span>
+                    <span>Next JS</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>{TechIcons.gatsby}</span>
+                    <span>Gatsby</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
                     <span>{TechIcons.nodejs}</span>
                     <span>Node.js</span>
                   </li>
@@ -170,22 +160,10 @@ export default ({ data }) => {
                     <span>Angular</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.react}</span>
-                    <span>React</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.redux}</span>
-                    <span>Redux</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.gatsby}</span>
-                    <span>Gatsby</span>
-                  </li>
-                  {/* <li className="xl:p-1 m-2">
                     <span>{TechIcons.mongodb}</span>
                     <span>MongoDB</span>
                   </li>
-                  <li className="xl:p-1 m-2">
+                  {/* <li className="xl:p-1 m-2">
                     <span>{TechIcons.mysql}</span>
                     <span>MySQL</span>
                   </li> */}
@@ -227,7 +205,7 @@ export default ({ data }) => {
                   </li>
                 </ul>
                 <hr />
-                <p className="text-md">I&apos;m currently exploring</p>
+                <p className="text-md">I&apos;m learning to use on a regular basis</p>
                 <ul className="list-tech flex flex-row flex-wrap justify-center">
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.graphql}</span>
@@ -242,16 +220,23 @@ export default ({ data }) => {
                     <span>Webpack</span>
                   </li>
                   <li className="xl:p-1 m-2">
+                    <span>{TechIcons.react}</span>
+                    <span>React Native</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
                     <span>{TechIcons.adobeillustrator}</span>
                     <span>Adobe Illustrator</span>
                   </li>
-                  <li className="xl:p-1 m-2">
+                  {/* <li className="xl:p-1 m-2">
                     <span>{TechIcons.adobexd}</span>
                     <span>Adobe Xd</span>
-                  </li>
+                  </li> */}
                   <li className="xl:p-1 m-2">
                     <span>{TechIcons.wordpress}</span>
                     <span>Wordpress</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>...and more</span>
                   </li>
                 </ul>
               </Card>
@@ -262,6 +247,31 @@ export default ({ data }) => {
                 <hr />
                 <ul className="list-workexp mt-4 text-left">
                   <li>
+                    <p className="text-sm">05/2021 – Present</p>
+                    <h4>Frontend web developer</h4>
+                    <a
+                      href="https://www.be-tse.it"
+                      alt="BE Group Italy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Be Group - Milan, Italy
+                    </a>
+                    <p className="mt-1">
+                      {`Working as a frontend developer/consultant and part of a team developing
+                      complex online banking applications for clients such as "illimity" and "Azimut
+                      / STEP". The main technologies I work with daily are React, Typescript,
+                      JavaScript, Redux, Redux Toolkit, HTML, SCSS, REST, Styled Components, Git,
+                      Azure Cloud, Zeplin, in-house design systems, libraries, and many other
+                      related technologies. `}
+                      <br />
+                      <br />
+                      {`                      In some cases, I've also used server-side/static
+                      rendering frameworks based around React such as Next.js and Gatsby.`}
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
                     <p className="text-sm">05/2020 – Present</p>
                     <h4>Frontend web developer</h4>
                     <a
@@ -270,24 +280,50 @@ export default ({ data }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      NTT Data Italia / Ipse Docet - Milan, Italy
+                      NTT Data Italia - Milan, Italy
                     </a>
                     <p className="mt-1">
-                      Working in the frontend web development division of international company NTT
-                      Data. Have been part of diverse teams working on solutions for clients such as
-                      Vodafone, TIM, Enel, Lepida, Sogei, Sky UK using the latest of techologies and
-                      development principles.
+                      {`I worked as a frontend developer/consultant and part of a team developing
+                      complex RESTful applications for various industries such as telecom, energy,
+                      and governmental institutions. Clients include Vodafone, SKY UK, TIM, Sogei,
+                      Enel, Italian Government ministries, and also internal NTT Data projects.`}
+                      <br />
+                      <br />
+                      {`The
+                        main technologies I worked with daily were React, Typescript, JavaScript,
+                        Redux, HTML, SCSS, Styled Components, Git, Azure Cloud, Figma, Storybook,
+                        Jest, in-house design systems, libraries, and many other related technologies.`}
                     </p>
                   </li>
+                  <hr />
                   <li>
-                    <p className="text-sm">01/2020 – 05/2020</p>
+                    <p className="text-sm">01/2020 – Present</p>
+                    <h4>Web developer</h4>
+                    <a
+                      href="https://ipsedocet.it/"
+                      alt="Ipse Docet"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ipse Docet - Milan, Italy
+                    </a>
+                    <p className="mt-1">
+                      Working as a frontend developer for various clients of Ipse Docet - an IT
+                      consultancy and management company.
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">09/2019 – 01/2020</p>
                     <h4>Freelance web developer</h4>
                     <p className="mt-1">
-                      Working on projects for diverse clients, building components for web
-                      applications and doing projects such as static web sites, PSD to
-                      HTML/CSS/JavaScript, and more.
+                      Built static websites in JavaScript frameworks from prototype to production,
+                      worked on web applications/components with frameworks such as React and
+                      Angular, worked on UI/UX solutions, created WordPress websites with popular
+                      website builders.
                     </p>
                   </li>
+                  <hr />
                   <li>
                     <p className="text-sm">06/2019 – 09/2019</p>
                     <h4>Software engineer trainee</h4>
@@ -302,40 +338,11 @@ export default ({ data }) => {
                     <p className="mt-1">
                       One Inside is a Swiss company with subsidiaries in Germany and North
                       Macedonia. As a software engineer trainee at the Skopje office, I worked in a
-                      collaborative, agile development team and on multiple applications. I became
-                      knowledgeable in and used technologies such as Angular, Node.js, JavaScript,
-                      TypeScript, SCSS, Git. I also dabbled in MySQL, Docker, Jira as well as UI/UX
-                      work to better understand the general aspect of a project as a frontend web
-                      developer.
+                      collaborative development team both on frontend and backend tasks on multiple
+                      applications. I gained experience in technologies such as Angular, Node.js,
+                      JavaScript, TypeScript, databases, SCSS, Git, Docker, Agile, UX/UI concepts,
+                      and other related technologies.
                     </p>
-                  </li>
-                  <hr />
-                  <li className="">
-                    <p className="text-sm">2013 – 2019</p>
-                    <h4>Event organisation, music label, and artist management</h4>
-                    <a
-                      href="https://patapata.eu"
-                      alt="Pata Pata Recordings"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Pata Pata Recordings
-                    </a>
-                    <p className="mt-1">Event organisation, music label, and artist management</p>
-                  </li>
-                  <hr />
-                  <li className="">
-                    <p className="text-sm">2008 – present</p>
-                    <h4>Artist - electronic music producer</h4>
-                    <a
-                      href="https://patapata.eu"
-                      alt="Pata Pata Recordings"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Sal Sonder – Pata Pata Recordings
-                    </a>
-                    <p className="mt-1">Freelance producer, mix and mastering engineer</p>
                   </li>
                 </ul>
               </Card>
@@ -347,7 +354,7 @@ export default ({ data }) => {
                 <ul className="list-edu mt-4 text-left">
                   <li>
                     <p className="text-sm">2018 – 2019</p>
-                    <h4>Web Development - JavaScript Academy</h4>
+                    <h4>Web Development Program</h4>
                     <a
                       href="https://semosedu.com.mk"
                       alt="Semos Edu"
@@ -357,9 +364,8 @@ export default ({ data }) => {
                       Semos Education - Skopje, North Macedonia
                     </a>
                     <p className="mt-1">
-                      Linux, Git, HTML 5, CSS 3, JavaScript, Node.js, MongoDB, React, Redux, HTTP,
-                      REST. Subsequently, I added to my knowledge technologies such as Angular,
-                      TypeScript, etc.
+                      Technologies studied during the program include HTML 5, CSS 3, JavaScript,
+                      Node.js, MongoDB, React, Redux, Linux, Git, HTTP, REST, Angular, TypeScript.
                     </p>
                   </li>
                   <hr />
@@ -371,7 +377,7 @@ export default ({ data }) => {
                       Skopje (North Macedonia)
                     </p>
                     <p className="mt-1">
-                      Education put on hold in the 2nd of total 4 academic years
+                      Education put on hold in the 2nd of total 4 academic years.
                     </p>
                   </li>
                   <hr />
@@ -391,9 +397,7 @@ export default ({ data }) => {
                 <hr />
                 <ul className="list-skills mt-4 text-left">
                   <li>
-                    <span>
-                      Friendly and communicative person, with a positive outlook on things
-                    </span>
+                    <span>A friendly and communicative personality</span>
                   </li>
                   <li>
                     <span>Task-oriented and deadline-focused</span>
@@ -411,7 +415,7 @@ export default ({ data }) => {
                     <span>Resourceful</span>
                   </li>
                   <li>
-                    <span>Greatly interested in developing new skills</span>
+                    <span>Interested in advancing and developing new skills</span>
                   </li>
                 </ul>
               </Card>
