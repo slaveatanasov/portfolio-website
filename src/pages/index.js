@@ -42,7 +42,7 @@ export default ({ data }) => {
               </p>
               <p>
                 Eligible to work in the EU?{' '}
-                <span className="text-green-500">Yes, I&apos;m an European Union citizen</span>
+                <span className="text-green-500">Yes, I&apos;m a European Union citizen</span>
               </p>
               <p>
                 Most recent job position?{' '}
@@ -272,7 +272,7 @@ export default ({ data }) => {
                   </li>
                   <hr />
                   <li>
-                    <p className="text-sm">05/2020 – Present</p>
+                    <p className="text-sm">05/2020 – 05/2021</p>
                     <h4>Frontend web developer</h4>
                     <a
                       href="https://it.nttdata.com"
