@@ -27,8 +27,8 @@ export default ({ data }) => {
               Frontend Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hey! I&apos;m Slave, and my lifelong interest in digital technologies and creative
-              environments has become a pursuit of a career in web development.
+              Hey! I&apos;m a software developer building web applications using technologies such
+              as React &amp; Typescript.
             </p>
             <br />
             <CleanCard className="q-a-card">
@@ -38,24 +38,24 @@ export default ({ data }) => {
                 Current employment status: <span className="text-green-500">Employed</span>
               </p>
               <p>
-                Location: <span className="text-green-500">WFH / remote</span>
+                Location: <span className="text-green-500">North Macedonia / WFH / hybrid</span>
               </p>
               <p>
                 Eligible to work in the EU?{' '}
-                <span className="text-green-500">Yes, I&apos;m a European Union citizen</span>
+                <span className="text-green-500">Yes, I&apos;m a EU citizen</span>
               </p>
               <p>
-                Most recent job position?{' '}
+                Current position:{' '}
                 <span className="text-green-500">
-                  Frontend web developer at{' '}
+                  Software engineer at{' '}
                   <a
-                    href="https://www.be-tse.it/"
-                    alt="BE Group Italy"
+                    href="https://htecgroup.com"
+                    alt="HTEC Group"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-green-500"
                   >
-                    BE Group Italy
+                    HTEC Group
                   </a>
                 </span>
               </p>
@@ -247,7 +247,28 @@ export default ({ data }) => {
                 <hr />
                 <ul className="list-workexp mt-4 text-left">
                   <li>
-                    <p className="text-sm">05/2021 – Present</p>
+                    <p className="text-sm">03/2022 – Present</p>
+                    <h4>Software engineer</h4>
+                    <a
+                      href="https://htecgroup.com"
+                      alt="HTEC Group"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      HTEC Group
+                    </a>
+                    <p className="mt-1">
+                      {`Working as a frontend developer and part of a tight-knit team developing
+                      complex applications for clients that are some of the world's greatest companies. 
+                      The main technologies I work with daily are React, Typescript,
+                      JavaScript, React Query, HTML, Styled Components, REST, Docker, Git, AWS,
+                      Azure Cloud, Sketch, in-house design systems, libraries, and many other
+                      related technologies. `}
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">05/2021 – 03/2022</p>
                     <h4>Frontend web developer</h4>
                     <a
                       href="https://www.be-tse.it"
@@ -258,7 +279,7 @@ export default ({ data }) => {
                       Be Group - Milan, Italy
                     </a>
                     <p className="mt-1">
-                      {`Working as a frontend developer/consultant and part of a team developing
+                      {`I worked as a frontend developer/consultant and part of a team developing
                       complex online banking applications for clients such as "illimity" and "Azimut
                       / STEP". The main technologies I work with daily are React, Typescript,
                       JavaScript, Redux, Redux Toolkit, HTML, SCSS, REST, Styled Components, Git,
