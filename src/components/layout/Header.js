@@ -10,16 +10,16 @@ const Header = () => (
         </div>
       </div>
       <div className="flex justify-between mt-4 sm:mt-0 nav-links">
-        <AnchorLink className="" href="#about">
+        <AnchorLink className="anchorLink" href="#about">
           About
         </AnchorLink>
-        <AnchorLink className="" href="#qualifications">
+        <AnchorLink className="anchorLink" href="#qualifications">
           Qualifications
         </AnchorLink>
-        <AnchorLink className="" href="#projects">
+        <AnchorLink className="anchorLink" href="#projects">
           Projects
         </AnchorLink>
-        <AnchorLink className="" href="#contact">
+        <AnchorLink className="anchorLink" href="#contact">
           Contact
         </AnchorLink>
       </div>

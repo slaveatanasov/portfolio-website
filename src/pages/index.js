@@ -27,18 +27,19 @@ export default ({ data }) => {
               Frontend Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hey! I&apos;m a software developer building web applications using technologies such
-              as React &amp; Typescript.
+              Hey! I&apos;m a software developer creating web apps using industry standard
+              technologies such as React &amp; TypeScript.
             </p>
             <br />
             <CleanCard className="q-a-card">
               <h3 className="font-semibold text-lg">Quick info</h3>
               <hr />
               <p>
-                Current employment status: <span className="text-green-500">Employed</span>
+                Current employment status:{' '}
+                <span className="text-green-500">Employed full-time</span>
               </p>
               <p>
-                Location: <span className="text-green-500">North Macedonia / WFH / hybrid</span>
+                Location: <span className="text-green-500">North Macedonia / remote</span>
               </p>
               <p>
                 Eligible to work in the EU?{' '}
@@ -60,7 +61,7 @@ export default ({ data }) => {
                 </span>
               </p>
               <div className="socials flex justify-center lg:justify-start">
-                <ul className="flex justify-between w:180px">
+                <ul className="flex justify-between">
                   <li>
                     <a
                       className="icon-anchor-link"
@@ -72,7 +73,7 @@ export default ({ data }) => {
                       <LinkedInIcon classes="social-button w-6" />
                     </a>
                   </li>
-                  <li>
+                  <li className="ml-2">
                     <a
                       className="icon-anchor-link"
                       href="https://github.com/slaveatanasov"
@@ -83,10 +84,10 @@ export default ({ data }) => {
                       <GithubIcon classes="social-button w-6" />
                     </a>
                   </li>
-                  <li>
+                  <li className="ml-2">
                     <a
                       className="icon-anchor-link"
-                      href="mailto:slaveatanasovmusic@gmail.com"
+                      href="mailto:slaveatan@gmail.com"
                       alt="Email"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -255,14 +256,14 @@ export default ({ data }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      HTEC Group
+                      HTEC Group (contractor for Apple Inc.)
                     </a>
                     <p className="mt-1">
-                      {`Working as a frontend developer and part of a tight-knit team developing
-                      complex applications for clients that are some of the world's greatest companies. 
-                      The main technologies I work with daily are React, Typescript,
-                      JavaScript, React Query, HTML, Styled Components, REST, Docker, Git, AWS,
-                      Azure Cloud, Sketch, in-house design systems, libraries, and many other
+                      {`Working as a frontend software engineer and part of a highly talented team developing
+                      complex user facing applications for one of the world's greatest technological companies - Apple Inc. 
+                      The main technologies I work with daily are React, TypeScript,
+                      JavaScript, TanStack Query, HTML, Styled Components, REST, Docker, Git, AWS,
+                      Azure Cloud, Sketch, in-house design systems, libraries, and many more
                       related technologies. `}
                     </p>
                   </li>
@@ -385,8 +386,9 @@ export default ({ data }) => {
                       Semos Education - Skopje, North Macedonia
                     </a>
                     <p className="mt-1">
-                      Technologies studied during the program include HTML 5, CSS 3, JavaScript,
-                      Node.js, MongoDB, React, Redux, Linux, Git, HTTP, REST, Angular, TypeScript.
+                      A Web Development program focused on learning technologies such as HTML 5, CSS
+                      3, JavaScript, Node.js, MongoDB, React, Redux, Linux, Git, HTTP, REST,
+                      Angular, TypeScript.
                     </p>
                   </li>
                   <hr />
@@ -394,7 +396,7 @@ export default ({ data }) => {
                     <p className="text-sm">2008 – 2010</p>
                     <h4>Student</h4>
                     <p className="institution">
-                      Faculty of Applied Foreign Languages - business department, FON University,
+                      Faculty of Applied Foreign Languages (business department), FON University,
                       Skopje (North Macedonia)
                     </p>
                     <p className="mt-1">
@@ -418,25 +420,19 @@ export default ({ data }) => {
                 <hr />
                 <ul className="list-skills mt-4 text-left">
                   <li>
-                    <span>A friendly and communicative personality</span>
+                    <span>Open, friendly, and communicative personality</span>
                   </li>
                   <li>
-                    <span>Task-oriented and deadline-focused</span>
+                    <span>Task-oriented and deadline-focused on the job</span>
                   </li>
                   <li>
-                    <span>Team player</span>
+                    <span>Always a team player</span>
                   </li>
                   <li>
-                    <span>Responsible</span>
+                    <span>Responsible, resourceful, and adaptive to all circumstances</span>
                   </li>
                   <li>
-                    <span>Adaptive</span>
-                  </li>
-                  <li>
-                    <span>Resourceful</span>
-                  </li>
-                  <li>
-                    <span>Interested in advancing and developing new skills</span>
+                    <span>Fully involved in advancing and developing newer and broader skills</span>
                   </li>
                 </ul>
               </Card>
@@ -445,44 +441,35 @@ export default ({ data }) => {
         </div>
       </section>
       <div id="projects" className="pt-12 md:pt-20">
-        <h2 className="text-3xl lg:text-5xl font-semibold text-center">Portfolio projects</h2>
+        <h2 className="text-3xl lg:text-5xl font-semibold text-center">Projects</h2>
         <SplitSection
           primarySlot={
             <div className="lg:pr-32 xl:pr-48">
-              <h3 className="text-2xl font-semibold leading-tight">peRSSonified</h3>
+              <h3 className="text-2xl font-semibold leading-tight">Upperway TMS</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 Check it out on{' '}
                 <a
-                  href="https://github.com/slaveatanasov/perssonified"
-                  alt="GitHub peRSSonified"
+                  href="https://demo.upperway.io/"
+                  alt="Upperway TMS"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub
-                </a>
-                {' and '}
-                <a
-                  href="https://perssonified.herokuapp.com/"
-                  alt="Heroku peRSSonified"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Heroku
-                </a>
+                  demo.upperway.io
+                </a>{' '}
+                by requesting a demo account
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                Imagined as a personalized news aggregator allowing you to subscribe to news outlets
-                and topics that you want to read, this project implements authorization and
-                authentication, using tools such as Two Factor Authentication and JWT. The
-                technologies used in building it include Angular, Angular Material, TypeScript,
-                Node.js, MySQL, SCSS etc.
+                Upperway is a SaaS TMS (Transportation Management System) software built by me and
+                my team to help solve problems for small and medium enterprises in the trucking
+                industry primarily in the USA. This software is built with the enterprise standard
+                technologies stack such as Angular, Java/Spring, SQL, and AWS.
               </p>
             </div>
           }
           secondarySlot={
             <Img
-              fluid={data.perssonified.childImageSharp.fluid}
-              alt="perssonified"
+              fluid={data.upperway_scr_1.childImageSharp.fluid}
+              alt="Upperway TMS"
               className="project-img"
             />
           }
@@ -491,11 +478,41 @@ export default ({ data }) => {
           reverseOrder
           primarySlot={
             <div className="lg:pl-32 xl:pl-48">
-              <h3 className="text-2xl font-semibold leading-tight">
-                From prototype in Photoshop to a complete website
-              </h3>
+              <h3 className="text-2xl font-semibold leading-tight">UniversalDot</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 Check it out on{' '}
+                <a
+                  href="https://app.universaldot.me/"
+                  alt="UniversalDot"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  app.universaldot.me
+                </a>
+              </p>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                I was commisioned to develop the Front End web application for a client who&apos;s
+                established in the crypto industry. This project is built in React and is connected
+                to a Polkadot blockchain API.
+              </p>
+            </div>
+          }
+          secondarySlot={
+            <Img
+              fluid={data.universaldot_scr_1.childImageSharp.fluid}
+              alt="universaldoy"
+              className="project-img"
+            />
+          }
+        />
+        <SplitSection
+          primarySlot={
+            <div className="lg:pr-32 xl:pr-48">
+              <h3 className="text-2xl font-semibold leading-tight">
+                From design prototype to a deployed website
+              </h3>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                Check out the source code on{' '}
                 <a
                   href="https://github.com/slaveatanasov/landing-page-example"
                   alt="GitHub Landing Page Project"
@@ -504,21 +521,12 @@ export default ({ data }) => {
                 >
                   GitHub
                 </a>
-                {' and '}
-                <a
-                  href="https://playground-by-slave-atanasov.herokuapp.com/"
-                  alt="Heroku Landing Page Project"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Heroku
-                </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                This slick landing page website was built in Angular from scratch following the
-                design provided in a Photoshop file. It is fully responsive with features such as
-                automatic slideshow, AJAX tabs section, modern cards and banners section, as well as
-                contact form and cookie policy components.
+                This slick landing page website was built from scratch and in pixel perfect way
+                based on a design provided by a client. It was build in Angular, it&apos;s fully
+                responsive with features such as automatic slideshow, AJAX tabs section, modern
+                cards and banners section, as well as contact form, and cookie policy components.
               </p>
             </div>
           }
@@ -531,22 +539,24 @@ export default ({ data }) => {
           }
         />
         <SplitSection
+          reverseOrder
           primarySlot={
-            <div className="lg:pr-32 xl:pr-48">
+            <div className="lg:pl-32 xl:pl-48">
               <h3 className="text-2xl font-semibold leading-tight">SlaveAtanasov.com</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
+                Check out the source code on{' '}
                 <a
                   href="https://github.com/slaveatanasov/portfolio-website"
                   alt="slaveatanasov.com"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Check out the source code on GitHub
+                  GitHub
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                I built the website you&apos;re currently browsing in Gatsby. It&apos;s one of the
-                fastest static website frameworks.
+                The website you&apos;re currently browsing I built in Gatsby - one of the fastest
+                static website frameworks available.
               </p>
             </div>
           }
@@ -559,9 +569,8 @@ export default ({ data }) => {
           }
         />
         <SplitSection
-          reverseOrder
           primarySlot={
-            <div className="lg:pl-32 xl:pl-48">
+            <div className="lg:pr-32 xl:pr-48">
               <h3 className="text-2xl font-semibold leading-tight">Project 5mins</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 Check it out on{' '}
@@ -584,8 +593,8 @@ export default ({ data }) => {
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                I was commisioned to develop this website for a client&apos;s new app. I build it in
-                Gatsby, with the content being sourced from Contentful via a GraphQL API.
+                I was commisioned to develop this website for a client. I built it in Gatsby, with
+                the content being sourced from Contentful through a GraphQL API.
               </p>
             </div>
           }
@@ -598,62 +607,23 @@ export default ({ data }) => {
           }
         />
         <SplitSection
-          primarySlot={
-            <div className="lg:pr-32 xl:pr-48">
-              <h3 className="text-2xl font-semibold leading-tight">Acconote</h3>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                Check it out on{' '}
-                <a
-                  href="https://github.com/slaveatanasov/acconote_app"
-                  alt="GitHub Acconote"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  GitHub
-                </a>
-                {' and '}
-                <a
-                  href="https://acconote.herokuapp.com/"
-                  alt="Heroku Acconote"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Heroku
-                </a>
-              </p>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                This basic note taking and to-do app is a quick way to showcase the latest React
-                possibilities. It implements TypeScript in React, as well as the newest React Hooks,
-                and it uses HTML5 drag and drop API for a better user experience. For the UI I used
-                tools such as Materialize and SCSS.
-              </p>
-            </div>
-          }
-          secondarySlot={
-            <Img
-              fluid={data.acconote.childImageSharp.fluid}
-              alt="Acconote"
-              className="project-img"
-            />
-          }
-        />
-        <SplitSection
           reverseOrder
           primarySlot={
             <div className="lg:pl-32 xl:pl-48">
               <h3 className="text-2xl font-semibold leading-tight">Other projects</h3>
               <p className="mt-2 text-xl font-light leading-relaxed">
+                Explore more on{' '}
                 <a
                   href="https://github.com/slaveatanasov?tab=repositories"
                   alt="GitHub Projects"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Explore all projects on GitHub
+                  GitHub
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                Check out my GitHub account for other small projects I&apos;ve built.
+                Visit my GitHub account for other projects not presented here.
               </p>
             </div>
           }
@@ -667,14 +637,14 @@ export default ({ data }) => {
 
 export const query = graphql`
   query Images {
-    acconote: file(relativePath: { eq: "acconote.png" }) {
+    upperway_scr_1: file(relativePath: { eq: "upperway_scr_1.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
         }
       }
     }
-    perssonified: file(relativePath: { eq: "perssonified_1.jpg" }) {
+    universaldot_scr_1: file(relativePath: { eq: "universaldot_scr_1.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid

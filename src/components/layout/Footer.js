@@ -6,7 +6,8 @@ import EmailIcon from '../../svg/email';
 
 const Footer = () => (
   <footer id="contact" className="container mx-auto px-3 mb-8 text-gray-800">
-    <div className="flex justify-center pt-1 md:pt-6">
+    <p className="text-xl font-light leading-relaxed text-center">Let&apos;s get in touch!</p>
+    <div className="flex justify-center">
       <div className="socials flex justify-center">
         <ul className="flex justify-between">
           <li>
@@ -17,7 +18,7 @@ const Footer = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <LinkedInIcon classes="social-button w-8 lg:w-10 mx-4 md:mx-6" />
+              <LinkedInIcon classes="social-button w-8 lg:w-10 mx-2" />
             </a>
           </li>
           <li>
@@ -28,25 +29,25 @@ const Footer = () => (
               target="_blank"
               rel="noopener noreferrer"
             >
-              <GithubIcon classes="social-button w-8 lg:w-10 mx-4 md:mx-6" />
+              <GithubIcon classes="social-button w-8 lg:w-10 mx-2" />
             </a>
           </li>
           <li>
             <a
               className="icon-anchor-link"
-              href="mailto:slaveatanasovmusic@gmail.com"
+              href="mailto:slaveatan@gmail.com"
               alt="Email"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <EmailIcon classes="social-button w-8 lg:w-10 mx-4 md:mx-6" />
+              <EmailIcon classes="social-button w-8 lg:w-10 mx-2" />
             </a>
           </li>
         </ul>
       </div>
     </div>
     <div className="flex justify-center">
-      <p className="text-sm md:text-base">Copyright © 2022 Slave Atanasov. All rights reserved.</p>
+      <p className="text-sm md:text-base">Copyright © 2023 Slave Atanasov. All rights reserved.</p>
     </div>
   </footer>
 );
