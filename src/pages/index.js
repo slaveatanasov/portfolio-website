@@ -319,7 +319,7 @@ export default ({ data }) => {
                   </li>
                   <hr />
                   <li>
-                    <p className="text-sm">01/2020 – Present</p>
+                    <p className="text-sm">01/2020 – 03/2022</p>
                     <h4>Web developer</h4>
                     <a
                       href="https://ipsedocet.it/"
