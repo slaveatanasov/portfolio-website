@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { graphql } from 'gatsby';
-import Img from 'gatsby-image';
+import { GatsbyImage } from "gatsby-plugin-image"
 
 import Layout from '../components/layout/Layout';
 import Card from '../components/Card';
@@ -101,8 +101,8 @@ export default ({ data }) => {
           </div>
           <div className="lg:w-1/2">
             <div className="image-sa-wrapper">
-              <Img
-                fluid={data.goodLookingDude.childImageSharp.fluid}
+              <GatsbyImage
+                image={data.goodLookingDude.childImageSharp.gatsbyImageData}
                 alt="Good Looking Dude"
                 className="image-sa xl:ml-14"
               />
@@ -467,8 +467,8 @@ export default ({ data }) => {
             </div>
           }
           secondarySlot={
-            <Img
-              fluid={data.upperway_scr_1.childImageSharp.fluid}
+            <GatsbyImage
+              image={data.upperway_scr_1.childImageSharp.gatsbyImageData}
               alt="Upperway TMS"
               className="project-img"
             />
@@ -498,8 +498,8 @@ export default ({ data }) => {
             </div>
           }
           secondarySlot={
-            <Img
-              fluid={data.universaldot_scr_1.childImageSharp.fluid}
+            <GatsbyImage
+              image={data.universaldot_scr_1.childImageSharp.gatsbyImageData}
               alt="universaldoy"
               className="project-img"
             />
@@ -531,8 +531,8 @@ export default ({ data }) => {
             </div>
           }
           secondarySlot={
-            <Img
-              fluid={data.landingPageProject.childImageSharp.fluid}
+            <GatsbyImage
+              image={data.landingPageProject.childImageSharp.gatsbyImageData}
               alt="Landing page project"
               className="project-img"
             />
@@ -561,8 +561,8 @@ export default ({ data }) => {
             </div>
           }
           secondarySlot={
-            <Img
-              fluid={data.sacom.childImageSharp.fluid}
+            <GatsbyImage
+            image={data.sacom.childImageSharp.gatsbyImageData}
               alt="slaveatanasov.com"
               className="project-img"
             />
@@ -599,8 +599,8 @@ export default ({ data }) => {
             </div>
           }
           secondarySlot={
-            <Img
-              fluid={data.project5mins.childImageSharp.fluid}
+            <GatsbyImage
+            image={data.project5mins.childImageSharp.gatsbyImageData}
               alt="project-5mins"
               className="project-img"
             />
@@ -639,44 +639,32 @@ export const query = graphql`
   query Images {
     upperway_scr_1: file(relativePath: { eq: "upperway_scr_1.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     universaldot_scr_1: file(relativePath: { eq: "universaldot_scr_1.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     landingPageProject: file(relativePath: { eq: "landing-page-project.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     sacom: file(relativePath: { eq: "slaveatanasovcom.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     project5mins: file(relativePath: { eq: "project-5mins.png" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
     goodLookingDude: file(relativePath: { eq: "sa_img.jpg" }) {
       childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
+        gatsbyImageData(layout: CONSTRAINED)
       }
     }
   }

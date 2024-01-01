@@ -2,12 +2,12 @@ import React from 'react';
 
 const NextsJsIcon = ({ classes }) => (
   <svg className={classes} viewBox="0 0 207 124">
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         id="Black-Next.js"
         transform="translate(-247.000000, -138.000000)"
         fill="#000000"
-        fill-rule="nonzero"
+        fillRule="nonzero"
       >
         <g id="next-black" transform="translate(247.000000, 138.000000)">
           <g id="EXT-+-Type-something">
