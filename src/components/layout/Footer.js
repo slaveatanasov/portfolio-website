@@ -47,7 +47,7 @@ const Footer = () => (
       </div>
     </div>
     <div className="flex justify-center">
-      <p className="text-sm md:text-base">Copyright © 2023 Slave Atanasov. All rights reserved.</p>
+      <p className="text-sm md:text-base">Copyright © 2024 Slave Atanasov. All rights reserved.</p>
     </div>
   </footer>
 );
