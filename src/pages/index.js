@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import { graphql } from 'gatsby';
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout/Layout';
 import Card from '../components/Card';
@@ -24,31 +24,39 @@ export default ({ data }) => {
               Slave Atanasov
             </h1>
             <h1 className="text-3xl md:text-5xl xl:text-6xl font-bold leading-none">
-              Frontend Developer
+              Web Developer
             </h1>
             <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hey! I&apos;m a software developer creating web apps using industry standard
-              technologies such as React &amp; TypeScript.
+              Hello! I&apos;m a software developer specializing in building dynamic web applications
+              with industry-standard tools.
             </p>
             <br />
             <CleanCard className="q-a-card">
               <h3 className="font-semibold text-lg">Quick info</h3>
               <hr />
               <p>
-                Current employment status:{' '}
-                <span className="text-green-500">Employed full-time</span>
+                Employment status: <span className="text-green-500">Full-time</span>
               </p>
               <p>
-                Location: <span className="text-green-500">North Macedonia / remote</span>
+                Location: <span className="text-green-500">North Macedonia / Remote</span>
               </p>
               <p>
-                Eligible to work in the EU?{' '}
-                <span className="text-green-500">Yes, I&apos;m a EU citizen</span>
+                EU Work Eligibility <span className="text-green-500">Yes, EU citizen</span>
               </p>
               <p>
-                Current position:{' '}
+                Current role:{' '}
                 <span className="text-green-500">
-                  Software engineer at{' '}
+                  Software engineer contractor at{' '}
+                  <a
+                    href="https://www.apple.com/"
+                    alt="Apple"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-green-500"
+                  >
+                    Apple Inc.
+                  </a>{' '}
+                  via{' '}
                   <a
                     href="https://htecgroup.com"
                     alt="HTEC Group"
@@ -60,7 +68,7 @@ export default ({ data }) => {
                   </a>
                 </span>
               </p>
-              <div className="socials flex justify-center lg:justify-start">
+              <div className="socials flex justify-center lg:justify-start mt-2">
                 <ul className="flex justify-between">
                   <li>
                     <a
@@ -116,52 +124,52 @@ export default ({ data }) => {
           <div className="flex flex-col lg:flex-wrap lg:flex-row sm:-mx-3 mt-6 md:mt-12">
             <div className="lg:w-1/2 sm:w-auto px-3">
               <Card className="mb-8">
-                <p className="font-semibold text-xl">Technology</p>
+                <p className="font-semibold text-xl">Tools & Technologies</p>
                 <hr />
-                <p className="text-md">I have experience with</p>
+                {/* <p className="text-md">I have experience with</p> */}
                 <ul className="list-tech flex flex-row flex-wrap justify-center">
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.html}</span>
-                    <span>HTML 5</span>
+                    {/* <span>{TechIcons.html}</span> */}
+                    <span>HTML</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.css}</span>
-                    <span>CSS 3</span>
+                    {/* <span>{TechIcons.css}</span> */}
+                    <span>CSS / CSS frameworks</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.js}</span>
+                    {/* <span>{TechIcons.js}</span> */}
                     <span>JavaScript</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.ts}</span>
+                    {/* <span>{TechIcons.ts}</span> */}
                     <span>TypeScript</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.react}</span>
+                    {/* <span>{TechIcons.react}</span> */}
                     <span>React</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.redux}</span>
+                    {/* <span>{TechIcons.redux}</span> */}
                     <span>Redux / Redux Toolkit</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.nextjs}</span>
-                    <span>Next JS</span>
+                    {/* <span>{TechIcons.nextjs}</span> */}
+                    <span>Next.js</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.gatsby}</span>
-                    <span>Gatsby</span>
+                    {/* <span>{TechIcons.nodejs}</span> */}
+                    <span>Node.js / Express</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.nodejs}</span>
-                    <span>Node.js</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.angular}</span>
+                    {/* <span>{TechIcons.angular}</span> */}
                     <span>Angular</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.mongodb}</span>
+                    {/* <span>{TechIcons.git}</span> */}
+                    <span>Git</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    {/* <span>{TechIcons.mongodb}</span> */}
                     <span>MongoDB</span>
                   </li>
                   {/* <li className="xl:p-1 m-2">
@@ -169,15 +177,14 @@ export default ({ data }) => {
                     <span>MySQL</span>
                   </li> */}
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.git}</span>
-                    <span>Git</span>
+                    <span>Tanstack</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.linux}</span>
+                    {/* <span>{TechIcons.linux}</span> */}
                     <span>Linux</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.vscode}</span>
+                    {/* <span>{TechIcons.vscode}</span> */}
                     <span>VSCode</span>
                   </li>
                   {/* <li className="xl:p-1 m-2">
@@ -189,187 +196,59 @@ export default ({ data }) => {
                     <span>Material UI</span>
                   </li> */}
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.sass}</span>
-                    <span>Sass</span>
+                    {/* <span>{TechIcons.jest}</span> */}
+                    <span>Testing / Jest</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.jest}</span>
-                    <span>Jest</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.adobephotoshop}</span>
-                    <span>Adobe Photoshop</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.figma}</span>
+                    {/* <span>{TechIcons.figma}</span> */}
                     <span>Figma</span>
                   </li>
-                </ul>
-                <hr />
-                <p className="text-md">I&apos;m learning to use on a regular basis</p>
-                <ul className="list-tech flex flex-row flex-wrap justify-center">
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.graphql}</span>
+                    {/* <span>{TechIcons.graphql}</span> */}
                     <span>GraphQL</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.docker}</span>
+                    {/* <span>{TechIcons.docker}</span> */}
                     <span>Docker</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.webpack}</span>
-                    <span>Webpack</span>
+                    <span>...and others</span>
+                  </li>
+                </ul>
+                <hr />
+                <p className="text-md">Currently expanding my expertise with</p>
+                <ul className="list-tech flex flex-row flex-wrap justify-center">
+                  <li className="xl:p-1 m-2">
+                    <span>Python</span>
                   </li>
                   <li className="xl:p-1 m-2">
-                    <span>{TechIcons.react}</span>
+                    <span>Flask</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>Django</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>SQL / PostgreSQL</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>DevOps / CI-CD</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>AWS</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    <span>Azure</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    {/* <span>{TechIcons.webpack}</span> */}
+                    <span>Build tools: Webpack, Vite, etc.</span>
+                  </li>
+                  <li className="xl:p-1 m-2">
+                    {/* <span>{TechIcons.react}</span> */}
                     <span>React Native</span>
                   </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.adobeillustrator}</span>
-                    <span>Adobe Illustrator</span>
-                  </li>
-                  {/* <li className="xl:p-1 m-2">
-                    <span>{TechIcons.adobexd}</span>
-                    <span>Adobe Xd</span>
-                  </li> */}
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.wordpress}</span>
-                    <span>Wordpress</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>...and more</span>
-                  </li>
                 </ul>
               </Card>
-            </div>
-            <div className="lg:w-1/2 sm:w-auto px-3">
-              <Card className="mb-8">
-                <p className="font-semibold text-xl">Work experience</p>
-                <hr />
-                <ul className="list-workexp mt-4 text-left">
-                  <li>
-                    <p className="text-sm">03/2022 – Present</p>
-                    <h4>Software engineer</h4>
-                    <a
-                      href="https://htecgroup.com"
-                      alt="HTEC Group"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      HTEC Group (contractor for Apple Inc.)
-                    </a>
-                    <p className="mt-1">
-                      {`Working as a frontend software engineer and part of a highly talented team developing
-                      complex user facing applications for one of the world's greatest technological companies - Apple Inc. 
-                      The main technologies I work with daily are React, TypeScript,
-                      JavaScript, TanStack Query, HTML, Styled Components, REST, Docker, Git, AWS,
-                      Azure Cloud, Sketch, in-house design systems, libraries, and many more
-                      related technologies. `}
-                    </p>
-                  </li>
-                  <hr />
-                  <li>
-                    <p className="text-sm">05/2021 – 03/2022</p>
-                    <h4>Frontend web developer</h4>
-                    <a
-                      href="https://www.be-tse.it"
-                      alt="BE Group Italy"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Be Group - Milan, Italy
-                    </a>
-                    <p className="mt-1">
-                      {`I worked as a frontend developer/consultant and part of a team developing
-                      complex online banking applications for clients such as "illimity" and "Azimut
-                      / STEP". The main technologies I work with daily are React, Typescript,
-                      JavaScript, Redux, Redux Toolkit, HTML, SCSS, REST, Styled Components, Git,
-                      Azure Cloud, Zeplin, in-house design systems, libraries, and many other
-                      related technologies. `}
-                      <br />
-                      <br />
-                      {`                      In some cases, I've also used server-side/static
-                      rendering frameworks based around React such as Next.js and Gatsby.`}
-                    </p>
-                  </li>
-                  <hr />
-                  <li>
-                    <p className="text-sm">05/2020 – 05/2021</p>
-                    <h4>Frontend web developer</h4>
-                    <a
-                      href="https://it.nttdata.com"
-                      alt="NTTData"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      NTT Data Italia - Milan, Italy
-                    </a>
-                    <p className="mt-1">
-                      {`I worked as a frontend developer/consultant and part of a team developing
-                      complex RESTful applications for various industries such as telecom, energy,
-                      and governmental institutions. Clients include Vodafone, SKY UK, TIM, Sogei,
-                      Enel, Italian Government ministries, and also internal NTT Data projects.`}
-                      <br />
-                      <br />
-                      {`The
-                        main technologies I worked with daily were React, Typescript, JavaScript,
-                        Redux, HTML, SCSS, Styled Components, Git, Azure Cloud, Figma, Storybook,
-                        Jest, in-house design systems, libraries, and many other related technologies.`}
-                    </p>
-                  </li>
-                  <hr />
-                  <li>
-                    <p className="text-sm">01/2020 – 03/2022</p>
-                    <h4>Web developer</h4>
-                    <a
-                      href="https://ipsedocet.it/"
-                      alt="Ipse Docet"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Ipse Docet - Milan, Italy
-                    </a>
-                    <p className="mt-1">
-                      Working as a frontend developer for various clients of Ipse Docet - an IT
-                      consultancy and management company.
-                    </p>
-                  </li>
-                  <hr />
-                  <li>
-                    <p className="text-sm">09/2019 – 01/2020</p>
-                    <h4>Freelance web developer</h4>
-                    <p className="mt-1">
-                      Built static websites in JavaScript frameworks from prototype to production,
-                      worked on web applications/components with frameworks such as React and
-                      Angular, worked on UI/UX solutions, created WordPress websites with popular
-                      website builders.
-                    </p>
-                  </li>
-                  <hr />
-                  <li>
-                    <p className="text-sm">06/2019 – 09/2019</p>
-                    <h4>Software engineer trainee</h4>
-                    <a
-                      href="https://one-inside.com"
-                      alt="One Inside"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      One Inside - Skopje, North Macedonia
-                    </a>
-                    <p className="mt-1">
-                      One Inside is a Swiss company with subsidiaries in Germany and North
-                      Macedonia. As a software engineer trainee at the Skopje office, I worked in a
-                      collaborative development team both on frontend and backend tasks on multiple
-                      applications. I gained experience in technologies such as Angular, Node.js,
-                      JavaScript, TypeScript, databases, SCSS, Git, Docker, Agile, UX/UI concepts,
-                      and other related technologies.
-                    </p>
-                  </li>
-                </ul>
-              </Card>
-            </div>
-            <div className="lg:w-1/2 sm:w-auto px-3">
               <Card className="mb-8">
                 <p className="font-semibold text-xl">Education and training</p>
                 <hr />
@@ -413,26 +292,183 @@ export default ({ data }) => {
                   </li>
                 </ul>
               </Card>
-            </div>
-            <div className="lg:w-1/2 sm:w-auto px-3">
               <Card className="mb-8">
                 <p className="font-semibold text-xl">Personal skills</p>
                 <hr />
                 <ul className="list-skills mt-4 text-left">
                   <li>
-                    <span>Open, friendly, and communicative personality</span>
+                    <span>Approachable, friendly, and effective communicator</span>
                   </li>
                   <li>
-                    <span>Task-oriented and deadline-focused on the job</span>
+                    <span>Task-oriented and committed to meeting deadlines</span>
                   </li>
                   <li>
-                    <span>Always a team player</span>
+                    <span>Dedicated team player</span>
                   </li>
                   <li>
-                    <span>Responsible, resourceful, and adaptive to all circumstances</span>
+                    <span>Responsible, resourceful, and adaptable in various circumstances</span>
                   </li>
                   <li>
-                    <span>Fully involved in advancing and developing newer and broader skills</span>
+                    <span>Proactively engaged in continuous learning and skill development</span>
+                  </li>
+                </ul>
+              </Card>
+            </div>
+            <div className="lg:w-1/2 sm:w-auto px-3">
+              <Card className="mb-8">
+                <p className="font-semibold text-xl">Work Experience</p>
+                <hr />
+                <ul className="list-workexp mt-4 text-left">
+                  <li>
+                    <p className="text-sm">03/2022 – Present</p>
+                    <h4>Software Engineer / Contractor</h4>
+                    <a
+                      href="https://www.apple.com/"
+                      alt="Apple"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Apple Inc.
+                    </a>
+                    <p className="mt-1">
+                      <div>
+                        <div>
+                          Contribute to the development and maintenance of internal tools and
+                          customer-facing products crucial to the success of Apple Music, iTunes,
+                          and other divisions.
+                        </div>
+                        <div>
+                          Mentor and onboard fellow contractors, sharing knowledge and best
+                          practices.
+                        </div>
+                        <div>
+                          Conduct demonstrations to stakeholders, showcasing projects and value.
+                        </div>
+                      </div>
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">03/2022 – Present</p>
+                    <h4>Software Engineer</h4>
+                    <a
+                      href="https://htecgroup.com"
+                      alt="HTEC Group"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      HTEC Group (contractor for Apple Inc.)
+                    </a>
+                    <p className="mt-1">
+                      <div>
+                        Working as a frontend software engineer and part of a highly talented team
+                        developing complex user facing applications for one of the world's greatest
+                        technological companies - Apple Inc.
+                      </div>
+                      <div>
+                        The main technologies I work with are React, TypeScript, JavaScript, REST,
+                        Git, AWS, Azure, in-house design systems, libraries, and other related
+                        technologies.
+                      </div>
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">05/2021 – 03/2022</p>
+                    <h4>Web Developer</h4>
+                    <a
+                      href="https://www.be-tse.it"
+                      alt="BE Group Italy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Be Group - Milan, Italy
+                    </a>
+                    <p className="mt-1">
+                      <div>
+                        I worked as a frontend developer/consultant, collaborating with a team to
+                        develop complex online banking applications for clients like Illimity. My
+                        daily toolkit included React, TypeScript, JavaScript, Redux Toolkit, HTML,
+                        SCSS, REST, Styled Components, Git, Azure Cloud along with various in-house
+                        design systems and libraries. We also utilized server-side and static
+                        rendering frameworks such as Next.js and Gatsby to enhance application
+                        performance and user experience.
+                      </div>
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">05/2020 – 05/2021</p>
+                    <h4>Web Developer</h4>
+                    <a
+                      href="https://it.nttdata.com"
+                      alt="NTTData"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      NTT Data Italia - Milan, Italy
+                    </a>
+                    <p className="mt-1">
+                      <div>
+                        I worked as a frontend developer/consultant as part of a team dedicated to
+                        developing complex RESTful applications across various industries, including
+                        telecommunications, energy, and government institutions. Clients included
+                        Vodafone, SKY UK, TIM, Sogei, Enel, Italian government ministries, as well
+                        as internal projects at NTT Data. On a daily basis, I utilized a range of
+                        technologies, including React, TypeScript, JavaScript, Redux, HTML, SCSS,
+                        Styled Components, Git, Azure Cloud, Figma, Storybook, and Jest, along with
+                        in-house design systems and libraries, and other related tools.
+                      </div>
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">01/2020 – 03/2022</p>
+                    <h4>Web Developer</h4>
+                    <a
+                      href="https://ipsedocet.it/"
+                      alt="Ipse Docet"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Ipse Docet - Milan, Italy
+                    </a>
+                    <p className="mt-1">
+                      Working as a frontend developer for various clients of Ipse Docet - an IT
+                      consultancy and management company.
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">09/2019 – 01/2020</p>
+                    <h4>Freelance Web Developer</h4>
+                    <p className="mt-1">
+                      Built static websites in JavaScript frameworks from prototype to production,
+                      worked on web applications/components with frameworks such as React and
+                      Angular, worked on UI/UX solutions, created WordPress websites with popular
+                      website builders.
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">06/2019 – 09/2019</p>
+                    <h4>Junior Software Developer</h4>
+                    <a
+                      href="https://one-inside.com"
+                      alt="One Inside"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      One Inside - Skopje, North Macedonia
+                    </a>
+                    <p className="mt-1">
+                      One Inside is a Swiss company with subsidiaries in Germany and North
+                      Macedonia. As a software engineer trainee at the Skopje office, I worked in a
+                      collaborative development team both on frontend and backend tasks on multiple
+                      applications. I gained experience in technologies such as Angular, Node.js,
+                      JavaScript, TypeScript, databases, SCSS, Git, Docker, Agile, UX/UI concepts,
+                      and other related technologies.
+                    </p>
                   </li>
                 </ul>
               </Card>
@@ -562,7 +598,7 @@ export default ({ data }) => {
           }
           secondarySlot={
             <GatsbyImage
-            image={data.sacom.childImageSharp.gatsbyImageData}
+              image={data.sacom.childImageSharp.gatsbyImageData}
               alt="slaveatanasov.com"
               className="project-img"
             />
@@ -600,7 +636,7 @@ export default ({ data }) => {
           }
           secondarySlot={
             <GatsbyImage
-            image={data.project5mins.childImageSharp.gatsbyImageData}
+              image={data.project5mins.childImageSharp.gatsbyImageData}
               alt="project-5mins"
               className="project-img"
             />

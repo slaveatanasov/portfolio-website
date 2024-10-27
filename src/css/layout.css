@@ -149,7 +149,7 @@ a:hover {
 
 .list-edu,
 .list-workexp {
-  padding: 0.5rem;
+  /* padding: 0.5rem; */
   display: flex;
   flex-direction: column;
 }
