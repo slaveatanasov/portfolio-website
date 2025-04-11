@@ -46,8 +46,8 @@ export default ({ data }) => {
               <p>
                 Current role:{' '}
                 <span className="text-green-500">
-                  Software engineer contractor at{' '}
-                  <a
+                  Software engineer at{' '}
+                  {/* <a
                     href="https://www.apple.com/"
                     alt="Apple"
                     target="_blank"
@@ -56,7 +56,7 @@ export default ({ data }) => {
                   >
                     Apple Inc.
                   </a>{' '}
-                  via{' '}
+                  via{' '} */}
                   <a
                     href="https://htecgroup.com"
                     alt="HTEC Group"
@@ -218,7 +218,7 @@ export default ({ data }) => {
                 <hr />
                 <p className="text-md">Currently expanding my expertise with</p>
                 <ul className="list-tech flex flex-row flex-wrap justify-center">
-                  <li className="xl:p-1 m-2">
+                  {/* <li className="xl:p-1 m-2">
                     <span>Python</span>
                   </li>
                   <li className="xl:p-1 m-2">
@@ -226,7 +226,7 @@ export default ({ data }) => {
                   </li>
                   <li className="xl:p-1 m-2">
                     <span>Django</span>
-                  </li>
+                  </li> */}
                   <li className="xl:p-1 m-2">
                     <span>SQL / PostgreSQL</span>
                   </li>
@@ -319,7 +319,7 @@ export default ({ data }) => {
                 <p className="font-semibold text-xl">Work Experience</p>
                 <hr />
                 <ul className="list-workexp mt-4 text-left">
-                  <li>
+                  {/* <li>
                     <p className="text-sm">03/2022 – Present</p>
                     <h4>Software Engineer / Contractor</h4>
                     <a
@@ -346,7 +346,7 @@ export default ({ data }) => {
                         </div>
                       </div>
                     </p>
-                  </li>
+                  </li> */}
                   <hr />
                   <li>
                     <p className="text-sm">03/2022 – Present</p>
@@ -357,17 +357,19 @@ export default ({ data }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      HTEC Group (contractor for Apple Inc.)
+                      HTEC Group 
+                      {/* (contractor for Apple Inc.) */}
                     </a>
                     <p className="mt-1">
                       <div>
                         Working as a frontend software engineer and part of a highly talented team
-                        developing complex user facing applications for one of the world's greatest
-                        technological companies - Apple Inc.
+                        developing complex user facing applications.
+                         {/* for one of the world's greatest
+                        technological companies - Apple Inc. */}
                       </div>
                       <div>
                         The main technologies I work with are React, TypeScript, JavaScript, REST,
-                        Git, AWS, Azure, in-house design systems, libraries, and other related
+                        Git, CI-CD, in-house design systems, libraries, and other related
                         technologies.
                       </div>
                     </p>
