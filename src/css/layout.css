@@ -28,6 +28,47 @@
   background-color: rgb(249, 249, 249);
 }
 
+.in-short-card {
+  padding: 1rem 1.125rem;
+  border-radius: 0.5rem;
+  border: 1px solid #e5e7eb;
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.in-short-card h3 {
+  cursor: default;
+}
+
+.in-short-dl {
+  margin: 0;
+}
+
+.in-short-row {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.in-short-row-last {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.in-short-row dt {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #6b7280;
+  margin-bottom: 0.3rem;
+}
+
+.in-short-row dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: #1f2937;
+}
+
 .anchorLink {
   color: #1a202c;
 }
@@ -119,31 +160,63 @@ a:hover {
   transition: 0.2s ease-in-out;
 }
 
-.list-tech li {
-  display: flex;
-  align-items: center;
-  /* border: 1px solid rgba(0, 0, 0, 0.123); */
-  border-radius: 15px;
-  transition: 0.1s ease-out;
+.tools-block {
+  margin-bottom: 1.25rem;
 }
 
-.list-tech li:hover {
-  background-color: rgb(249, 249, 249);
-  cursor: default;
+.tools-block:last-of-type {
+  margin-bottom: 0;
+}
+
+.tools-block h4 {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4a5568;
+  margin-bottom: 0.65rem;
+}
+
+.tools-intro {
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+}
+
+.list-tech li {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 9999px;
+  padding: 0.22rem 0.62rem;
+  margin: 0.18rem;
+  font-size: 0.8125rem;
+  line-height: 1.35;
+  transition: 0.1s ease-out;
 }
 
 .list-tech li span:nth-child(2) {
   margin-right: 0.4rem;
 }
 
-.list-skills li {
-  display: block;
-  padding: 0.2rem;
-  transition: 0.1s ease-out;
-  cursor: default;
+.how-i-work-list {
+  list-style: disc outside;
+  padding-left: 1.15rem;
 }
 
-.list-skills li:hover {
+.how-i-work-list li {
+  padding: 0.35rem 0.35rem 0.35rem 0.15rem;
+  margin-left: 0.1rem;
+  border-radius: 4px;
+  transition: background-color 0.1s ease-out;
+}
+
+.how-i-work-list li::marker {
+  color: #a0aec0;
+}
+
+.how-i-work-list li:hover {
   background-color: rgb(249, 249, 249);
 }
 

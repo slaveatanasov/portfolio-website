@@ -5,10 +5,8 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 
 import Layout from '../components/layout/Layout';
 import Card from '../components/Card';
-import CleanCard from '../components/CleanCard';
 import SplitSection from '../components/SplitSection';
 
-import TechIcons from '../svg/_icons';
 import GithubIcon from '../svg/github';
 import LinkedInIcon from '../svg/linkedin';
 import EmailIcon from '../svg/email';
@@ -23,52 +21,36 @@ export default ({ data }) => {
             <h1 className="text-5xl lg:text-5xl xl:text-6xl font-bold leading-none robot-name">
               Slave Atanasov
             </h1>
-            <h1 className="text-3xl md:text-5xl xl:text-6xl font-bold leading-none">
-              Web Developer
+            <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight mt-1">
+              AI-enabled
+              <br />
+              Senior Web Developer
             </h1>
-            <p className="text-xl lg:text-2xl mt-6 font-light">
-              Hello! I&apos;m a software developer specializing in building dynamic web applications
-              with industry-standard tools.
+            <p className="text-xl lg:text-2xl mt-6 font-light text-gray-800 leading-relaxed">
+              Hi, I&apos;m Slave. I build web software solo and with teams, from small shops to
+              large companies.
             </p>
             <br />
-            <CleanCard className="q-a-card">
-              <h3 className="font-semibold text-lg">Quick info</h3>
-              <hr />
-              <p>
-                Employment status: <span className="text-green-500">Full-time</span>
-              </p>
-              <p>
-                Location: <span className="text-green-500">North Macedonia / Remote</span>
-              </p>
-              <p>
-                EU Work Eligibility <span className="text-green-500">Yes, EU citizen</span>
-              </p>
-              <p>
-                Current role:{' '}
-                <span className="text-green-500">
-                  Software engineer at{' '}
-                  {/* <a
-                    href="https://www.apple.com/"
-                    alt="Apple"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-500"
-                  >
-                    Apple Inc.
-                  </a>{' '}
-                  via{' '} */}
-                  <a
-                    href="https://htecgroup.com"
-                    alt="HTEC Group"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-green-500"
-                  >
-                    HTEC Group
-                  </a>
-                </span>
-              </p>
-              <div className="socials flex justify-center lg:justify-start mt-2">
+            <div className="in-short-card">
+              <h3 className="font-semibold text-lg text-gray-900 mb-1">In short</h3>
+              <p className="text-xs text-gray-500 mb-4">Availability, location, citizenship</p>
+              <dl className="in-short-dl text-left">
+                <div className="in-short-row">
+                  <dt>Work arrangement</dt>
+                  <dd>
+                    Independent contractor · selectively taking new work when capacity and fit align
+                  </dd>
+                </div>
+                <div className="in-short-row">
+                  <dt>Location</dt>
+                  <dd>North Macedonia · remote delivery across time zones</dd>
+                </div>
+                <div className="in-short-row in-short-row-last">
+                  <dt>Citizenship</dt>
+                  <dd>EU citizen (Bulgaria) · North Macedonia</dd>
+                </div>
+              </dl>
+              <div className="socials flex justify-center lg:justify-start mt-4 pt-3 border-t border-gray-200">
                 <ul className="flex justify-between">
                   <li>
                     <a
@@ -105,7 +87,7 @@ export default ({ data }) => {
                   </li>
                 </ul>
               </div>
-            </CleanCard>
+            </div>
           </div>
           <div className="lg:w-1/2">
             <div className="image-sa-wrapper">
@@ -123,134 +105,205 @@ export default ({ data }) => {
           <h2 className="text-3xl lg:text-5xl font-semibold">Qualifications</h2>
           <div className="flex flex-col lg:flex-wrap lg:flex-row sm:-mx-3 mt-6 md:mt-12">
             <div className="lg:w-1/2 sm:w-auto px-3">
-              <Card className="mb-8">
-                <p className="font-semibold text-xl">Tools & Technologies</p>
+              <Card className="mb-8 text-left">
+                <p className="font-semibold text-xl text-center">Stack &amp; tools</p>
                 <hr />
-                {/* <p className="text-md">I have experience with</p> */}
-                <ul className="list-tech flex flex-row flex-wrap justify-center">
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.html}</span> */}
-                    <span>HTML</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.css}</span> */}
-                    <span>CSS / CSS frameworks</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.js}</span> */}
-                    <span>JavaScript</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.ts}</span> */}
-                    <span>TypeScript</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.react}</span> */}
-                    <span>React</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.redux}</span> */}
-                    <span>Redux / Redux Toolkit</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.nextjs}</span> */}
-                    <span>Next.js</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.nodejs}</span> */}
-                    <span>Node.js / Express</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.angular}</span> */}
-                    <span>Angular</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.git}</span> */}
-                    <span>Git</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.mongodb}</span> */}
-                    <span>MongoDB</span>
-                  </li>
-                  {/* <li className="xl:p-1 m-2">
-                    <span>{TechIcons.mysql}</span>
-                    <span>MySQL</span>
-                  </li> */}
-                  <li className="xl:p-1 m-2">
-                    <span>Tanstack</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.linux}</span> */}
-                    <span>Linux</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.vscode}</span> */}
-                    <span>VSCode</span>
-                  </li>
-                  {/* <li className="xl:p-1 m-2">
-                    <span>{TechIcons.bootstrap}</span>
-                    <span>Bootstrap</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>{TechIcons.materialui}</span>
-                    <span>Material UI</span>
-                  </li> */}
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.jest}</span> */}
-                    <span>Testing / Jest</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.figma}</span> */}
-                    <span>Figma</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.graphql}</span> */}
-                    <span>GraphQL</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.docker}</span> */}
-                    <span>Docker</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>...and others</span>
-                  </li>
-                </ul>
-                <hr />
-                <p className="text-md">Currently expanding my expertise with</p>
-                <ul className="list-tech flex flex-row flex-wrap justify-center">
-                  {/* <li className="xl:p-1 m-2">
-                    <span>Python</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>Flask</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>Django</span>
-                  </li> */}
-                  <li className="xl:p-1 m-2">
-                    <span>SQL / PostgreSQL</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>DevOps / CI-CD</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>AWS</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    <span>Azure</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.webpack}</span> */}
-                    <span>Build tools: Webpack, Vite, etc.</span>
-                  </li>
-                  <li className="xl:p-1 m-2">
-                    {/* <span>{TechIcons.react}</span> */}
-                    <span>React Native</span>
-                  </li>
-                </ul>
+                <div className="tools-block">
+                  <h4>Frontend &amp; UI</h4>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>HTML &amp; CSS</span>
+                    </li>
+                    <li>
+                      <span>Tailwind CSS</span>
+                    </li>
+                    <li>
+                      <span>JavaScript</span>
+                    </li>
+                    <li>
+                      <span>TypeScript</span>
+                    </li>
+                    <li>
+                      <span>React</span>
+                    </li>
+                    <li>
+                      <span>Next.js</span>
+                    </li>
+                    <li>
+                      <span>Angular</span>
+                    </li>
+                    <li>
+                      <span>Redux Toolkit</span>
+                    </li>
+                    <li>
+                      <span>TanStack (Query, Router, Table)</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>Backend &amp; data</h4>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>REST</span>
+                    </li>
+                    <li>
+                      <span>GraphQL</span>
+                    </li>
+                    <li>
+                      <span>Node.js / Express</span>
+                    </li>
+                    <li>
+                      <span>MongoDB</span>
+                    </li>
+                    <li>
+                      <span>PostgreSQL / SQL</span>
+                    </li>
+                    <li>
+                      <span>Supabase</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>Infra &amp; delivery</h4>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>Vercel</span>
+                    </li>
+                    <li>
+                      <span>AWS</span>
+                    </li>
+                    <li>
+                      <span>Azure</span>
+                    </li>
+                    <li>
+                      <span>CI/CD &amp; DevOps</span>
+                    </li>
+                    <li>
+                      <span>Docker</span>
+                    </li>
+                    <li>
+                      <span>Linux</span>
+                    </li>
+                    <li>
+                      <span>Cloudflare</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>Tooling &amp; quality</h4>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>Git</span>
+                    </li>
+                    <li>
+                      <span>VS Code</span>
+                    </li>
+                    <li>
+                      <span>Figma</span>
+                    </li>
+                    <li>
+                      <span>Testing / Jest</span>
+                    </li>
+                    <li>
+                      <span>Webpack, Vite &amp; modern bundlers</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>AI &amp; LLMs</h4>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>Cursor</span>
+                    </li>
+                    <li>
+                      <span>GitHub Copilot</span>
+                    </li>
+                    <li>
+                      <span>Claude</span>
+                    </li>
+                    <li>
+                      <span>ChatGPT / OpenAI</span>
+                    </li>
+                    <li>
+                      <span>LLM APIs &amp; integrations</span>
+                    </li>
+                    <li>
+                      <span>Prompt &amp; tool-calling workflows</span>
+                    </li>
+                    <li>
+                      <span>Agent-style product features</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>SEO &amp; analytics</h4>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>Technical &amp; on-page SEO</span>
+                    </li>
+                    <li>
+                      <span>Analytics &amp; event tracking</span>
+                    </li>
+                    <li>
+                      <span>Performance &amp; Core Web Vitals</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>Building, SaaS &amp; collaboration</h4>
+                  <p className="tools-intro">
+                    Beyond client work I also build and ship my own products: solopreneur and
+                    indie-style projects, SaaS ideas end to end, and collaboration with partners,
+                    users, and teams when a product needs more than code.
+                  </p>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>Solopreneurship &amp; side projects</span>
+                    </li>
+                    <li>
+                      <span>SaaS product building</span>
+                    </li>
+                    <li>
+                      <span>Collaboration &amp; delivery</span>
+                    </li>
+                    <li>
+                      <span>Marketing &amp; growth</span>
+                    </li>
+                    <li>
+                      <span>Stakeholder communication</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>Content &amp; CMS</h4>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>Strapi</span>
+                    </li>
+                    <li>
+                      <span>WordPress</span>
+                    </li>
+                    <li>
+                      <span>Headless CMS patterns</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="tools-block">
+                  <h4>Mobile (learning)</h4>
+                  <p className="tools-intro">
+                    Still growing here: dabbling in React Native to see how mobile apps feel and
+                    ship, alongside web. Small experiments and real builds, not my main lane yet,
+                    but I am actively learning.
+                  </p>
+                  <ul className="list-tech flex flex-row flex-wrap">
+                    <li>
+                      <span>React Native</span>
+                    </li>
+                  </ul>
+                </div>
               </Card>
               <Card className="mb-8">
-                <p className="font-semibold text-xl">Education and training</p>
+                <p className="font-semibold text-xl">Education</p>
                 <hr />
                 <ul className="list-edu mt-4 text-left">
                   <li>
@@ -262,54 +315,66 @@ export default ({ data }) => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Semos Education - Skopje, North Macedonia
+                      Semos Education, Skopje
                     </a>
                     <p className="mt-1">
-                      A Web Development program focused on learning technologies such as HTML 5, CSS
-                      3, JavaScript, Node.js, MongoDB, React, Redux, Linux, Git, HTTP, REST,
-                      Angular, TypeScript.
+                      Full-time program covering the modern web stack: HTML/CSS, JavaScript,
+                      Node.js, MongoDB, React, Redux, Angular, TypeScript, Linux, Git, HTTP, and
+                      REST APIs.
                     </p>
                   </li>
                   <hr />
                   <li>
                     <p className="text-sm">2008 – 2010</p>
-                    <h4>Student</h4>
+                    <h4>University (paused)</h4>
                     <p className="institution">
-                      Faculty of Applied Foreign Languages (business department), FON University,
-                      Skopje (North Macedonia)
+                      Faculty of Applied Foreign Languages, business track, FON University, Skopje
                     </p>
                     <p className="mt-1">
-                      Education put on hold in the 2nd of total 4 academic years.
+                      Studied two of four years, then paused to pursue other paths.
                     </p>
                   </li>
                   <hr />
                   <li>
                     <p className="text-sm">2004 – 2008</p>
-                    <h4>Diploma - Social Sciences and Humanities</h4>
+                    <h4>High school diploma</h4>
                     <p className="institution">
-                      Public High School &ldquo;Jane Sandanski&ldquo; (North Macedonia)
+                      Public High School &ldquo;Jane Sandanski&ldquo;, North Macedonia
                     </p>
                   </li>
                 </ul>
               </Card>
               <Card className="mb-8">
-                <p className="font-semibold text-xl">Personal skills</p>
+                <p className="font-semibold text-xl">How I work</p>
                 <hr />
-                <ul className="list-skills mt-4 text-left">
+                <ul className="how-i-work-list mt-4 text-left text-sm leading-relaxed text-gray-700">
                   <li>
-                    <span>Approachable, friendly, and effective communicator</span>
+                    <strong className="text-gray-900">Communication.</strong> Regular updates with
+                    engineers, designers, and stakeholders.
                   </li>
                   <li>
-                    <span>Task-oriented and committed to meeting deadlines</span>
+                    <strong className="text-gray-900">Range.</strong> Agency and founder work, and
+                    longer corporate engagements.
                   </li>
                   <li>
-                    <span>Dedicated team player</span>
+                    <strong className="text-gray-900">Scope.</strong> Agreed in writing; I call out
+                    risks early.
                   </li>
                   <li>
-                    <span>Responsible, resourceful, and adaptable in various circumstances</span>
+                    <strong className="text-gray-900">Dates.</strong> I aim to hit what we agree on,
+                    and I say early if that is not realistic.
                   </li>
                   <li>
-                    <span>Proactively engaged in continuous learning and skill development</span>
+                    <strong className="text-gray-900">Collaboration.</strong> Code reviews, pairing,
+                    shared ownership.
+                  </li>
+                  <li>
+                    <strong className="text-gray-900">Change.</strong> New stacks, teams, or
+                    priorities are normal; I adjust.
+                  </li>
+                  <li>
+                    <strong className="text-gray-900">Learning.</strong> I keep up with tools,
+                    patterns, and the product domain.
                   </li>
                 </ul>
               </Card>
@@ -319,11 +384,55 @@ export default ({ data }) => {
                 <p className="font-semibold text-xl">Work Experience</p>
                 <hr />
                 <ul className="list-workexp mt-4 text-left">
-                  {/* <li>
-                    <p className="text-sm">03/2022 – Present</p>
-                    <h4>Software Engineer / Contractor</h4>
+                  <li>
+                    <p className="text-sm">02/2026 – Present</p>
+                    <h4>Senior Web Developer</h4>
                     <a
-                      href="https://www.apple.com/"
+                      href="https://adevait.com/"
+                      alt="Adeva"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Adeva
+                    </a>{' '}
+                    (Deltatre contract)
+                    <p className="mt-1">
+                      <div>
+                        I work in <strong>Next.js</strong> on both <strong>client UI</strong> and{' '}
+                        <strong>server-side</strong> code. I contribute to{' '}
+                        <strong>architecture</strong> and implement <strong>APIs</strong> in the
+                        context of merged companies and how their systems come together.
+                      </div>
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">04/2025 – 02/2026</p>
+                    <h4>Senior Software Engineer</h4>
+                    <a href="https://zoox.com" alt="Zoox" target="_blank" rel="noopener noreferrer">
+                      Zoox, Inc.
+                    </a>
+                    <p className="mt-1">
+                      <div>
+                        Contract role: apps that help mechanics diagnose and repair{' '}
+                        <strong>autonomous vehicles</strong>, built with <strong>React</strong>,{' '}
+                        <strong>TypeScript</strong>, <strong>Redux Toolkit</strong>, and in-house UI
+                        libraries in a large <strong>monorepo</strong>.
+                      </div>
+                      <div>
+                        <strong>AI-assisted tooling</strong> for velocity;{' '}
+                        <strong>TypeScript</strong>/<strong>Node</strong> services,{' '}
+                        <strong>Docker</strong> on Linux <strong>VDIs</strong>,{' '}
+                        <strong>CI/CD</strong>, and cross-team coordination.
+                      </div>
+                    </p>
+                  </li>
+                  <hr />
+                  <li>
+                    <p className="text-sm">03/2022 – 04/2025</p>
+                    <h4>Software Engineer</h4>
+                    <a
+                      href="https://www.apple.com"
                       alt="Apple"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -332,45 +441,45 @@ export default ({ data }) => {
                     </a>
                     <p className="mt-1">
                       <div>
-                        <div>
-                          Contribute to the development and maintenance of internal tools and
-                          customer-facing products crucial to the success of Apple Music, iTunes,
-                          and other divisions.
-                        </div>
-                        <div>
-                          Mentor and onboard fellow contractors, sharing knowledge and best
-                          practices.
-                        </div>
-                        <div>
-                          Conduct demonstrations to stakeholders, showcasing projects and value.
-                        </div>
+                        Contract role: built and maintained <strong>UIs</strong> and internal tools
+                        for flagship services such as <strong>Apple Music</strong>,{' '}
+                        <strong>iTunes</strong>, and <strong>Apple TV+</strong>, including a
+                        platform for emerging music trends and a next-generation{' '}
+                        <strong>editorial media management</strong> system.
+                      </div>
+                      <div>
+                        Contributed to a <strong>micro-frontend migration</strong>, partnered with{' '}
+                        <strong>design</strong> and <strong>product</strong>, mentored contractors,
+                        and demoed progress to stakeholders.
                       </div>
                     </p>
-                  </li> */}
+                  </li>
                   <hr />
                   <li>
-                    <p className="text-sm">03/2022 – Present</p>
-                    <h4>Software Engineer</h4>
+                    <p className="text-sm">03/2022 – 02/2026</p>
+                    <h4>Senior Software Engineer</h4>
                     <a
                       href="https://htecgroup.com"
                       alt="HTEC Group"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      HTEC Group 
-                      {/* (contractor for Apple Inc.) */}
+                      HTEC Group
                     </a>
                     <p className="mt-1">
                       <div>
-                        Working as a frontend software engineer and part of a highly talented team
-                        developing complex user facing applications.
-                         {/* for one of the world's greatest
-                        technological companies - Apple Inc. */}
+                        I worked for HTEC&apos;s partners and clients: <strong>frontend</strong> and
+                        product delivery with <strong>React</strong>, <strong>TypeScript</strong>,{' '}
+                        <strong>JavaScript</strong>, <strong>Next.js</strong>,{' '}
+                        <strong>Node.js</strong>, <strong>Docker</strong>, <strong>Git</strong>,
+                        design tooling, <strong>CI/CD</strong>, and in-house design systems.
+                        Internal tools and customer-facing products; onboarding peers and demos to
+                        stakeholders.
                       </div>
                       <div>
-                        The main technologies I work with are React, TypeScript, JavaScript, REST,
-                        Git, CI-CD, in-house design systems, libraries, and other related
-                        technologies.
+                        Kept up with <strong>AI</strong> and emerging tech encouraged by the
+                        company; collaborated with <strong>Tech Leads</strong> and{' '}
+                        <strong>design</strong> to ship features and improve how the team works.
                       </div>
                     </p>
                   </li>
@@ -388,13 +497,10 @@ export default ({ data }) => {
                     </a>
                     <p className="mt-1">
                       <div>
-                        I worked as a frontend developer/consultant, collaborating with a team to
-                        develop complex online banking applications for clients like Illimity. My
-                        daily toolkit included React, TypeScript, JavaScript, Redux Toolkit, HTML,
-                        SCSS, REST, Styled Components, Git, Azure Cloud along with various in-house
-                        design systems and libraries. We also utilized server-side and static
-                        rendering frameworks such as Next.js and Gatsby to enhance application
-                        performance and user experience.
+                        Illimity contract: building and evolving the digital bank&apos;s online
+                        banking frontend with the team. React, TypeScript, Redux Toolkit, REST, and
+                        Azure-hosted delivery; Next.js and Gatsby where static or SSR helped
+                        performance and UX.
                       </div>
                     </p>
                   </li>
@@ -412,14 +518,11 @@ export default ({ data }) => {
                     </a>
                     <p className="mt-1">
                       <div>
-                        I worked as a frontend developer/consultant as part of a team dedicated to
-                        developing complex RESTful applications across various industries, including
-                        telecommunications, energy, and government institutions. Clients included
-                        Vodafone, SKY UK, TIM, Sogei, Enel, Italian government ministries, as well
-                        as internal projects at NTT Data. On a daily basis, I utilized a range of
-                        technologies, including React, TypeScript, JavaScript, Redux, HTML, SCSS,
-                        Styled Components, Git, Azure Cloud, Figma, Storybook, and Jest, along with
-                        in-house design systems and libraries, and other related tools.
+                        Frontend on large REST-backed products for telco, energy, and public sector
+                        clients (e.g. Vodafone, SKY UK, TIM, Sogei, Enel, government ministries)
+                        plus internal NTT Data work. React, TypeScript, Redux, Storybook, Jest,
+                        Figma, and Azure, with each client&apos;s design system and delivery
+                        standards.
                       </div>
                     </p>
                   </li>
@@ -436,8 +539,8 @@ export default ({ data }) => {
                       Ipse Docet - Milan, Italy
                     </a>
                     <p className="mt-1">
-                      Working as a frontend developer for various clients of Ipse Docet - an IT
-                      consultancy and management company.
+                      Frontend developer for Ipse Docet clients across short- and long-term
+                      engagements at a Milan-based IT consultancy.
                     </p>
                   </li>
                   <hr />
@@ -445,10 +548,8 @@ export default ({ data }) => {
                     <p className="text-sm">09/2019 – 01/2020</p>
                     <h4>Freelance Web Developer</h4>
                     <p className="mt-1">
-                      Built static websites in JavaScript frameworks from prototype to production,
-                      worked on web applications/components with frameworks such as React and
-                      Angular, worked on UI/UX solutions, created WordPress websites with popular
-                      website builders.
+                      Freelance builds: marketing sites and React or Angular pieces from prototype
+                      to production, light UI/UX support, and WordPress sites with common builders.
                     </p>
                   </li>
                   <hr />
@@ -464,12 +565,9 @@ export default ({ data }) => {
                       One Inside - Skopje, North Macedonia
                     </a>
                     <p className="mt-1">
-                      One Inside is a Swiss company with subsidiaries in Germany and North
-                      Macedonia. As a software engineer trainee at the Skopje office, I worked in a
-                      collaborative development team both on frontend and backend tasks on multiple
-                      applications. I gained experience in technologies such as Angular, Node.js,
-                      JavaScript, TypeScript, databases, SCSS, Git, Docker, Agile, UX/UI concepts,
-                      and other related technologies.
+                      Trainee on a Swiss-led team in Skopje: frontend and backend tasks on several
+                      apps. Stack exposure included Angular, Node.js, TypeScript, databases, Docker,
+                      Git, and Agile delivery.
                     </p>
                   </li>
                 </ul>
@@ -483,24 +581,50 @@ export default ({ data }) => {
         <SplitSection
           primarySlot={
             <div className="lg:pr-32 xl:pr-48">
-              <h3 className="text-2xl font-semibold leading-tight">Upperway TMS</h3>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                Check it out on{' '}
+              <h3 className="text-2xl font-semibold leading-tight mb-0">Next 9 Months</h3>
+              <p className="mt-1 text-xl font-light leading-relaxed">
                 <a
-                  href="https://demo.upperway.io/"
+                  href="https://next9months.com"
+                  alt="Next 9 Months"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  next9months.com
+                </a>
+              </p>
+              <p className="mt-2 text-xl font-light leading-relaxed">
+                Next 9 Months is a product I built for parents: gender reveals, polls, a baby-name
+                finder, and other shared moments around pregnancy and early parenthood.
+              </p>
+            </div>
+          }
+          secondarySlot={
+            <GatsbyImage
+              image={data.next9Months.childImageSharp.gatsbyImageData}
+              alt="Next 9 Months"
+              className="project-img"
+            />
+          }
+        />
+        <SplitSection
+          reverseOrder
+          primarySlot={
+            <div className="lg:pl-32 xl:pl-48">
+              <h3 className="text-2xl font-semibold leading-tight mb-0">Upperway TMS</h3>
+              <p className="mt-1 text-xl font-light leading-relaxed">
+                <a
+                  href="https://upperway.io/"
                   alt="Upperway TMS"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  demo.upperway.io
-                </a>{' '}
-                by requesting a demo account
+                  upperway.io
+                </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                Upperway is a SaaS TMS (Transportation Management System) software built by me and
-                my team to help solve problems for small and medium enterprises in the trucking
-                industry primarily in the USA. This software is built with the enterprise standard
-                technologies stack such as Angular, Java/Spring, SQL, and AWS.
+                Upperway is a SaaS TMS for small and mid-size trucking companies in the US, built
+                with my team. Angular on the front end, Java and Spring on the back end, SQL, and
+                AWS.
               </p>
             </div>
           }
@@ -513,12 +637,10 @@ export default ({ data }) => {
           }
         />
         <SplitSection
-          reverseOrder
           primarySlot={
-            <div className="lg:pl-32 xl:pl-48">
-              <h3 className="text-2xl font-semibold leading-tight">UniversalDot</h3>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                Check it out on{' '}
+            <div className="lg:pr-32 xl:pr-48">
+              <h3 className="text-2xl font-semibold leading-tight mb-0">UniversalDot</h3>
+              <p className="mt-1 text-xl font-light leading-relaxed">
                 <a
                   href="https://app.universaldot.me/"
                   alt="UniversalDot"
@@ -529,28 +651,27 @@ export default ({ data }) => {
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                I was commisioned to develop the Front End web application for a client who&apos;s
-                established in the crypto industry. This project is built in React and is connected
-                to a Polkadot blockchain API.
+                Frontend for a client in crypto: React, wired to a Polkadot-based chain through its
+                API.
               </p>
             </div>
           }
           secondarySlot={
             <GatsbyImage
               image={data.universaldot_scr_1.childImageSharp.gatsbyImageData}
-              alt="universaldoy"
+              alt="UniversalDot"
               className="project-img"
             />
           }
         />
         <SplitSection
+          reverseOrder
           primarySlot={
-            <div className="lg:pr-32 xl:pr-48">
-              <h3 className="text-2xl font-semibold leading-tight">
+            <div className="lg:pl-32 xl:pl-48">
+              <h3 className="text-2xl font-semibold leading-tight mb-0">
                 From design prototype to a deployed website
               </h3>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                Check out the source code on{' '}
+              <p className="mt-1 text-xl font-light leading-relaxed">
                 <a
                   href="https://github.com/slaveatanasov/landing-page-example"
                   alt="GitHub Landing Page Project"
@@ -561,10 +682,9 @@ export default ({ data }) => {
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                This slick landing page website was built from scratch and in pixel perfect way
-                based on a design provided by a client. It was build in Angular, it&apos;s fully
-                responsive with features such as automatic slideshow, AJAX tabs section, modern
-                cards and banners section, as well as contact form, and cookie policy components.
+                Marketing site from a client&apos;s design: Angular, responsive layout, slideshow,
+                tabbed sections, cards and banners, contact form, and cookie UI. Implemented to match
+                the mockups closely.
               </p>
             </div>
           }
@@ -577,12 +697,10 @@ export default ({ data }) => {
           }
         />
         <SplitSection
-          reverseOrder
           primarySlot={
-            <div className="lg:pl-32 xl:pl-48">
-              <h3 className="text-2xl font-semibold leading-tight">SlaveAtanasov.com</h3>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                Check out the source code on{' '}
+            <div className="lg:pr-32 xl:pr-48">
+              <h3 className="text-2xl font-semibold leading-tight mb-0">SlaveAtanasov.com</h3>
+              <p className="mt-1 text-xl font-light leading-relaxed">
                 <a
                   href="https://github.com/slaveatanasov/portfolio-website"
                   alt="slaveatanasov.com"
@@ -593,8 +711,7 @@ export default ({ data }) => {
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                The website you&apos;re currently browsing I built in Gatsby - one of the fastest
-                static website frameworks available.
+                This portfolio: Gatsby, static HTML at build time.
               </p>
             </div>
           }
@@ -607,11 +724,11 @@ export default ({ data }) => {
           }
         />
         <SplitSection
+          reverseOrder
           primarySlot={
-            <div className="lg:pr-32 xl:pr-48">
-              <h3 className="text-2xl font-semibold leading-tight">Project 5mins</h3>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                Check it out on{' '}
+            <div className="lg:pl-32 xl:pl-48">
+              <h3 className="text-2xl font-semibold leading-tight mb-0">Project 5mins</h3>
+              <p className="mt-1 text-xl font-light leading-relaxed">
                 <a
                   href="https://github.com/slaveatanasov/darryl-dexter"
                   alt="GitHub Project5mins"
@@ -620,19 +737,20 @@ export default ({ data }) => {
                 >
                   GitHub
                 </a>
-                {' and '}
+              </p>
+              <p className="mt-px text-xl font-light leading-relaxed">
                 <a
                   href="https://darryldexter.netlify.app/"
                   alt="Netlify Project5mins"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Netlify
+                  darryldexter.netlify.app
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                I was commisioned to develop this website for a client. I built it in Gatsby, with
-                the content being sourced from Contentful through a GraphQL API.
+                Client site on Gatsby; copy and assets from Contentful, queried at build time with
+                GraphQL.
               </p>
             </div>
           }
@@ -645,23 +763,21 @@ export default ({ data }) => {
           }
         />
         <SplitSection
-          reverseOrder
           primarySlot={
-            <div className="lg:pl-32 xl:pl-48">
-              <h3 className="text-2xl font-semibold leading-tight">Other projects</h3>
-              <p className="mt-2 text-xl font-light leading-relaxed">
-                Explore more on{' '}
+            <div className="lg:pr-32 xl:pr-48">
+              <h3 className="text-2xl font-semibold leading-tight mb-0">Other projects</h3>
+              <p className="mt-1 text-xl font-light leading-relaxed">
                 <a
                   href="https://github.com/slaveatanasov?tab=repositories"
                   alt="GitHub Projects"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  GitHub
+                  github.com/slaveatanasov
                 </a>
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
-                Visit my GitHub account for other projects not presented here.
+                Smaller experiments and older work live in the repo list there.
               </p>
             </div>
           }
@@ -681,6 +797,11 @@ export const query = graphql`
       }
     }
     universaldot_scr_1: file(relativePath: { eq: "universaldot_scr_1.jpg" }) {
+      childImageSharp {
+        gatsbyImageData(layout: CONSTRAINED)
+      }
+    }
+    next9Months: file(relativePath: { eq: "n9m.png" }) {
       childImageSharp {
         gatsbyImageData(layout: CONSTRAINED)
       }

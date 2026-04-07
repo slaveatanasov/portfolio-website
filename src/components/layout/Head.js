@@ -3,11 +3,11 @@ import { Helmet } from 'react-helmet';
 
 const Head = () => (
   <Helmet>
-    <title>Slave Atanasov - Frontend Web Developer</title>
-    <meta name="title" content="Slave Atanasov - Frontend Web Developer" />
+    <title>Slave Atanasov — Senior Web Developer</title>
+    <meta name="title" content="Slave Atanasov — Senior Web Developer" />
     <meta
       name="description"
-      content="Up-and-coming web developer using technologies such as JavaScript, Angular, React, Gatsby, TypeScript, Node.js, MongoDB, MySQL, REST - GraphQL, etc."
+      content="Senior web developer, remote, EU-based. Solo or embedded in teams, small companies to large orgs. Deltatre via Adeva; background includes Zoox and Apple."
     />
   </Helmet>
 );
