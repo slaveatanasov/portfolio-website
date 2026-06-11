@@ -6,6 +6,7 @@ import { GatsbyImage } from 'gatsby-plugin-image';
 import Layout from '../components/layout/Layout';
 import Card from '../components/Card';
 import SplitSection from '../components/SplitSection';
+import ToptalBadge from '../components/ToptalBadge';
 
 import GithubIcon from '../svg/github';
 import LinkedInIcon from '../svg/linkedin';
@@ -16,80 +17,85 @@ export default ({ data }) => {
   return (
     <Layout>
       <section id="about" className="pt-10 md:pt-20 bg-gradient">
-        <div className="container mx-auto px-8 lg:flex">
-          <div className="text-center lg:text-left lg:w-1/2 sm:mb-3">
+        <div className="container mx-auto px-8 hero-layout">
+          <div className="text-center lg:text-left hero-content sm:mb-3">
             <h1 className="text-5xl lg:text-5xl xl:text-6xl font-bold leading-none robot-name">
               Slave Atanasov
             </h1>
             <h1 className="text-2xl sm:text-3xl md:text-4xl xl:text-5xl font-bold leading-tight mt-1">
-              AI-enabled
-              <br />
               Senior Web Developer
             </h1>
-            <p className="text-xl lg:text-2xl mt-6 font-light text-gray-800 leading-relaxed">
+            <p className="hero-intro text-xl lg:text-2xl mt-6 font-light text-gray-800 leading-relaxed">
               Hi, I&apos;m Slave. I build web software solo and with teams, from small shops to
               large companies.
             </p>
-            <br />
-            <div className="in-short-card">
-              <h3 className="font-semibold text-lg text-gray-900 mb-1">In short</h3>
-              <p className="text-xs text-gray-500 mb-4">Availability, location, citizenship</p>
-              <dl className="in-short-dl text-left">
-                <div className="in-short-row">
-                  <dt>Work arrangement</dt>
-                  <dd>
-                    Independent contractor · selectively taking new work when capacity and fit align
-                  </dd>
+            <div className="in-short-block">
+              <div className="in-short">
+                <div className="in-short-header">
+                  <h3 className="font-semibold text-lg text-gray-900">In short</h3>
+                  <p className="in-short-caption">Availability, location, citizenship</p>
                 </div>
-                <div className="in-short-row">
-                  <dt>Location</dt>
-                  <dd>North Macedonia · remote delivery across time zones</dd>
+                <dl className="in-short-facts text-left">
+                  <div className="in-short-row">
+                    <dt>Work arrangement</dt>
+                    <dd>
+                      Independent contractor · selectively taking new work when capacity and fit
+                      align
+                    </dd>
+                  </div>
+                  <div className="in-short-row">
+                    <dt>Location</dt>
+                    <dd>North Macedonia · remote delivery across time zones</dd>
+                  </div>
+                  <div className="in-short-row">
+                    <dt>Citizenship</dt>
+                    <dd>EU citizen (Bulgaria) · North Macedonia</dd>
+                  </div>
+                </dl>
+                <div className="socials flex justify-center lg:justify-start in-short-socials">
+                  <ul className="flex justify-between">
+                    <li>
+                      <a
+                        className="icon-anchor-link"
+                        href="https://www.linkedin.com/in/slaveatanasov"
+                        alt="LinkedIn"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <LinkedInIcon classes="social-button w-6" />
+                      </a>
+                    </li>
+                    <li className="ml-2">
+                      <a
+                        className="icon-anchor-link"
+                        href="https://github.com/slaveatanasov"
+                        alt="GitHub"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <GithubIcon classes="social-button w-6" />
+                      </a>
+                    </li>
+                    <li className="ml-2">
+                      <a
+                        className="icon-anchor-link"
+                        href="mailto:slaveatan@gmail.com"
+                        alt="Email"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <EmailIcon classes="social-button w-6" />
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-                <div className="in-short-row in-short-row-last">
-                  <dt>Citizenship</dt>
-                  <dd>EU citizen (Bulgaria) · North Macedonia</dd>
-                </div>
-              </dl>
-              <div className="socials flex justify-center lg:justify-start mt-4 pt-3 border-t border-gray-200">
-                <ul className="flex justify-between">
-                  <li>
-                    <a
-                      className="icon-anchor-link"
-                      href="https://www.linkedin.com/in/slaveatanasov"
-                      alt="LinkedIn"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <LinkedInIcon classes="social-button w-6" />
-                    </a>
-                  </li>
-                  <li className="ml-2">
-                    <a
-                      className="icon-anchor-link"
-                      href="https://github.com/slaveatanasov"
-                      alt="GitHub"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <GithubIcon classes="social-button w-6" />
-                    </a>
-                  </li>
-                  <li className="ml-2">
-                    <a
-                      className="icon-anchor-link"
-                      href="mailto:slaveatan@gmail.com"
-                      alt="Email"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <EmailIcon classes="social-button w-6" />
-                    </a>
-                  </li>
-                </ul>
+              </div>
+              <div className="toptal-badge-wrapper">
+                <ToptalBadge />
               </div>
             </div>
           </div>
-          <div className="lg:w-1/2">
+          <div className="hero-media">
             <div className="image-sa-wrapper">
               <GatsbyImage
                 image={data.goodLookingDude.childImageSharp.gatsbyImageData}
@@ -388,14 +394,14 @@ export default ({ data }) => {
                     <p className="text-sm">02/2026 – Present</p>
                     <h4>Senior Web Developer</h4>
                     <a
-                      href="https://adevait.com/"
-                      alt="Adeva"
+                      href="https://www.deltatre.com/"
+                      alt="Deltatre"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      Adeva
+                      Deltatre
                     </a>{' '}
-                    (Deltatre contract)
+                    (via Toptal)
                     <p className="mt-1">
                       <div>
                         I work in <strong>Next.js</strong> on both <strong>client UI</strong> and{' '}
