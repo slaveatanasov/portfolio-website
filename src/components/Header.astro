@@ -63,9 +63,9 @@ const current = Astro.url.pathname;
     --hdr: 0;
     background-color: rgb(6 7 8 / calc(0.7 * var(--hdr)));
     border-bottom-color: rgb(22 25 30 / calc(0.8 * var(--hdr)));
-    backdrop-filter: blur(calc(12px * var(--hdr)));
-    -webkit-backdrop-filter: blur(calc(12px * var(--hdr)));
-    /* Smooths the jumps a mouse wheel makes through the 100px ramp. */
+    /* Smooths the jumps a mouse wheel makes through the 100px ramp.
+       Blur is set in the script: the CSS build drops unprefixed backdrop-filter,
+       and a variable inside blur() does not repaint, so only the tint showed. */
     transition:
       background-color 450ms ease,
       border-color 450ms ease,
@@ -83,6 +83,9 @@ const current = Astro.url.pathname;
       queued = false;
       const t = Math.min(Math.max(window.scrollY / RAMP, 0), 1);
       header.style.setProperty('--hdr', t.toFixed(3));
+      const blur = `blur(${(12 * t).toFixed(2)}px)`;
+      header.style.setProperty('backdrop-filter', blur);
+      header.style.setProperty('-webkit-backdrop-filter', blur);
     };
     window.addEventListener(
       'scroll',
