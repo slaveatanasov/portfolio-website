@@ -689,8 +689,8 @@ export default ({ data }) => {
               </p>
               <p className="mt-2 text-xl font-light leading-relaxed">
                 Marketing site from a client&apos;s design: Angular, responsive layout, slideshow,
-                tabbed sections, cards and banners, contact form, and cookie UI. Implemented to match
-                the mockups closely.
+                tabbed sections, cards and banners, contact form, and cookie UI. Implemented to
+                match the mockups closely.
               </p>
             </div>
           }
