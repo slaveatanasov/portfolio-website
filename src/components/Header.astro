@@ -64,10 +64,6 @@ const current = Astro.url.pathname;
     border-bottom-color: rgb(22 25 30 / calc(0.8 * var(--hdr)));
     transition: border-color 450ms ease;
   }
-  /* The frost is a separate layer so the blur is not flattened away by the
-     header background. Both values are written from the scroll script: the CSS
-     build drops unprefixed backdrop-filter, and a variable inside blur() does
-     not repaint. */
   .header-frost {
     position: absolute;
     inset: 0;
