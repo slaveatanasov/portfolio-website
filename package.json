@@ -1,35 +1,29 @@
 {
   "name": "slaveatanasov",
   "author": "Slave Atanasov",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "MIT",
+  "type": "module",
   "scripts": {
-    "dev": "gatsby develop",
-    "build": "gatsby build"
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "format": "prettier --write ."
   },
   "dependencies": {
-    "gatsby": "^5.13.1",
-    "gatsby-plugin-image": "^3.13.0",
-    "gatsby-plugin-manifest": "^5.13.0",
-    "gatsby-plugin-react-helmet": "^6.13.0",
-    "gatsby-plugin-sharp": "^5.13.0",
-    "gatsby-source-filesystem": "^5.13.0",
-    "gatsby-theme-codebushi": "1.0.0",
-    "gatsby-transformer-sharp": "^5.13.0",
-    "react": "^18.2.0",
-    "react-anchor-link-smooth-scroll": "^1.0.12",
-    "react-dom": "^18.2.0",
-    "react-helmet": "^6.1.0"
+    "@astrojs/sitemap": "^3.7.4",
+    "astro": "^7.4.0",
+    "motion": "^14.3.0",
+    "three": "^0.186.1"
   },
   "devDependencies": {
-    "eslint": "^8.56.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-jsx-a11y": "^6.8.0",
-    "eslint-plugin-prettier": "^5.1.2",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^3.1.1"
+    "@astrojs/check": "^0.9.10",
+    "@tailwindcss/vite": "^4.3.3",
+    "@types/three": "^0.186.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
+    "tailwindcss": "^4.3.3",
+    "typescript": "^6.0.3"
   }
 }

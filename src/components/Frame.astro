@@ -1,0 +1,45 @@
+---
+/**
+ * Dark bezel for light UI screenshots: browser-style chrome, inner shadow,
+ * so light images sit comfortably on the dark surface.
+ */
+interface Props {
+  class?: string;
+  caption?: string;
+}
+
+const { class: className, caption } = Astro.props;
+---
+
+<figure class:list={['frame overflow-hidden rounded-xl border border-border bg-[#0e1117]', className]}>
+  <div class="flex items-center gap-1.5 border-b border-border px-3 py-2" aria-hidden="true">
+    <span class="size-2 rounded-full bg-border-strong"></span>
+    <span class="size-2 rounded-full bg-border-strong"></span>
+    <span class="size-2 rounded-full bg-border-strong"></span>
+    {
+      caption && (
+        <span class="ml-3 truncate font-mono text-[0.65rem] tracking-wide text-fg-faint">
+          {caption}
+        </span>
+      )
+    }
+  </div>
+  <div class="frame-body relative">
+    <slot />
+  </div>
+</figure>
+
+<style>
+  .frame-body :global(img) {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  .frame-body::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.35);
+  }
+</style>

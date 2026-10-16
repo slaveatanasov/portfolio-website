@@ -1,0 +1,47 @@
+---
+const isHome = Astro.url.pathname === '/';
+const links = [
+  { href: isHome ? '#work' : '/#work', label: 'Work' },
+  { href: isHome ? '#products' : '/#products', label: 'Products', wide: true },
+  { href: '/about', label: 'About' },
+  { href: isHome ? '#contact' : '/#contact', label: 'Contact' },
+];
+const current = Astro.url.pathname;
+---
+
+<header
+  class="sticky top-0 z-50 border-b border-border/80 bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/60"
+>
+  <div class="container-site flex h-14 items-center justify-between gap-6">
+    <a
+      href="/"
+      class="brand-mark text-fg text-[1.6rem] no-underline hover:text-brand"
+      aria-label="Slave Atanasov, home"
+    >
+      SLAVE_ATANASOV
+    </a>
+    <nav aria-label="Primary">
+      <ul class="flex items-center gap-5 text-sm sm:gap-7">
+        {
+          links.map(({ href, label, wide }) => {
+            const active = !href.startsWith('#') && current.startsWith(href);
+            return (
+              <li class:list={[wide && 'hidden sm:block']}>
+                <a
+                  href={href}
+                  class:list={[
+                    'font-mono text-[0.8125rem] tracking-wide no-underline transition-colors',
+                    active ? 'text-fg' : 'text-fg-muted hover:text-fg',
+                  ]}
+                  aria-current={active ? 'page' : undefined}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>

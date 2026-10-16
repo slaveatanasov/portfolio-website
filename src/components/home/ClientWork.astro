@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import SectionHeading from '../SectionHeading.astro';
+import Tile from '../Tile.astro';
+import Chips from '../Chips.astro';
+import { formatRange } from '../../lib/format';
+
+const roles = (await getCollection('experience', ({ data }) => data.featured)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
+---
+
+<section id="work" class="container-site scroll-mt-20" aria-labelledby="work-title">
+  <SectionHeading label="Selected client work" title="Senior engineering inside serious teams">
+    <a
+      slot="aside"
+      href="/about#experience"
+      class="font-mono text-xs text-fg-muted no-underline hover:text-fg"
+    >
+      Full experience &rarr;
+    </a>
+  </SectionHeading>
+
+  <div class="grid gap-4 md:grid-cols-2">
+    {
+      roles.map(({ data }) => (
+        <Tile as="article" class="flex flex-col gap-5">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <p class="label mb-2">{formatRange(data.start, data.end)}</p>
+              <h3 class="text-lg font-semibold text-fg">
+                {data.company}
+                {data.via && <span class="font-normal text-fg-muted"> via {data.via}</span>}
+              </h3>
+              <p class="text-sm text-fg-muted">{data.title}</p>
+            </div>
+            {data.end === null && (
+              <span class="shrink-0 rounded-md border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-[0.65rem] tracking-wide text-emerald-300 uppercase">
+                Current
+              </span>
+            )}
+          </div>
+          <p class="text-sm leading-relaxed text-fg-muted">{data.summary}</p>
+          <Chips items={data.stack} class="mt-auto" />
+        </Tile>
+      ))
+    }
+  </div>
+</section>

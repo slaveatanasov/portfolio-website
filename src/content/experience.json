@@ -1,0 +1,132 @@
+[
+  {
+    "id": "deltatre",
+    "company": "Deltatre",
+    "url": "https://www.deltatre.com/",
+    "via": "Toptal",
+    "title": "Senior Web Developer",
+    "start": "2026-02",
+    "end": null,
+    "summary": "Next.js across client UI and server-side code for a sports media platform. I contribute to architecture and implement APIs in the context of merged companies and how their systems come together.",
+    "highlights": [
+      "Client UI and server-side code in Next.js",
+      "Architecture input and API implementation across merged systems"
+    ],
+    "stack": ["Next.js", "React", "TypeScript", "Node.js", "REST"],
+    "featured": true,
+    "order": 1
+  },
+  {
+    "id": "zoox",
+    "company": "Zoox",
+    "url": "https://zoox.com",
+    "title": "Senior Software Engineer",
+    "start": "2025-04",
+    "end": "2026-02",
+    "summary": "Contract role building the apps mechanics use to diagnose and repair autonomous vehicles: React, TypeScript, Redux Toolkit and in-house UI libraries inside a large monorepo.",
+    "highlights": [
+      "Diagnostics and repair tooling for autonomous vehicles",
+      "TypeScript/Node services, Docker on Linux VDIs, CI/CD",
+      "AI-assisted tooling for velocity; cross-team coordination"
+    ],
+    "stack": ["React", "TypeScript", "Redux Toolkit", "Node.js", "Docker", "Monorepo"],
+    "featured": true,
+    "order": 2
+  },
+  {
+    "id": "apple",
+    "company": "Apple",
+    "url": "https://www.apple.com",
+    "title": "Software Engineer",
+    "start": "2022-03",
+    "end": "2025-04",
+    "summary": "Contract role building and maintaining UIs and internal tools for Apple Music, iTunes and Apple TV+, including a platform for emerging music trends and a next-generation editorial media management system.",
+    "highlights": [
+      "Internal tools for Apple Music, iTunes and Apple TV+",
+      "Micro-frontend migration; partnered with design and product",
+      "Mentored contractors and demoed progress to stakeholders"
+    ],
+    "stack": ["React", "TypeScript", "Micro-frontends", "Design systems"],
+    "featured": true,
+    "order": 3
+  },
+  {
+    "id": "htec",
+    "company": "HTEC Group",
+    "url": "https://htecgroup.com",
+    "title": "Senior Software Engineer",
+    "start": "2022-03",
+    "end": "2026-02",
+    "summary": "Frontend and product delivery for HTEC's partners and clients: React, TypeScript, Next.js, Node.js, Docker, CI/CD and in-house design systems. Internal tools and customer-facing products.",
+    "highlights": [
+      "Delivery for partners and clients across internal and customer-facing products",
+      "Onboarded peers, demoed to stakeholders, worked closely with tech leads and design"
+    ],
+    "stack": ["React", "TypeScript", "Next.js", "Node.js", "Docker", "CI/CD"],
+    "featured": true,
+    "order": 4
+  },
+  {
+    "id": "be-group",
+    "company": "Be Group",
+    "url": "https://www.be-tse.it",
+    "location": "Milan, Italy",
+    "title": "Web Developer",
+    "start": "2021-05",
+    "end": "2022-03",
+    "summary": "Illimity contract: building and evolving the digital bank's online banking frontend with the team. React, TypeScript, Redux Toolkit, REST and Azure-hosted delivery; Next.js and Gatsby where static or SSR helped performance and UX.",
+    "stack": ["React", "TypeScript", "Redux Toolkit", "Next.js", "Azure"],
+    "featured": false,
+    "order": 5
+  },
+  {
+    "id": "ntt-data",
+    "company": "NTT Data Italia",
+    "url": "https://it.nttdata.com",
+    "location": "Milan, Italy",
+    "title": "Web Developer",
+    "start": "2020-05",
+    "end": "2021-05",
+    "summary": "Frontend on large REST-backed products for telco, energy and public sector clients (Vodafone, SKY UK, TIM, Sogei, Enel, government ministries) plus internal NTT Data work. React, TypeScript, Redux, Storybook, Jest, Figma and Azure, following each client's design system and delivery standards.",
+    "stack": ["React", "TypeScript", "Redux", "Storybook", "Jest", "Azure"],
+    "featured": false,
+    "order": 6
+  },
+  {
+    "id": "ipse-docet",
+    "company": "Ipse Docet",
+    "url": "https://ipsedocet.it/",
+    "location": "Milan, Italy",
+    "title": "Web Developer",
+    "start": "2020-01",
+    "end": "2022-03",
+    "summary": "Frontend developer for Ipse Docet clients across short- and long-term engagements at a Milan-based IT consultancy.",
+    "stack": ["React", "Angular", "TypeScript"],
+    "featured": false,
+    "order": 7
+  },
+  {
+    "id": "freelance-2019",
+    "company": "Freelance",
+    "title": "Freelance Web Developer",
+    "start": "2019-09",
+    "end": "2020-01",
+    "summary": "Marketing sites and React or Angular pieces from prototype to production, light UI/UX support, and WordPress sites with common builders.",
+    "stack": ["React", "Angular", "WordPress"],
+    "featured": false,
+    "order": 8
+  },
+  {
+    "id": "one-inside",
+    "company": "One Inside",
+    "url": "https://one-inside.com",
+    "location": "Skopje, North Macedonia",
+    "title": "Junior Software Developer",
+    "start": "2019-06",
+    "end": "2019-09",
+    "summary": "Trainee on a Swiss-led team in Skopje: frontend and backend tasks on several apps. Stack exposure included Angular, Node.js, TypeScript, databases, Docker, Git and Agile delivery.",
+    "stack": ["Angular", "Node.js", "TypeScript", "Docker"],
+    "featured": false,
+    "order": 9
+  }
+]

@@ -1,0 +1,56 @@
+---
+import HeroScene from '../HeroScene.astro';
+import SocialLinks from '../SocialLinks.astro';
+import { site } from '../../data/site';
+import { now } from '../../data/profile';
+---
+
+<section class="relative isolate overflow-hidden" aria-labelledby="hero-title">
+  <HeroScene class="absolute inset-0 -z-10" />
+  <div class="container-site relative pt-20 pb-16 sm:pt-28 sm:pb-24">
+    <p class="label mb-6 flex items-center gap-2" data-reveal>
+      <span class="relative inline-flex size-2">
+        <span
+          class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-60"
+        ></span>
+        <span class="relative inline-flex size-2 rounded-full bg-emerald-400"></span>
+      </span>
+      Available for select engagements
+    </p>
+
+    <h1 id="hero-title" class="max-w-4xl" data-reveal>
+      <span class="brand-mark block text-fg text-[clamp(3rem,9vw,6rem)]">Slave Atanasov</span>
+      <span
+        class="mt-2 block text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.05] font-semibold tracking-tight text-fg"
+      >
+        Senior Web Developer
+      </span>
+    </h1>
+
+    <p class="mt-7 max-w-2xl text-lg leading-relaxed text-fg-muted sm:text-xl" data-reveal>
+      Hi, I'm Slave. I build web software solo and with teams, from small shops to large
+      companies. Currently with Deltatre via Toptal; before that Zoox, Apple and HTEC. On the side
+      I ship my own products.
+    </p>
+
+    <div class="mt-9 flex flex-wrap items-center gap-3" data-reveal>
+      <a
+        href={`mailto:${site.email}`}
+        class="inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2.5 text-sm font-medium text-bg no-underline transition-colors hover:bg-white"
+      >
+        Email me
+      </a>
+      <a
+        href="#work"
+        class="inline-flex items-center gap-2 rounded-lg border border-border-strong px-4 py-2.5 text-sm font-medium text-fg no-underline transition-colors hover:border-fg-faint hover:bg-bg-raised"
+      >
+        See client work
+      </a>
+      <SocialLinks class="ml-1" />
+    </div>
+
+    <p class="mt-10 font-mono text-xs text-fg-faint" data-reveal>
+      <span class="text-fg-muted">now</span> · {now.role} · since {now.since}
+    </p>
+  </div>
+</section>

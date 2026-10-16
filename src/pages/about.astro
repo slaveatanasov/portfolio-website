@@ -1,0 +1,312 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import Chips from '../components/Chips.astro';
+import Tile from '../components/Tile.astro';
+import ToptalBadge from '../components/ToptalBadge.astro';
+import { site } from '../data/site';
+import { facts, now, stackGroups, principles } from '../data/profile';
+import { formatRange, formatDuration } from '../lib/format';
+import photo from '../assets/sa_img.jpg';
+
+const experience = (await getCollection('experience')).sort((a, b) => a.data.order - b.data.order);
+const education = (await getCollection('education')).sort((a, b) => a.data.order - b.data.order);
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
+const toc = [
+  { href: '#now', label: 'Now' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#stack', label: 'Stack' },
+  { href: '#how-i-work', label: 'How I work' },
+  { href: '#education', label: 'Education' },
+  { href: '#projects', label: 'Projects' },
+];
+---
+
+<Base
+  title={`About — ${site.name}`}
+  description="Full CV of Slave Atanasov: experience, stack, how I work, education and projects."
+>
+  <div class="container-site pt-16 pb-8 sm:pt-24">
+    <div class="grid gap-10 lg:grid-cols-[1fr_16rem] lg:gap-16">
+      <!-- Intro -->
+      <header class="max-w-3xl" data-reveal>
+        <p class="label mb-4">About</p>
+        <h1 class="text-4xl font-semibold tracking-tight text-fg sm:text-5xl">
+          The long version.
+        </h1>
+        <p class="mt-6 text-lg leading-relaxed text-fg-muted">
+          I'm Slave Atanasov, a senior web developer based in North Macedonia, working remotely
+          with teams across time zones. I started in 2019 after a full-time web development
+          program, spent three years in Milan-based consultancies building for banks, telcos and
+          the public sector, then moved into longer contracts with HTEC, Apple, Zoox and now
+          Deltatre via Toptal. Alongside client work I build and ship my own products.
+        </p>
+        <dl class="mt-8 grid gap-4 sm:grid-cols-3">
+          {
+            facts.map((f) => (
+              <div class="border-l border-border pl-4">
+                <dt class="label mb-1.5">{f.label}</dt>
+                <dd class="text-sm leading-snug text-fg">{f.value}</dd>
+              </div>
+            ))
+          }
+        </dl>
+        <p class="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs print:hidden">
+          {
+            toc.map((t) => (
+              <a href={t.href} class="text-fg-muted no-underline hover:text-fg">
+                {t.label}
+              </a>
+            ))
+          }
+          <button
+            type="button"
+            class="ml-auto text-fg-muted hover:text-fg"
+            onclick="window.print()"
+          >
+            Print / PDF
+          </button>
+        </p>
+      </header>
+
+      <!-- Side column -->
+      <aside class="flex flex-col gap-4 print:hidden" data-reveal>
+        <Tile padded={false} reveal={false} class="aspect-square">
+          <Image
+            src={photo}
+            alt="Slave Atanasov"
+            widths={[256, 384, 512]}
+            sizes="16rem"
+            class="size-full object-cover"
+          />
+        </Tile>
+        <div class="flex justify-center py-2">
+          <div class="scale-90"><ToptalBadge /></div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <div class="container-site flex max-w-3xl flex-col gap-20 pb-8">
+    <!-- Now -->
+    <section id="now" class="scroll-mt-20" data-reveal>
+      <p class="label mb-3">Now</p>
+      <h2 class="text-2xl font-semibold tracking-tight text-fg">{now.role}</h2>
+      <p class="mt-2 text-fg-muted">
+        Since {now.since}. {now.note}
+      </p>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="scroll-mt-20">
+      <p class="label mb-3" data-reveal>Experience</p>
+      <h2 class="mb-8 text-2xl font-semibold tracking-tight text-fg" data-reveal>
+        {experience.length} roles since 2019
+      </h2>
+      <ol class="relative border-l border-border">
+        {
+          experience.map(({ data }) => (
+            <li class="relative pb-10 pl-7 last:pb-0" data-reveal>
+              <span
+                class:list={[
+                  'absolute top-1.5 -left-[5px] size-[9px] rounded-full border-2 border-bg',
+                  data.end === null ? 'bg-emerald-400' : 'bg-border-strong',
+                ]}
+                aria-hidden="true"
+              />
+              <p class="label mb-1.5">
+                {formatRange(data.start, data.end)}
+                <span class="text-fg-faint/70"> · {formatDuration(data.start, data.end)}</span>
+              </p>
+              <h3 class="text-lg font-semibold text-fg">
+                {data.title}
+                <span class="font-normal text-fg-muted">
+                  {' '}
+                  at{' '}
+                  {data.url ? (
+                    <a href={data.url} target="_blank" rel="noopener noreferrer" class="text-fg-muted hover:text-fg">
+                      {data.company}
+                    </a>
+                  ) : (
+                    data.company
+                  )}
+                  {data.via && <> via {data.via}</>}
+                  {data.location && <span class="text-fg-faint"> · {data.location}</span>}
+                </span>
+              </h3>
+              <p class="mt-2 text-sm leading-relaxed text-fg-muted">{data.summary}</p>
+              {data.highlights.length > 0 && (
+                <ul class="mt-3 space-y-1 text-sm text-fg-muted">
+                  {data.highlights.map((h) => (
+                    <li class="flex gap-2">
+                      <span class="text-fg-faint" aria-hidden="true">
+                        –
+                      </span>
+                      {h}
+                    </li>
+                  ))}
+                </ul>
+              )}
+              {data.stack.length > 0 && <Chips items={data.stack} class="mt-4" />}
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+
+    <!-- Stack -->
+    <section id="stack" class="scroll-mt-20">
+      <p class="label mb-3" data-reveal>Stack & tools</p>
+      <h2 class="mb-8 text-2xl font-semibold tracking-tight text-fg" data-reveal>
+        What I reach for
+      </h2>
+      <div class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+        {
+          stackGroups.map((g) => (
+            <div data-reveal>
+              <h3 class="label mb-3 text-fg-muted">{g.name}</h3>
+              {'intro' in g && <p class="mb-3 text-sm leading-relaxed text-fg-muted">{g.intro}</p>}
+              <Chips items={g.items} size="sm" />
+            </div>
+          ))
+        }
+      </div>
+    </section>
+
+    <!-- How I work -->
+    <section id="how-i-work" class="scroll-mt-20">
+      <p class="label mb-3" data-reveal>How I work</p>
+      <h2 class="mb-8 text-2xl font-semibold tracking-tight text-fg" data-reveal>
+        Principles I hold myself to
+      </h2>
+      <dl class="grid gap-x-10 gap-y-6 sm:grid-cols-2">
+        {
+          principles.map((p) => (
+            <div data-reveal>
+              <dt class="font-semibold text-fg">{p.title}</dt>
+              <dd class="mt-1 text-sm leading-relaxed text-fg-muted">{p.text}</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="scroll-mt-20">
+      <p class="label mb-3" data-reveal>Education</p>
+      <h2 class="mb-8 text-2xl font-semibold tracking-tight text-fg" data-reveal>Background</h2>
+      <ul class="divide-y divide-border">
+        {
+          education.map(({ data }) => (
+            <li class="grid gap-1 py-5 first:pt-0 sm:grid-cols-[9rem_1fr] sm:gap-6" data-reveal>
+              <p class="label pt-1">{data.years}</p>
+              <div>
+                <h3 class="font-semibold text-fg">{data.title}</h3>
+                <p class="text-sm text-fg-muted">
+                  {data.url ? (
+                    <a href={data.url} target="_blank" rel="noopener noreferrer" class="text-fg-muted hover:text-fg">
+                      {data.institution}
+                    </a>
+                  ) : (
+                    data.institution
+                  )}
+                </p>
+                {data.summary && <p class="mt-2 text-sm leading-relaxed text-fg-muted">{data.summary}</p>}
+              </div>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="scroll-mt-20">
+      <p class="label mb-3" data-reveal>Projects</p>
+      <h2 class="mb-8 text-2xl font-semibold tracking-tight text-fg" data-reveal>
+        Own products and side work
+      </h2>
+      <ul class="divide-y divide-border">
+        {
+          projects.map(({ id, data }) => (
+            <li class="flex flex-col gap-2 py-5 first:pt-0 sm:flex-row sm:items-start sm:justify-between sm:gap-8" data-reveal>
+              <div class="max-w-xl">
+                <h3 class="font-semibold text-fg">
+                  {data.featured ? (
+                    <a href={`/work/${id}`} class="text-fg no-underline hover:text-accent">
+                      {data.title}
+                    </a>
+                  ) : (
+                    data.title
+                  )}
+                  <span class="font-normal text-fg-muted"> — {data.tagline}</span>
+                </h3>
+                <p class="mt-1.5 text-sm leading-relaxed text-fg-muted">{data.summary}</p>
+              </div>
+              <p class="shrink-0 font-mono text-xs text-fg-faint">
+                {data.featured && (
+                  <a href={`/work/${id}`} class="text-fg-muted no-underline hover:text-fg">
+                    Case study &rarr;
+                  </a>
+                )}
+                {!data.featured && data.repo && (
+                  <a href={data.repo} target="_blank" rel="noopener noreferrer" class="text-fg-muted no-underline hover:text-fg">
+                    GitHub &rarr;
+                  </a>
+                )}
+              </p>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="mt-6 font-mono text-xs text-fg-faint">
+        Smaller experiments and older work:{' '}
+        <a href={`${site.github}?tab=repositories`} target="_blank" rel="noopener noreferrer">
+          github.com/slaveatanasov
+        </a>
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style is:global>
+  @media print {
+    @page {
+      margin: 16mm;
+    }
+    html {
+      background: #fff !important;
+      color: #111 !important;
+    }
+    header[class*='sticky'],
+    footer,
+    [data-reveal] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
+    header[class*='sticky'],
+    footer {
+      display: none !important;
+    }
+    .text-fg,
+    .text-fg-muted,
+    .text-fg-faint,
+    .label {
+      color: #111 !important;
+    }
+    .text-fg-muted,
+    .text-fg-faint,
+    .label {
+      color: #444 !important;
+    }
+    a {
+      color: #111 !important;
+      text-decoration: none !important;
+    }
+    li,
+    section {
+      break-inside: avoid;
+    }
+  }
+</style>

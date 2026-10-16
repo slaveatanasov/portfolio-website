@@ -1,0 +1,164 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Surfaces */
+  --color-bg: #0b0d12;
+  --color-bg-raised: #12151c;
+  --color-bg-hover: #171b24;
+  --color-border: #1f2430;
+  --color-border-strong: #2c3342;
+
+  /* Text */
+  --color-fg: #e6e8ee;
+  --color-fg-muted: #9aa3b2;
+  --color-fg-faint: #6b7483;
+
+  /* Accent (electric blue, ties to Toptal) and brand red */
+  --color-accent: #4d8dff;
+  --color-accent-hover: #7aaaff;
+  --color-brand: #ff3b3b;
+
+  /* Type */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-jetbrains-mono);
+  --font-brand: var(--font-vt323);
+
+  /* Radii */
+  --radius-tile: 1rem;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background: color-mix(in oklab, var(--color-accent) 35%, transparent);
+  }
+
+  a {
+    color: var(--color-accent);
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+    transition: color 120ms ease;
+  }
+
+  a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .container-site {
+    width: 100%;
+    max-width: 72rem;
+    margin-inline: auto;
+    padding-inline: clamp(1.25rem, 4vw, 2.5rem);
+  }
+
+  .label {
+    font-family: var(--font-mono);
+    font-size: 0.6875rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-fg-faint);
+  }
+
+  .brand-mark {
+    font-family: var(--font-brand);
+    font-weight: 400;
+    line-height: 0.85;
+    letter-spacing: 0.01em;
+    transition: color 120ms ease;
+  }
+
+  .brand-mark:hover {
+    color: var(--color-brand);
+    cursor: crosshair;
+  }
+
+  .prose-dark {
+    color: var(--color-fg-muted);
+    line-height: 1.7;
+  }
+
+  .prose-dark h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-fg);
+    margin-top: 2.25rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.01em;
+  }
+
+  .prose-dark h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-fg);
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .prose-dark p {
+    margin-bottom: 1rem;
+  }
+
+  .prose-dark ul {
+    list-style: disc outside;
+    padding-left: 1.25rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose-dark li {
+    margin-bottom: 0.35rem;
+  }
+
+  .prose-dark li::marker {
+    color: var(--color-fg-faint);
+  }
+
+  .prose-dark strong {
+    color: var(--color-fg);
+    font-weight: 600;
+  }
+
+  .prose-dark a {
+    text-decoration: underline;
+  }
+}
+
+@layer utilities {
+  /* Hidden only when JS is running and motion is allowed; Motion animates them in. */
+  @media (prefers-reduced-motion: no-preference) {
+    html.js [data-reveal] {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+}

@@ -1,0 +1,20 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site';
+---
+
+<Base title={`Not found — ${site.name}`} description="This page does not exist.">
+  <div class="container-site flex flex-col items-start gap-6 py-32">
+    <p class="label">Error 404</p>
+    <h1 class="brand-mark text-fg text-[clamp(3rem,10vw,6rem)]">Page not found</h1>
+    <p class="max-w-md text-fg-muted">
+      Nothing lives at this address. The home page has everything that does.
+    </p>
+    <a
+      href="/"
+      class="inline-flex items-center rounded-lg bg-fg px-4 py-2.5 text-sm font-medium text-bg no-underline hover:bg-white"
+    >
+      Go home
+    </a>
+  </div>
+</Base>

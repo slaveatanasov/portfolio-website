@@ -1,0 +1,46 @@
+---
+import SocialLinks from './SocialLinks.astro';
+import { site } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer id="contact" class="mt-24 border-t border-border">
+  <div class="container-site grid gap-10 py-16 md:grid-cols-[1.4fr_1fr] md:gap-16">
+    <div data-reveal>
+      <p class="label mb-4">Contact</p>
+      <h2 class="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+        Have a project or a team that needs a senior hand?
+      </h2>
+      <p class="mt-4 max-w-xl text-fg-muted">
+        I selectively take on new work when capacity and fit align. Email is the fastest way to
+        reach me.
+      </p>
+      <div class="mt-7 flex flex-wrap items-center gap-3">
+        <a
+          href={`mailto:${site.email}`}
+          class="inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2.5 text-sm font-medium text-bg no-underline transition-colors hover:bg-white hover:text-bg"
+        >
+          {site.email}
+        </a>
+        <a
+          href={site.toptal}
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 rounded-lg border border-border-strong px-4 py-2.5 text-sm font-medium text-fg no-underline transition-colors hover:border-fg-faint hover:bg-bg-raised"
+        >
+          Hire via Toptal
+        </a>
+      </div>
+    </div>
+    <div class="flex flex-col justify-between gap-8" data-reveal>
+      <div>
+        <p class="label mb-4">Elsewhere</p>
+        <SocialLinks size="lg" />
+      </div>
+      <p class="font-mono text-xs text-fg-faint">
+        &copy; {year} Slave Atanasov. Built with Astro.
+      </p>
+    </div>
+  </div>
+</footer>

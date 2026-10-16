@@ -1,0 +1,161 @@
+---
+import type { GetStaticPaths } from 'astro';
+import { getCollection, render } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../../layouts/Base.astro';
+import Frame from '../../components/Frame.astro';
+import Chips from '../../components/Chips.astro';
+import Tile from '../../components/Tile.astro';
+import { site } from '../../data/site';
+
+export const getStaticPaths = (async () => {
+  const featured = (await getCollection('projects', ({ data }) => data.featured)).sort(
+    (a, b) => a.data.order - b.data.order,
+  );
+  return featured.map((entry, i) => ({
+    params: { slug: entry.id },
+    props: {
+      entry,
+      prev: featured[i - 1] ?? featured[featured.length - 1],
+      next: featured[i + 1] ?? featured[0],
+    },
+  }));
+}) satisfies GetStaticPaths;
+
+const { entry, prev, next } = Astro.props;
+const { data } = entry;
+const { Content } = await render(entry);
+const statusLabel = { live: 'Live', archived: 'Retired product', 'open-source': 'Open source' }[
+  data.status
+];
+---
+
+<Base
+  title={`${data.title} — ${site.name}`}
+  description={data.summary}
+  ogImage={data.cover?.src}
+>
+  <article class="container-site pt-16 pb-8 sm:pt-24">
+    <nav class="mb-8 font-mono text-xs text-fg-faint" aria-label="Breadcrumb" data-reveal>
+      <a href="/" class="text-fg-muted no-underline hover:text-fg">Home</a>
+      <span aria-hidden="true"> / </span>
+      <a href="/#products" class="text-fg-muted no-underline hover:text-fg">Products</a>
+      <span aria-hidden="true"> / </span>
+      <span class="text-fg">{data.title}</span>
+    </nav>
+
+    <header class="grid gap-10 lg:grid-cols-[1fr_18rem] lg:gap-16">
+      <div data-reveal>
+        <p class="label mb-4">Case study · {statusLabel}</p>
+        <h1 class="text-4xl font-semibold tracking-tight text-fg sm:text-5xl">{data.title}</h1>
+        <p class="mt-4 text-xl text-fg-muted">{data.tagline}</p>
+        <p class="mt-6 max-w-2xl leading-relaxed text-fg-muted">{data.summary}</p>
+      </div>
+      <dl class="flex flex-col gap-5 lg:pt-10" data-reveal>
+        <div>
+          <dt class="label mb-1.5">Role</dt>
+          <dd class="text-sm text-fg">{data.role}</dd>
+        </div>
+        {
+          data.years && (
+            <div>
+              <dt class="label mb-1.5">Years</dt>
+              <dd class="text-sm text-fg">{data.years}</dd>
+            </div>
+          )
+        }
+        <div>
+          <dt class="label mb-1.5">Stack</dt>
+          <dd><Chips items={data.stack} /></dd>
+        </div>
+        {
+          data.status === 'live' && data.url && (
+            <div>
+              <dt class="label mb-1.5">Link</dt>
+              <dd class="text-sm">
+                <a href={data.url} target="_blank" rel="noopener noreferrer">
+                  {new URL(data.url).host}
+                </a>
+              </dd>
+            </div>
+          )
+        }
+      </dl>
+    </header>
+
+    {
+      data.cover && (
+        <div class="mt-12" data-reveal>
+          <Frame caption={data.coverAlt ?? data.title}>
+            <Image
+              src={data.cover}
+              alt={data.coverAlt ?? data.title}
+              widths={[768, 1200, 1600]}
+              sizes="(min-width: 1152px) 72rem, 100vw"
+              loading="eager"
+            />
+          </Frame>
+        </div>
+      )
+    }
+
+    {
+      data.outcomes.length > 0 && (
+        <ul class="mt-6 grid gap-4 sm:grid-cols-3" role="list">
+          {data.outcomes.map((o) => (
+            <Tile as="li" class="flex flex-col gap-2">
+              <span class="text-3xl font-semibold tracking-tight text-fg">{o.value}</span>
+              <span class="label">{o.label}</span>
+            </Tile>
+          ))}
+        </ul>
+      )
+    }
+
+    <div class="prose-dark mt-14 max-w-3xl" data-reveal>
+      <Content />
+    </div>
+
+    {
+      data.gallery.length > 0 && (
+        <section class="mt-16" aria-label="Screenshots">
+          <p class="label mb-6" data-reveal>
+            Screens
+          </p>
+          <div class="grid gap-6 md:grid-cols-2">
+            {data.gallery.map((g) => (
+              <div data-reveal>
+                <Frame caption={g.caption}>
+                  <Image src={g.src} alt={g.alt} widths={[480, 768, 1024]} sizes="(min-width: 768px) 36rem, 100vw" />
+                </Frame>
+              </div>
+            ))}
+          </div>
+        </section>
+      )
+    }
+
+    <nav
+      class="mt-20 grid gap-4 border-t border-border pt-8 sm:grid-cols-2"
+      aria-label="Other case studies"
+      data-reveal
+    >
+      {
+        prev.id !== entry.id && prev.id !== next.id && (
+          <a href={`/work/${prev.id}`} class="group flex flex-col gap-1 no-underline">
+            <span class="label">Previous</span>
+            <span class="text-lg font-semibold text-fg group-hover:text-accent">{prev.data.title}</span>
+          </a>
+        )
+      }
+      {
+        next.id !== entry.id && (
+          <a href={`/work/${next.id}`} class="group flex flex-col gap-1 no-underline sm:text-right">
+            <span class="label">Next</span>
+            <span class="text-lg font-semibold text-fg group-hover:text-accent">{next.data.title}</span>
+          </a>
+        )
+      }
+    </nav>
+  </article>
+</Base>

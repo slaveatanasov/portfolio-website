@@ -1,0 +1,73 @@
+---
+/**
+ * Three.js hero backdrop as a custom element. The `three` chunk is imported lazily
+ * once the element is on screen; the scene pauses when hidden and disposes on removal.
+ * Falls back to a static gradient when WebGL is unavailable or motion is reduced.
+ */
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<hero-scene class:list={['hero-scene block', className]} aria-hidden="true">
+  <canvas class="size-full"></canvas>
+</hero-scene>
+
+<style>
+  .hero-scene {
+    background:
+      radial-gradient(60% 50% at 70% 20%, color-mix(in oklab, var(--color-accent) 14%, transparent), transparent 70%),
+      radial-gradient(40% 40% at 20% 80%, color-mix(in oklab, var(--color-accent) 8%, transparent), transparent 70%);
+    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+  }
+  .hero-scene canvas {
+    opacity: 0;
+    transition: opacity 900ms ease;
+  }
+  .hero-scene.is-ready canvas {
+    opacity: 1;
+  }
+</style>
+
+<script>
+  class HeroScene extends HTMLElement {
+    #dispose: (() => void) | null = null;
+    #observer: IntersectionObserver | null = null;
+
+    connectedCallback() {
+      const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const canvas = this.querySelector('canvas');
+      if (reduced || !canvas || !supportsWebGL()) return;
+
+      this.#observer = new IntersectionObserver(
+        async ([entry]) => {
+          if (!entry?.isIntersecting || this.#dispose) return;
+          this.#observer?.disconnect();
+          const { mountHeroScene } = await import('../scripts/hero-scene');
+          this.#dispose = mountHeroScene(canvas, this);
+          this.classList.add('is-ready');
+        },
+        { rootMargin: '200px' },
+      );
+      this.#observer.observe(this);
+    }
+
+    disconnectedCallback() {
+      this.#observer?.disconnect();
+      this.#dispose?.();
+      this.#dispose = null;
+    }
+  }
+
+  function supportsWebGL(): boolean {
+    try {
+      const c = document.createElement('canvas');
+      return !!(c.getContext('webgl2') || c.getContext('webgl'));
+    } catch {
+      return false;
+    }
+  }
+
+  if (!customElements.get('hero-scene')) customElements.define('hero-scene', HeroScene);
+</script>

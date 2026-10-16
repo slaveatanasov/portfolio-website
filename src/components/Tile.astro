@@ -1,0 +1,54 @@
+---
+/**
+ * Bento cell. 1px border, subtle top highlight, hover brightens the border.
+ * Pass `as="a"` + href to make the whole tile a link.
+ */
+interface Props {
+  as?: 'div' | 'a' | 'article' | 'section' | 'li';
+  href?: string;
+  class?: string;
+  padded?: boolean;
+  interactive?: boolean;
+  reveal?: boolean;
+  [key: string]: unknown;
+}
+
+const {
+  as: Tag = 'div',
+  class: className,
+  padded = true,
+  interactive = false,
+  reveal = true,
+  ...rest
+} = Astro.props;
+---
+
+<Tag
+  class:list={[
+    'tile relative overflow-hidden rounded-tile border border-border bg-bg-raised',
+    padded && 'p-5 sm:p-6',
+    (interactive || Tag === 'a') &&
+      'no-underline transition-colors duration-200 hover:border-border-strong hover:bg-bg-hover',
+    className,
+  ]}
+  data-reveal={reveal ? '' : undefined}
+  {...rest}
+>
+  <slot />
+</Tag>
+
+<style>
+  .tile::before {
+    content: '';
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      color-mix(in oklab, var(--color-fg) 14%, transparent),
+      transparent
+    );
+    pointer-events: none;
+  }
+</style>

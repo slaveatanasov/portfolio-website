@@ -1,0 +1,29 @@
+---
+import SectionHeading from '../SectionHeading.astro';
+import Tile from '../Tile.astro';
+import { principles } from '../../data/profile';
+
+const items = principles.filter((p) => p.home);
+---
+
+<section class="container-site" aria-labelledby="how-title">
+  <SectionHeading label="How I work" title="What you can expect">
+    <a slot="aside" href="/about#how-i-work" class="font-mono text-xs text-fg-muted no-underline hover:text-fg">
+      All principles &rarr;
+    </a>
+  </SectionHeading>
+
+  <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4" role="list">
+    {
+      items.map((p, i) => (
+        <Tile as="li" class="flex flex-col gap-4">
+          <span class="font-mono text-xs text-fg-faint">0{i + 1}</span>
+          <div>
+            <h3 class="font-semibold text-fg">{p.title}</h3>
+            <p class="mt-1.5 text-sm leading-relaxed text-fg-muted">{p.text}</p>
+          </div>
+        </Tile>
+      ))
+    }
+  </ul>
+</section>

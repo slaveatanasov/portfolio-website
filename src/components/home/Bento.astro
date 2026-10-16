@@ -1,0 +1,64 @@
+---
+import { Image } from 'astro:assets';
+import Tile from '../Tile.astro';
+import Chips from '../Chips.astro';
+import ToptalBadge from '../ToptalBadge.astro';
+import { facts, coreStack } from '../../data/profile';
+import photo from '../../assets/sa_img.jpg';
+
+const [availability, location, citizenship] = facts;
+---
+
+<section class="container-site" aria-label="At a glance">
+  <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-12">
+    <!-- Availability: wide -->
+    <Tile class="sm:col-span-2 lg:col-span-6 flex flex-col justify-between gap-8">
+      <p class="label">{availability.label}</p>
+      <div>
+        <p class="text-xl leading-snug font-medium text-fg sm:text-2xl">
+          {availability.value}
+        </p>
+        <p class="mt-3 text-sm text-fg-muted">
+          Contract, fractional or project-based. Embedded in your team or delivering end to end.
+        </p>
+      </div>
+    </Tile>
+
+    <!-- Toptal badge: raised -->
+    <Tile class="lg:col-span-3 flex items-center justify-center bg-bg-hover" padded={false}>
+      <div class="scale-[0.9] py-4 sm:scale-100">
+        <ToptalBadge />
+      </div>
+    </Tile>
+
+    <!-- Photo -->
+    <Tile class="lg:col-span-3 lg:row-span-2" padded={false}>
+      <Image
+        src={photo}
+        alt="Slave Atanasov at his desk"
+        widths={[320, 480, 640]}
+        sizes="(min-width: 1024px) 18rem, (min-width: 640px) 50vw, 100vw"
+        class="size-full object-cover grayscale-[20%] transition-[filter] duration-300 hover:grayscale-0"
+        loading="eager"
+      />
+    </Tile>
+
+    <!-- Location -->
+    <Tile class="lg:col-span-3 flex flex-col justify-between gap-6">
+      <p class="label">{location.label}</p>
+      <p class="text-base leading-snug font-medium text-fg">{location.value}</p>
+    </Tile>
+
+    <!-- Citizenship -->
+    <Tile class="lg:col-span-3 flex flex-col justify-between gap-6">
+      <p class="label">{citizenship.label}</p>
+      <p class="text-base leading-snug font-medium text-fg">{citizenship.value}</p>
+    </Tile>
+
+    <!-- Core stack -->
+    <Tile class="sm:col-span-2 lg:col-span-3 flex flex-col justify-between gap-6">
+      <p class="label">Core stack</p>
+      <Chips items={coreStack} />
+    </Tile>
+  </div>
+</section>

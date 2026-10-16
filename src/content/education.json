@@ -1,0 +1,26 @@
+[
+  {
+    "id": "semos",
+    "years": "2018 – 2019",
+    "title": "Web Development Program",
+    "institution": "Semos Education, Skopje",
+    "url": "https://semosedu.com.mk",
+    "summary": "Full-time program covering the modern web stack: HTML/CSS, JavaScript, Node.js, MongoDB, React, Redux, Angular, TypeScript, Linux, Git, HTTP and REST APIs.",
+    "order": 1
+  },
+  {
+    "id": "fon",
+    "years": "2008 – 2010",
+    "title": "University (paused)",
+    "institution": "Faculty of Applied Foreign Languages, business track, FON University, Skopje",
+    "summary": "Studied two of four years, then paused to pursue other paths.",
+    "order": 2
+  },
+  {
+    "id": "high-school",
+    "years": "2004 – 2008",
+    "title": "High school diploma",
+    "institution": "Public High School \"Jane Sandanski\", North Macedonia",
+    "order": 3
+  }
+]
