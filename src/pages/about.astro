@@ -17,7 +17,7 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 const toc = [
   { href: '#now', label: 'Now' },
   { href: '#experience', label: 'Experience' },
-  { href: '#stack', label: 'Stack' },
+  { href: '#stack', label: 'Tech stack' },
   { href: '#how-i-work', label: 'How I work' },
   { href: '#education', label: 'Education' },
   { href: '#projects', label: 'Projects' },
@@ -38,41 +38,52 @@ const toc = [
         </h1>
         <p class="mt-6 text-lg leading-relaxed text-fg-muted">
           I'm Slave Atanasov, a senior web developer based in North Macedonia, working remotely
-          with teams across time zones. I started in 2019 after a full-time web development
-          program, spent three years in Milan-based consultancies building for banks, telcos and
-          the public sector, then moved into longer contracts with HTEC, Apple, Zoox and now
-          Deltatre via Toptal. Alongside client work I build and ship my own products.
+          with teams across time zones. Before software, I was an electronic music producer, DJ and
+          label owner. In 2018, I put that on hold and focused my artistic side on software
+          development.
+        </p>
+        <p class="mt-4 text-lg leading-relaxed text-fg-muted">
+          Since then, I've built for banking, telecom and the public sector, then with HTEC, Apple in
+          media, Zoox in automotive and now Deltatre in sports content. The passion for art, music
+          and tech is alive and kicking: alongside client work, I build and ship my own products.
         </p>
         <dl class="mt-8 grid gap-4 sm:grid-cols-3">
           {
             facts.map((f) => (
               <div class="border-l border-border pl-4">
                 <dt class="label mb-1.5">{f.label}</dt>
-                <dd class="text-sm leading-snug text-fg">{f.value}</dd>
+                <dd class="text-sm leading-snug text-fg">
+                  {f.value}
+                  {'note' in f && <span class="mt-1 block text-fg-muted">{f.note}</span>}
+                </dd>
               </div>
             ))
           }
         </dl>
-        <p class="mt-8 flex flex-wrap gap-x-5 gap-y-2 font-mono text-xs print:hidden">
-          {
-            toc.map((t) => (
-              <a href={t.href} class="text-fg-muted no-underline hover:text-fg">
-                {t.label}
-              </a>
-            ))
-          }
-          <button
-            type="button"
-            class="ml-auto text-fg-muted hover:text-fg"
-            onclick="window.print()"
-          >
-            Print / PDF
-          </button>
-        </p>
+        <nav class="mt-10" aria-labelledby="quick-menu-title">
+          <p id="quick-menu-title" class="label mb-3">Quick menu · jump to</p>
+          <ul class="flex flex-wrap gap-2">
+            {
+              toc.map((t) => (
+                <li>
+                  <a
+                    href={t.href}
+                    class="group inline-flex items-center gap-1.5 rounded-full border border-border-strong bg-bg-raised px-3.5 py-1.5 font-mono text-xs text-fg-muted no-underline transition-colors hover:border-fg-faint hover:bg-bg-hover hover:text-fg"
+                  >
+                    {t.label}
+                    <span class="text-fg-faint transition-transform group-hover:translate-y-0.5 group-hover:text-fg" aria-hidden="true">
+                      &darr;
+                    </span>
+                  </a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
       </header>
 
       <!-- Side column -->
-      <aside class="flex flex-col gap-4 print:hidden" data-reveal>
+      <aside class="flex flex-col gap-4" data-reveal>
         <Tile padded={false} reveal={false} class="aspect-square">
           <Image
             src={photo}
@@ -158,9 +169,9 @@ const toc = [
 
     <!-- Stack -->
     <section id="stack" class="scroll-mt-20">
-      <p class="label mb-3" data-reveal>Stack & tools</p>
+      <p class="label mb-3" data-reveal>Tech stack</p>
       <h2 class="mb-8 text-2xl font-semibold tracking-tight text-fg" data-reveal>
-        What I reach for
+        Tools, frameworks and AI
       </h2>
       <div class="grid gap-x-10 gap-y-8 sm:grid-cols-2">
         {
@@ -225,7 +236,7 @@ const toc = [
     <section id="projects" class="scroll-mt-20">
       <p class="label mb-3" data-reveal>Projects</p>
       <h2 class="mb-8 text-2xl font-semibold tracking-tight text-fg" data-reveal>
-        Own products and side work
+        Client projects and my own products
       </h2>
       <ul class="divide-y divide-border">
         {
@@ -269,44 +280,3 @@ const toc = [
     </section>
   </div>
 </Base>
-
-<style is:global>
-  @media print {
-    @page {
-      margin: 16mm;
-    }
-    html {
-      background: #fff !important;
-      color: #111 !important;
-    }
-    header[class*='sticky'],
-    footer,
-    [data-reveal] {
-      opacity: 1 !important;
-      transform: none !important;
-    }
-    header[class*='sticky'],
-    footer {
-      display: none !important;
-    }
-    .text-fg,
-    .text-fg-muted,
-    .text-fg-faint,
-    .label {
-      color: #111 !important;
-    }
-    .text-fg-muted,
-    .text-fg-faint,
-    .label {
-      color: #444 !important;
-    }
-    a {
-      color: #111 !important;
-      text-decoration: none !important;
-    }
-    li,
-    section {
-      break-inside: avoid;
-    }
-  }
-</style>

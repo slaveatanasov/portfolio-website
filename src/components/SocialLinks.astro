@@ -4,16 +4,26 @@ import { site } from '../data/site';
 interface Props {
   size?: 'sm' | 'lg';
   class?: string;
+  hideEmail?: boolean;
+  /** `hero` sits on the aurora: darker fill, brighter edge. */
+  tone?: 'default' | 'hero';
 }
 
-const { size = 'sm', class: className } = Astro.props;
+const { size = 'sm', class: className, hideEmail = false, tone = 'default' } = Astro.props;
 const icon = size === 'lg' ? 'size-5' : 'size-[1.125rem]';
 const pad = size === 'lg' ? 'size-11' : 'size-9';
+// `key` is the borderless physical-button style from global.css.
+const toneClass =
+  tone === 'hero'
+    ? 'key'
+    : 'border border-border text-fg-muted no-underline transition-colors duration-150 hover:border-border-strong hover:bg-bg-raised hover:text-fg';
 
 const items = [
   { href: site.linkedin, label: 'LinkedIn', icon: 'linkedin' },
   { href: site.github, label: 'GitHub', icon: 'github' },
-  { href: `mailto:${site.email}`, label: 'Email', icon: 'email' },
+  ...(!hideEmail
+    ? [{ href: `mailto:${site.email}`, label: 'Email', icon: 'email' as const }]
+    : []),
 ];
 ---
 
@@ -29,7 +39,8 @@ const items = [
           title={label}
           class:list={[
             pad,
-            'inline-flex items-center justify-center rounded-lg border border-border text-fg-muted no-underline transition-colors hover:border-border-strong hover:bg-bg-raised hover:text-fg',
+            toneClass,
+            'inline-flex items-center justify-center rounded-lg',
           ]}
         >
           {name === 'linkedin' && (

@@ -10,7 +10,7 @@
 import { animate } from 'motion/mini';
 import { inView } from 'motion';
 
-const STAGGER = 0.06;
+const STAGGER = 0.12;
 const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 if (reduced) {
@@ -39,8 +39,8 @@ if (reduced) {
           pending.delete(e);
           animate(
             e,
-            { opacity: [0, 1], transform: ['translateY(14px)', 'translateY(0px)'] },
-            { duration: 0.55, delay: i * STAGGER, ease: [0.22, 1, 0.36, 1] },
+            { opacity: [0, 1], transform: ['translateY(22px)', 'translateY(0px)'] },
+            { duration: 1.1, delay: i * STAGGER, ease: [0.22, 1, 0.36, 1] },
           );
         });
       },

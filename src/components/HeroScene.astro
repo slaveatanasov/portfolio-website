@@ -19,14 +19,12 @@ const { class: className } = Astro.props;
     background:
       radial-gradient(60% 50% at 70% 20%, color-mix(in oklab, var(--color-accent) 14%, transparent), transparent 70%),
       radial-gradient(40% 40% at 20% 80%, color-mix(in oklab, var(--color-accent) 8%, transparent), transparent 70%);
-    mask-image: linear-gradient(to bottom, black 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 78%, transparent 100%);
   }
   .hero-scene canvas {
-    opacity: 0;
-    transition: opacity 900ms ease;
-  }
-  .hero-scene.is-ready canvas {
-    opacity: 1;
+    display: block;
+    width: 100%;
+    height: 100%;
   }
 </style>
 
@@ -44,8 +42,14 @@ const { class: className } = Astro.props;
         async ([entry]) => {
           if (!entry?.isIntersecting || this.#dispose) return;
           this.#observer?.disconnect();
-          const { mountHeroScene } = await import('../scripts/hero-scene');
-          this.#dispose = mountHeroScene(canvas, this);
+          // Below lg (where the hero stacks) use the wide, quieter mobile field; chosen at mount.
+          if (window.matchMedia('(max-width: 1023px)').matches) {
+            const { mountHeroSceneMobile } = await import('../scripts/hero-scene-mobile');
+            this.#dispose = mountHeroSceneMobile(canvas, this);
+          } else {
+            const { mountHeroScene } = await import('../scripts/hero-scene');
+            this.#dispose = mountHeroScene(canvas, this);
+          }
           this.classList.add('is-ready');
         },
         { rootMargin: '200px' },

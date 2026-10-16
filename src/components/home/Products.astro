@@ -1,68 +1,21 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
 import SectionHeading from '../SectionHeading.astro';
-import Tile from '../Tile.astro';
-import Frame from '../Frame.astro';
-import Chips from '../Chips.astro';
-import { site } from '../../data/site';
+import ProjectCard from '../ProjectCard.astro';
 
-const all = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
-const featured = all.filter((p) => p.data.featured);
-const others = all.filter((p) => !p.data.featured);
+const featured = (await getCollection('projects', ({ data }) => data.featured)).sort(
+  (a, b) => a.data.order - b.data.order,
+);
 ---
 
-<section id="products" class="container-site scroll-mt-20" aria-labelledby="products-title">
-  <SectionHeading label="Products I built" title="Shipping my own things, end to end">
-    <p slot="aside" class="max-w-xs font-mono text-xs text-fg-faint">
-      Both products are retired. Case studies show what was built and why.
-    </p>
+<section id="projects" class="container-site scroll-mt-20" aria-labelledby="projects-label">
+  <SectionHeading id="projects" label="Projects" title="Client builds and my own products, end to end">
+    <a slot="aside" href="/projects" class="font-mono text-xs text-fg-muted no-underline hover:text-fg">
+      All projects &rarr;
+    </a>
   </SectionHeading>
 
   <div class="grid gap-4 lg:grid-cols-2">
-    {
-      featured.map(({ id, data }) => (
-        <Tile as="a" href={`/work/${id}`} class="group flex flex-col gap-6" aria-label={`${data.title} case study`}>
-          {data.cover && (
-            <Frame caption={data.title.toLowerCase().replace(/\s+/g, '')}>
-              <Image
-                src={data.cover}
-                alt={data.coverAlt ?? data.title}
-                widths={[480, 768, 1024]}
-                sizes="(min-width: 1024px) 34rem, 100vw"
-                class="aspect-[16/10] object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]"
-              />
-            </Frame>
-          )}
-          <div class="flex flex-col gap-3">
-            <div class="flex items-start justify-between gap-4">
-              <div>
-                <h3 class="text-xl font-semibold text-fg">{data.title}</h3>
-                <p class="mt-1 text-sm text-fg-muted">{data.tagline}</p>
-              </div>
-              <span class="shrink-0 font-mono text-xs text-fg-faint transition-colors group-hover:text-fg">
-                Case study &rarr;
-              </span>
-            </div>
-            <p class="text-sm leading-relaxed text-fg-muted">{data.summary}</p>
-            <Chips items={data.stack} class="mt-1" />
-          </div>
-        </Tile>
-      ))
-    }
-  </div>
-
-  <div class="mt-6 flex flex-wrap items-center justify-between gap-3 border-t border-border pt-5" data-reveal>
-    <p class="text-sm text-fg-muted">
-      Also: {others.map((p) => p.data.title).join(', ')}.
-    </p>
-    <a
-      href={`${site.github}?tab=repositories`}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="font-mono text-xs text-fg-muted no-underline hover:text-fg"
-    >
-      More on GitHub &rarr;
-    </a>
+    {featured.map((project) => <ProjectCard project={project} />)}
   </div>
 </section>

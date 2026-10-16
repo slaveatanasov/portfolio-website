@@ -2,23 +2,23 @@
 const isHome = Astro.url.pathname === '/';
 const links = [
   { href: isHome ? '#work' : '/#work', label: 'Work' },
-  { href: isHome ? '#products' : '/#products', label: 'Products', wide: true },
+  { href: '/projects', label: 'Projects', wide: true },
   { href: '/about', label: 'About' },
-  { href: isHome ? '#contact' : '/#contact', label: 'Contact' },
+  { href: '/contact', label: 'Contact' },
 ];
 const current = Astro.url.pathname;
 ---
 
-<header
-  class="sticky top-0 z-50 border-b border-border/80 bg-bg/80 backdrop-blur supports-[backdrop-filter]:bg-bg/60"
->
-  <div class="container-site flex h-14 items-center justify-between gap-6">
+<!-- Fully clear at the top. Blur, tint and border ramp in over the first 100px of scroll
+     (--hdr goes 0 → 1, see script below). -->
+<header class="site-header sticky top-0 z-50 border-b">
+  <div class="container-site flex h-16 items-center justify-between gap-6">
     <a
       href="/"
-      class="brand-mark text-fg text-[1.6rem] no-underline hover:text-brand"
+      class="brand-sa font-display text-[1.75rem] leading-none font-black tracking-[-0.02em] no-underline"
       aria-label="Slave Atanasov, home"
     >
-      SLAVE_ATANASOV
+      SA
     </a>
     <nav aria-label="Primary">
       <ul class="flex items-center gap-5 text-sm sm:gap-7">
@@ -45,3 +45,55 @@ const current = Astro.url.pathname;
     </nav>
   </div>
 </header>
+
+<style>
+  /* Outlined SA, never filled: muted at rest, lighter on hover. */
+  .brand-sa {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    -webkit-text-stroke: 1.25px rgb(232 234 238 / 0.45);
+    transition: -webkit-text-stroke-color 200ms ease;
+  }
+  .brand-sa:hover,
+  .brand-sa:focus-visible {
+    color: transparent;
+    -webkit-text-stroke-color: rgb(255 255 255 / 0.95);
+  }
+  .site-header {
+    --hdr: 0;
+    background-color: rgb(6 7 8 / calc(0.7 * var(--hdr)));
+    border-bottom-color: rgb(22 25 30 / calc(0.8 * var(--hdr)));
+    backdrop-filter: blur(calc(12px * var(--hdr)));
+    -webkit-backdrop-filter: blur(calc(12px * var(--hdr)));
+    /* Smooths the jumps a mouse wheel makes through the 100px ramp. */
+    transition:
+      background-color 450ms ease,
+      border-color 450ms ease,
+      backdrop-filter 450ms ease,
+      -webkit-backdrop-filter 450ms ease;
+  }
+</style>
+
+<script>
+  const RAMP = 100;
+  const header = document.querySelector<HTMLElement>('.site-header');
+  if (header) {
+    let queued = false;
+    const sync = () => {
+      queued = false;
+      const t = Math.min(Math.max(window.scrollY / RAMP, 0), 1);
+      header.style.setProperty('--hdr', t.toFixed(3));
+    };
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!queued) {
+          queued = true;
+          requestAnimationFrame(sync);
+        }
+      },
+      { passive: true },
+    );
+    sync();
+  }
+</script>

@@ -7,12 +7,13 @@
     "title": "Senior Web Developer",
     "start": "2026-02",
     "end": null,
-    "summary": "Next.js across client UI and server-side code for a sports media platform. I contribute to architecture and implement APIs in the context of merged companies and how their systems come together.",
+    "summary": "Next.js across client UI and server-side code for a sports media platform. I contribute to architecture and implement APIs in the context of merged companies and how their systems come together. Day-to-day work is LLM-assisted with tools like Claude and Cursor.",
     "highlights": [
       "Client UI and server-side code in Next.js",
-      "Architecture input and API implementation across merged systems"
+      "Architecture input and API implementation across merged systems",
+      "LLM-assisted development with Claude and Cursor"
     ],
-    "stack": ["Next.js", "React", "TypeScript", "Node.js", "REST"],
+    "stack": ["Next.js", "React", "TypeScript", "Node.js", "REST", "Claude", "Cursor"],
     "featured": true,
     "order": 1
   },

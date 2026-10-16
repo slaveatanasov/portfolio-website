@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ProjectCard from '../components/ProjectCard.astro';
+import Chips from '../components/Chips.astro';
+import { site } from '../data/site';
+
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const featured = projects.filter((p) => p.data.featured);
+const more = projects.filter((p) => !p.data.featured);
+---
+
+<Base
+  title={`Projects — ${site.name}`}
+  description="Client projects and own products Slave Atanasov designed, built and shipped end to end."
+>
+  <div class="container-site pt-16 pb-8 sm:pt-24">
+    <header class="max-w-3xl" data-reveal>
+      <p class="label mb-4">Projects</p>
+      <h1 class="text-4xl font-semibold tracking-tight text-fg sm:text-5xl">
+        Things I built and shipped.
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-fg-muted">
+        Projects for clients and products of my own, from first idea through design, code, launch
+        and everything after. 
+      </p>
+    </header>
+
+    <section class="mt-14" aria-labelledby="featured-title">
+      <h2 id="featured-title" class="label mb-6" data-reveal>Case studies</h2>
+      <div class="grid gap-4 lg:grid-cols-2">
+        {featured.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
+
+    {
+      more.length > 0 && (
+        <section class="mt-20 max-w-3xl" aria-labelledby="more-title">
+          <h2 id="more-title" class="label mb-6" data-reveal>
+            More projects
+          </h2>
+          <ul class="divide-y divide-border">
+            {more.map(({ data }) => (
+              <li class="flex flex-col gap-3 py-5 first:pt-0 sm:flex-row sm:items-start sm:justify-between sm:gap-8" data-reveal>
+                <div class="max-w-xl">
+                  <h3 class="font-semibold text-fg">
+                    {data.title}
+                    <span class="font-normal text-fg-muted"> — {data.tagline}</span>
+                  </h3>
+                  <p class="mt-1.5 text-sm leading-relaxed text-fg-muted">{data.summary}</p>
+                  {data.stack.length > 0 && <Chips items={data.stack} size="sm" class="mt-3" />}
+                </div>
+                <p class="flex shrink-0 gap-4 font-mono text-xs">
+                  {data.url && (
+                    <a href={data.url} target="_blank" rel="noopener noreferrer" class="text-fg-muted no-underline hover:text-fg">
+                      Visit &rarr;
+                    </a>
+                  )}
+                  {data.repo && (
+                    <a href={data.repo} target="_blank" rel="noopener noreferrer" class="text-fg-muted no-underline hover:text-fg">
+                      GitHub &rarr;
+                    </a>
+                  )}
+                </p>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
+
+    <p class="mt-10 font-mono text-xs text-fg-faint" data-reveal>
+      Smaller experiments and older work:{' '}
+      <a href={`${site.github}?tab=repositories`} target="_blank" rel="noopener noreferrer">
+        github.com/slaveatanasov
+      </a>
+    </p>
+  </div>
+</Base>

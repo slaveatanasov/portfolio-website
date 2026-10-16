@@ -24,12 +24,19 @@ const { class: className, caption } = Astro.props;
       )
     }
   </div>
-  <div class="frame-body relative">
+  <div class="frame-body relative overflow-hidden">
     <slot />
   </div>
 </figure>
 
 <style>
+  /* The body clips its image (hover zooms scale it), so a zoomed screenshot never spills over
+     the chrome bar or past the edge ring. Bottom corners follow the figure's inner radius;
+     isolation keeps the clip exact once the zoom moves the image onto its own GPU layer. */
+  .frame-body {
+    isolation: isolate;
+    border-radius: 0 0 calc(0.75rem - 1px) calc(0.75rem - 1px);
+  }
   .frame-body :global(img) {
     display: block;
     width: 100%;
@@ -39,6 +46,8 @@ const { class: className, caption } = Astro.props;
     content: '';
     position: absolute;
     inset: 0;
+    z-index: 1;
+    border-radius: inherit;
     pointer-events: none;
     box-shadow: inset 0 0 0 1px rgb(0 0 0 / 0.35);
   }

@@ -1,56 +1,158 @@
 ---
 import HeroScene from '../HeroScene.astro';
+import Portrait from '../Portrait.astro';
 import SocialLinks from '../SocialLinks.astro';
 import { site } from '../../data/site';
-import { now } from '../../data/profile';
 ---
 
-<section class="relative isolate overflow-hidden" aria-labelledby="hero-title">
-  <HeroScene class="absolute inset-0 -z-10" />
-  <div class="container-site relative pt-20 pb-16 sm:pt-28 sm:pb-24">
-    <p class="label mb-6 flex items-center gap-2" data-reveal>
-      <span class="relative inline-flex size-2">
+<!-- -mt-16 slides the hero under the sticky header so its blur has aurora to work on. -->
+<section class="hero relative isolate -mt-16 overflow-hidden" aria-labelledby="hero-title">
+  <!-- Soft-light: over the photo it tints without washing out; over the empty
+       (transparent, isolated) backdrop it composites as normal. -->
+  <HeroScene class="absolute inset-0 -z-10 mix-blend-soft-light" />
+  <div
+    class="container-site relative grid items-center gap-10 pt-36 pb-16 sm:pt-44 sm:pb-24 lg:grid-cols-[1fr_auto] lg:gap-14"
+  >
+    <div class="hero-copy relative text-center lg:text-left">
+      <p class="label hero-type mb-6 text-fg-muted" data-reveal>
+        <span class="hero-eyebrow">Every great idea starts as a “what if”</span>
+      </p>
+
+      <h1 id="hero-title" class="mx-auto max-w-4xl lg:mx-0" data-reveal>
+        <span class="hero-clip block font-display text-[clamp(2.4rem,5.6vw,4.6rem)] leading-[0.92] font-black tracking-[-0.025em] uppercase">
+          <canvas class="hero-clip-aurora" aria-hidden="true"></canvas>
+          <span class="hero-clip-text">Slave Atanasov</span>
+        </span>
         <span
-          class="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-60"
-        ></span>
-        <span class="relative inline-flex size-2 rounded-full bg-emerald-400"></span>
-      </span>
-      Available for select engagements
-    </p>
+          class="hero-type mt-2 block text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.05] font-semibold tracking-tight text-fg"
+        >
+          Senior Web Developer
+        </span>
+      </h1>
 
-    <h1 id="hero-title" class="max-w-4xl" data-reveal>
-      <span class="brand-mark block text-fg text-[clamp(3rem,9vw,6rem)]">Slave Atanasov</span>
-      <span
-        class="mt-2 block text-[clamp(1.75rem,4.5vw,3.25rem)] leading-[1.05] font-semibold tracking-tight text-fg"
-      >
-        Senior Web Developer
-      </span>
-    </h1>
+      <p class="hero-type mx-auto mt-7 max-w-2xl text-lg leading-relaxed font-medium text-white sm:text-xl lg:mx-0" data-reveal>
+        Hi, I'm Slave. I build web software solo and with teams, from small shops to large
+        companies. Background includes Apple, Zoox, and currently Deltatre via Toptal. On the side
+        I ship my own products.
+      </p>
 
-    <p class="mt-7 max-w-2xl text-lg leading-relaxed text-fg-muted sm:text-xl" data-reveal>
-      Hi, I'm Slave. I build web software solo and with teams, from small shops to large
-      companies. Currently with Deltatre via Toptal; before that Zoox, Apple and HTEC. On the side
-      I ship my own products.
-    </p>
-
-    <div class="mt-9 flex flex-wrap items-center gap-3" data-reveal>
-      <a
-        href={`mailto:${site.email}`}
-        class="inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2.5 text-sm font-medium text-bg no-underline transition-colors hover:bg-white"
-      >
-        Email me
-      </a>
-      <a
-        href="#work"
-        class="inline-flex items-center gap-2 rounded-lg border border-border-strong px-4 py-2.5 text-sm font-medium text-fg no-underline transition-colors hover:border-fg-faint hover:bg-bg-raised"
-      >
-        See client work
-      </a>
-      <SocialLinks class="ml-1" />
+      <div class="mt-9 flex flex-wrap items-center justify-center gap-3 lg:justify-start" data-reveal>
+        <a
+          href={`mailto:${site.email}`}
+          class="key key-primary inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
+        >
+          Email me
+        </a>
+        <a
+          href="#work"
+          class="key inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
+        >
+          See client work
+        </a>
+        <SocialLinks class="ml-1" hideEmail tone="hero" />
+      </div>
     </div>
 
-    <p class="mt-10 font-mono text-xs text-fg-faint" data-reveal>
-      <span class="text-fg-muted">now</span> · {now.role} · since {now.since}
-    </p>
+    <!-- -z-20 sits under the aurora (-z-10), which blends over the photo. Desktop only: on mobile
+         the about page photo is enough. -->
+    <div class="relative -z-20 hidden lg:block lg:justify-self-end" data-reveal>
+      <Portrait />
+    </div>
   </div>
 </section>
+
+<style>
+  /* Readability: a soft elliptical scrim that follows the copy column and dims the light
+     behind it, instead of per-line dark halos that turn muddy on the bright bands.
+     z-index -1 keeps it above the aurora (-10) and below the text. */
+  .hero-copy::before {
+    content: '';
+    position: absolute;
+    inset: -14% -20% -10% -16%;
+    z-index: -1;
+    pointer-events: none;
+    background: radial-gradient(
+      ellipse closest-side at var(--scrim-x, 50%) 62%,
+      rgb(6 7 8 / 0.74) 0%,
+      rgb(6 7 8 / 0.62) 40%,
+      rgb(6 7 8 / 0.32) 68%,
+      rgb(6 7 8 / 0.1) 88%,
+      transparent 100%
+    );
+  }
+  /* Below lg the mobile aurora is dim enough on its own; the scrim only read as a dark spot. */
+  @media (max-width: 1023px) {
+    .hero-copy::before {
+      display: none;
+    }
+  }
+  /* On desktop the copy is left-aligned, so the scrim leans left. */
+  @media (min-width: 1024px) {
+    .hero-copy {
+      --scrim-x: 46%;
+    }
+  }
+  /* Crisp edge only; the scrim does the heavy lifting. */
+  .hero-type {
+    text-shadow:
+      0 1px 2px rgb(6 7 8 / 0.6),
+      0 0 1px rgb(6 7 8 / 0.5);
+  }
+  /* The aurora script sets --aurora-tight (0 spread, 1 tight) and data-aurora-live on the hero. */
+  .hero[data-aurora-live] .hero-eyebrow {
+    opacity: var(--aurora-tight, 0);
+  }
+  /* Clip the aurora to the glyphs. Same result as background-clip: text. */
+  .hero-clip {
+    position: relative;
+    isolation: isolate;
+  }
+  .hero-clip-aurora {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    visibility: hidden;
+  }
+  .hero-clip-text {
+    position: relative;
+    color: var(--color-fg);
+  }
+  .hero-clip.is-live .hero-clip-text {
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+</style>
+
+<script>
+  const clip = document.querySelector<HTMLElement>('.hero-clip');
+  const canvas = clip?.querySelector('canvas');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function supportsWebGL(): boolean {
+    try {
+      const c = document.createElement('canvas');
+      return !!(c.getContext('webgl2') || c.getContext('webgl'));
+    } catch {
+      return false;
+    }
+  }
+
+  if (clip && canvas && !reduced && supportsWebGL()) {
+    const observer = new IntersectionObserver(
+      async ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        observer.disconnect();
+        const { mountHeadlineAurora } = await import('../../scripts/hero-scene');
+        mountHeadlineAurora(canvas, clip);
+      },
+      { rootMargin: '200px' },
+    );
+    observer.observe(clip);
+  }
+</script>

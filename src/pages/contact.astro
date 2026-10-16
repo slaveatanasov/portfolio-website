@@ -1,0 +1,102 @@
+---
+import Base from '../layouts/Base.astro';
+import Tile from '../components/Tile.astro';
+import { site } from '../data/site';
+import { facts } from '../data/profile';
+
+const channels = [
+  {
+    label: 'Email',
+    value: site.email,
+    href: `mailto:${site.email}`,
+    note: 'Fastest way to reach me. A few lines on the project, team and timing is plenty.',
+    primary: true,
+  },
+  {
+    label: 'Toptal',
+    value: 'Hire via Toptal',
+    href: site.toptal,
+    note: 'Vetted engagement with Toptal handling contracts and billing.',
+  },
+  {
+    label: 'LinkedIn',
+    value: 'linkedin.com/in/slaveatanasov',
+    href: site.linkedin,
+    note: 'Background, roles and recommendations.',
+  },
+  {
+    label: 'GitHub',
+    value: 'github.com/slaveatanasov',
+    href: site.github,
+    note: 'Code, side projects and experiments.',
+  },
+];
+---
+
+<Base
+  title={`Contact — ${site.name}`}
+  description="Get in touch with Slave Atanasov, senior web developer: email, Toptal, LinkedIn and GitHub."
+>
+  <div class="container-site pt-16 pb-8 sm:pt-24">
+    <header class="max-w-3xl" data-reveal>
+      <p class="label mb-4">Contact</p>
+      <h1 class="text-4xl font-semibold tracking-tight text-fg sm:text-5xl">
+        Have a project or a team that needs a senior hand?
+      </h1>
+      <p class="mt-6 text-lg leading-relaxed text-fg-muted">
+        I selectively take on new work when capacity and fit align. Tell me what you are building
+        and where you need help.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-3">
+        <a href={`mailto:${site.email}`} class="key key-primary inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium">
+          Email me
+        </a>
+        <a href={site.toptal} target="_blank" rel="noopener noreferrer" class="key inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium">
+          Hire via Toptal
+        </a>
+      </div>
+    </header>
+
+    <section class="mt-16 grid gap-4 sm:grid-cols-2" aria-label="Ways to reach me">
+      {
+        channels.map((c) => (
+          <Tile
+            as="a"
+            href={c.href}
+            target={c.href.startsWith('mailto') ? undefined : '_blank'}
+            rel={c.href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+            class="group flex flex-col gap-4 no-underline"
+          >
+            <p class="label">{c.label}</p>
+            <div>
+              <p class:list={['font-medium text-fg group-hover:text-white', c.primary ? 'text-xl' : 'text-base']}>
+                {c.value}
+                <span class="ml-1.5 text-fg-faint transition-colors group-hover:text-fg" aria-hidden="true">
+                  &rarr;
+                </span>
+              </p>
+              <p class="mt-2 text-sm text-fg-muted">{c.note}</p>
+            </div>
+          </Tile>
+        ))
+      }
+    </section>
+
+    <section class="mt-16 max-w-3xl" aria-labelledby="details-title">
+      <h2 id="details-title" class="label mb-6" data-reveal>Working details</h2>
+      <dl class="grid gap-6 sm:grid-cols-3" data-reveal>
+        {
+          facts.map((f) => (
+            <div class="border-l border-border pl-4">
+              <dt class="label mb-1.5">{f.label}</dt>
+              <dd class="text-sm leading-snug text-fg">
+                {f.value}
+                {'note' in f && <span class="mt-1 block text-fg-muted">{f.note}</span>}
+              </dd>
+            </div>
+          ))
+        }
+      </dl>
+    </section>
+  </div>
+</Base>

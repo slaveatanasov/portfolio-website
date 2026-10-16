@@ -1,0 +1,48 @@
+---
+/**
+ * Portrait with no frame: the edges feather out through a radial mask so the photo
+ * dissolves into the hero. The hero stacks it under the aurora canvas (see Hero.astro),
+ * which soft-light blends over it, so the light drifts across the photo.
+ */
+import { Image } from 'astro:assets';
+import photo from '../assets/sa_img.jpg';
+---
+
+<div class="portrait mx-auto size-[260px] sm:size-[340px]">
+  <Image
+    src={photo}
+    alt="Slave Atanasov at his desk"
+    widths={[340, 520, 680]}
+    sizes="(min-width: 640px) 340px, 260px"
+    class="size-full object-cover"
+    loading="eager"
+    fetchpriority="high"
+  />
+</div>
+
+<style>
+  .portrait {
+    /* Solid core, long soft falloff: no edge or circle to read. */
+    -webkit-mask-image: radial-gradient(
+      closest-side at 54% 47%,
+      #000 38%,
+      rgb(0 0 0 / 0.75) 58%,
+      rgb(0 0 0 / 0.35) 76%,
+      rgb(0 0 0 / 0.1) 90%,
+      transparent 100%
+    );
+    mask-image: radial-gradient(
+      closest-side at 54% 47%,
+      #000 38%,
+      rgb(0 0 0 / 0.75) 58%,
+      rgb(0 0 0 / 0.35) 76%,
+      rgb(0 0 0 / 0.1) 90%,
+      transparent 100%
+    );
+  }
+  /* Grade toward the aurora: cooler, a touch less saturated, deeper shadows, so the
+     blended light reads as falling on the photo rather than sitting on top of it. */
+  .portrait :global(img) {
+    filter: saturate(0.8) contrast(1.06) brightness(0.92) hue-rotate(-6deg);
+  }
+</style>

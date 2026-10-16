@@ -3,44 +3,92 @@ import SocialLinks from './SocialLinks.astro';
 import { site } from '../data/site';
 
 const year = new Date().getFullYear();
+// Motto on the left, contact pitch and links on the right. /contact already is the pitch, so
+// its footer is just the motto and copyright, centred.
+// The motto is sized in cqi against its own column: the longest line is ~9.5em wide, so 10cqi
+// always fits.
+const isContact = Astro.url.pathname.replace(/\/$/, '') === '/contact';
 ---
 
-<footer id="contact" class="mt-24 border-t border-border">
-  <div class="container-site grid gap-10 py-16 md:grid-cols-[1.4fr_1fr] md:gap-16">
-    <div data-reveal>
-      <p class="label mb-4">Contact</p>
-      <h2 class="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
-        Have a project or a team that needs a senior hand?
-      </h2>
-      <p class="mt-4 max-w-xl text-fg-muted">
-        I selectively take on new work when capacity and fit align. Email is the fastest way to
-        reach me.
+<footer class="mt-24 border-t border-border">
+  <div
+    class:list={[
+      'container-site py-16',
+      isContact
+        ? 'flex flex-col items-center gap-10 text-center'
+        : 'grid gap-12 md:grid-cols-[1.4fr_1fr] md:gap-16',
+    ]}
+  >
+    <div class:list={['@container', isContact && 'w-full max-w-2xl']} data-reveal>
+      <p class="footer-motto font-display text-[clamp(1.75rem,10cqi,3.75rem)] leading-[0.92] font-black tracking-[0.01em] uppercase">
+        Engineer's mind.
+        <br />
+        Artist's eye.
       </p>
-      <div class="mt-7 flex flex-wrap items-center gap-3">
-        <a
-          href={`mailto:${site.email}`}
-          class="inline-flex items-center gap-2 rounded-lg bg-fg px-4 py-2.5 text-sm font-medium text-bg no-underline transition-colors hover:bg-white hover:text-bg"
-        >
-          {site.email}
-        </a>
-        <a
-          href={site.toptal}
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 rounded-lg border border-border-strong px-4 py-2.5 text-sm font-medium text-fg no-underline transition-colors hover:border-fg-faint hover:bg-bg-raised"
-        >
-          Hire via Toptal
-        </a>
-      </div>
-    </div>
-    <div class="flex flex-col justify-between gap-8" data-reveal>
-      <div>
-        <p class="label mb-4">Elsewhere</p>
-        <SocialLinks size="lg" />
-      </div>
-      <p class="font-mono text-xs text-fg-faint">
-        &copy; {year} Slave Atanasov. Built with Astro.
+      <p class:list={['mt-6 max-w-md text-fg-muted', isContact && 'mx-auto']}>
+        Tech, art and a quiet obsession with the details people feel but rarely notice.
       </p>
     </div>
+
+    {
+      isContact ? (
+        <p class="font-mono text-xs text-fg-faint" data-reveal>
+          &copy; {year} Slave Atanasov.
+        </p>
+      ) : (
+        <div class="flex flex-col justify-between gap-10" data-reveal>
+          <div>
+            <p class="label mb-4">Contact</p>
+            <h2 class="text-2xl font-semibold tracking-tight text-fg sm:text-3xl">
+              Have a project or a team that needs a senior hand?
+            </h2>
+            <p class="mt-4 text-fg-muted">
+              I selectively take on new work when capacity and fit align. Email is the fastest
+              way to reach me.
+            </p>
+            <div class="mt-6 flex flex-wrap items-center gap-3">
+              <a
+                href={`mailto:${site.email}`}
+                class="key key-primary inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
+              >
+                Email me
+              </a>
+              <a
+                href={site.toptal}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="key inline-flex items-center gap-2 rounded-lg px-4 py-2.5 text-sm font-medium"
+              >
+                Hire via Toptal
+              </a>
+            </div>
+          </div>
+          <div class="flex flex-col gap-8">
+            <div>
+              <p class="label mb-4">Elsewhere</p>
+              <SocialLinks size="lg" hideEmail />
+            </div>
+            <p class="font-mono text-xs text-fg-faint">&copy; {year} Slave Atanasov.</p>
+          </div>
+        </div>
+      )
+    }
   </div>
 </footer>
+
+<style>
+  /* Outlined like the SA mark: muted at rest, lighter on hover. Geist's glyphs have
+     overlapping contours, so a bare stroke draws crossings inside H/A. Stroke first, then
+     fill with the page background to cover them (stroke doubled, in em so it scales: the fill
+     hides its inner half). */
+  .footer-motto {
+    color: var(--color-bg);
+    -webkit-text-fill-color: var(--color-bg);
+    -webkit-text-stroke: 0.04em rgb(232 234 238 / 0.4);
+    paint-order: stroke fill;
+    transition: -webkit-text-stroke-color 300ms ease;
+  }
+  .footer-motto:hover {
+    -webkit-text-stroke-color: rgb(255 255 255 / 0.9);
+  }
+</style>

@@ -5,14 +5,22 @@ export const facts = [
     label: 'Availability',
     value: 'Independent contractor, selectively taking new work when capacity and fit align.',
   },
-  { label: 'Location', value: 'North Macedonia, remote delivery across time zones.' },
-  { label: 'Citizenship', value: 'EU citizen (Bulgaria) and North Macedonia.' },
+  {
+    label: 'Location',
+    value: 'North Macedonia',
+    note: 'Remote delivery across time zones.',
+  },
+  {
+    label: 'Right to work',
+    value: 'EU citizen & N. Macedonia',
+    note: 'Clients across the EU, USA and worldwide.',
+  },
 ] as const;
 
 export const now = {
   role: 'Senior Web Developer at Deltatre, via Toptal',
   since: 'February 2026',
-  note: 'Next.js on both client and server, plus architecture and API work across merged systems.',
+  note: 'Next.js on both client and server, plus architecture and API work across merged systems. LLM-assisted day to day.',
 } as const;
 
 export const coreStack = [
@@ -20,10 +28,8 @@ export const coreStack = [
   'React',
   'Next.js',
   'Node.js',
-  'PostgreSQL',
-  'Tailwind CSS',
-  'Docker',
-  'CI/CD',
+  'Infra',
+  'AI & LLMs',
 ] as const;
 
 export const stackGroups = [
@@ -42,8 +48,20 @@ export const stackGroups = [
     ],
   },
   {
+    name: 'AI & LLMs',
+    items: [
+      'Anthropic Claude',
+      'OpenAI',
+      'Cursor',
+      'GitHub Copilot',
+      'LLM APIs & integrations',
+      'Prompt & tool-calling workflows',
+      'Agent-style product features',
+    ],
+  },
+  {
     name: 'Backend & data',
-    items: ['REST', 'GraphQL', 'Node.js / Express', 'MongoDB', 'PostgreSQL / SQL', 'Supabase'],
+    items: ['REST', 'GraphQL', 'Node.js / Express', 'MongoDB', 'PostgreSQL', 'Neon', 'Supabase'],
   },
   {
     name: 'Infra & delivery',
@@ -51,19 +69,7 @@ export const stackGroups = [
   },
   {
     name: 'Tooling & quality',
-    items: ['Git', 'VS Code', 'Figma', 'Testing / Jest', 'Webpack, Vite & modern bundlers'],
-  },
-  {
-    name: 'AI & LLMs',
-    items: [
-      'Cursor',
-      'GitHub Copilot',
-      'Claude',
-      'ChatGPT / OpenAI',
-      'LLM APIs & integrations',
-      'Prompt & tool-calling workflows',
-      'Agent-style product features',
-    ],
+    items: ['Git', 'VS Code', 'Figma', 'Unit & end-to-end testing', 'Vite & modern bundlers'],
   },
   {
     name: 'SEO & analytics',
@@ -83,7 +89,7 @@ export const stackGroups = [
   },
   {
     name: 'Content & CMS',
-    items: ['Strapi', 'WordPress', 'Headless CMS patterns'],
+    items: ['Strapi', 'Contentful', 'Payload CMS', 'WordPress', 'Headless CMS patterns'],
   },
   {
     name: 'Mobile (learning)',
@@ -100,13 +106,26 @@ export const principles = [
     home: true,
   },
   { title: 'Range', text: 'Agency and founder work, and longer corporate engagements.', home: false },
-  { title: 'Scope', text: 'Agreed in writing; I call out risks early.', home: true },
   {
-    title: 'Dates',
-    text: 'I aim to hit what we agree on, and I say early if that is not realistic.',
+    title: 'Scope',
+    text: 'We agree the work up front, and we talk it through when something would change it.',
     home: true,
   },
-  { title: 'Collaboration', text: 'Code reviews, pairing, shared ownership.', home: true },
+  {
+    title: 'Dates',
+    text: 'We plan to the dates we set, and we say early if one needs to move.',
+    home: true,
+  },
+  {
+    title: 'Collaboration',
+    text: 'Consultations, brainstorming, code reviews, pairing and shared ownership.',
+    home: true,
+  },
+  {
+    title: 'Stack & AI',
+    text: 'Modern tooling and LLM-assisted work, where it speeds delivery without cutting quality.',
+    home: true,
+  },
   { title: 'Change', text: 'New stacks, teams or priorities are normal; I adjust.', home: false },
   {
     title: 'Learning',
